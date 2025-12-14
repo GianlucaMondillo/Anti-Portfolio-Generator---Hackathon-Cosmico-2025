@@ -38,6 +38,7 @@ cd anti-portfolio-generator
 npm install
 
 # 3. Configura la chiave API
+cp .env.example .env
 # Apri il file .env e sostituisci il placeholder con la tua chiave OpenRouter
 
 # 4. Avvia il server di sviluppo
