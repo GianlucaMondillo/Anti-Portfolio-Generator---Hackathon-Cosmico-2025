@@ -1,0 +1,373 @@
+{
+  "meta": {
+    "name": "M. F.",
+    "location": "Milano, Italia",
+    "contact": "m.f.@devmail.io",
+    "primary_links": [
+      "https://github.com/mferretti/payment-gateway",
+      "https://github.com/mferretti/go-monitoring-tool",
+      "https://dev.to/marcoferretti"
+    ]
+  },
+  "anti_title": "Architetto di Resilienza Silenziosa",
+  "signature": {
+    "one_sentence": "Costruisco sistemi che non solo performano sotto pressione, ma falliscono in modo onesto e comprensibile, perché la vera robustezza si misura in chiarezza, non in astuzia.",
+    "three_traits": [
+      "Pragmatismo Radicale",
+      "Ossessione per la Chiarezza",
+      "Prevenzione Proattiva del Caos"
+    ],
+    "edge": "Quando altri sviluppatori Go e Rust si concentrano sull'ottimizzazione estrema o sulla pura eleganza del codice, io eccello nel far convivere prestazioni elevate, affidabilità a prova di bomba e semplicità radicale.\nRiesco a progettare sistemi che restano leggibili e manutenibili anche sotto picchi di carico, evitando astrazioni inutili e concentrando la complessità solo dove serve veramente: nei punti di cambio di affidabilità come rete, storage e integrazioni.\nLa mia forza sta nel sapere esattamente dove la complessità aggiunge valore misurabile e dove invece è solo rumore, garantendo che il sistema sia non solo performante, ma soprattutto diagnosticabile e comprensibile nel lungo termine.",
+    "non_goals": [
+      "Seguire ciecamente i trend tecnologici senza validazione dei problemi.",
+      "Implementare feature che aumentano la complessità architetturale senza benefici tangibili.",
+      "Affidarsi a contratti impliciti o documentazione insufficiente tra servizi.",
+      "Accettare deadline irrealistiche che compromettono la qualità del codice.",
+      "Commitare codice direttamente sulla branch principale senza revisione."
+    ]
+  },
+  "decision_patterns": [
+    {
+      "pattern_name": "Fail-Fast Ruidoso",
+      "when_used": "Integrazioni esterne, manipolazione dati critici, qualsiasi punto dove l'incertezza può generare stati incoerenti.",
+      "signals": [
+        "Variabilità imprevedibile delle risposte.",
+        "Dati che cambiano semantica senza preavviso.",
+        "Rischio di stati incoerenti difficili da diagnosticare.",
+        "Richiesta di 'normalizzare' risposte problematiche."
+      ],
+      "tradeoffs": [
+        "Rallentamento iniziale del rilascio.",
+        "Necessità di spiegare chiaramente i limiti del sistema.",
+        "Possibile insoddisfazione iniziale per chi cerca soluzioni 'rapide'."
+      ],
+      "example": "Rifiutare di normalizzare risposte incoerenti da un servizio esterno, insistendo invece su validazioni rigorose, versioning del contratto e alert rumorosi per segnalare immediatamente l'incoerenza."
+    },
+    {
+      "pattern_name": "Complessità Mirata sui Confini Critici",
+      "when_used": "Quando si progetta o si migliora un sistema distribuito, specialmente sotto carichi elevati o con requisiti di alta disponibilità.",
+      "signals": [
+        "Identificazione dei punti di 'cambio di affidabilità' (rete, storage, code, integrazioni).",
+        "Necessità di misurabile riduzione del rischio.",
+        "Requisiti di lunga vita utile del sistema (5+ anni)."
+      ],
+      "tradeoffs": [
+        "Potenziale aumento della complessità in aree circoscritte.",
+        "Necessità di definire confini netti e interfacce piccole.",
+        "Minore 'eleganza' apparente a favore di linearità."
+      ],
+      "example": "Introdurre idempotenza, backpressure e circuit breaker solo sui confini critici di un sistema di pagamenti, mantenendo il resto del flusso logico il più lineare ed esplicito possibile."
+    },
+    {
+      "pattern_name": "Osservabilità come Pilastro",
+      "when_used": "In ogni fase della progettazione e implementazione di un sistema distribuito.",
+      "signals": [
+        "Necessità di diagnosticare problemi in produzione.",
+        "Obiettivo di manutenibilità a lungo termine.",
+        "Deploy frequenti e rollback veloci."
+      ],
+      "tradeoffs": [
+        "Investimento iniziale in logging, tracing e metriche.",
+        "Potenziale overhead se non ben implementato."
+      ],
+      "example": "Implementare metriche dettagliate e tracing distribuito fin dall'inizio per un sistema event-driven, permettendo di isolare rapidamente colli di bottiglia o errori causati da variazioni nelle risposte dei servizi esterni."
+    }
+  ],
+  "method_stack": [
+    {
+      "step": "Disseca il Problema Reale",
+      "description": "Prima di scrivere una singola riga di codice, comprendo a fondo il problema da risolvere, identificando i veri vincoli e gli obiettivi critici.",
+      "artifacts_produced": [
+        "Definizione chiara del problema",
+        "Identificazione dei punti di fragilità/rischio",
+        "Criteri di successo misurabili"
+      ],
+      "common_failure": "Saltare questa fase e iniziare a scrivere codice basandosi su presupposti errati o incompletezze.",
+      "mitigation": "Dedico tempo alla discussione, alla documentazione preliminare e alla validazione dei requisiti con stakeholder chiave."
+    },
+    {
+      "step": "Mappa il Percorso Critico e i Cambi di Affidabilità",
+      "description": "Traccio il flusso end-to-end dei dati e delle operazioni critiche, individuando precisamente dove il sistema interagisce con elementi esterni (rete, storage, altri servizi) che possono compromettere l'affidabilità.",
+      "artifacts_produced": [
+        "Diagrammi di flusso semplificati",
+        "Lista dei punti di potenziale fallimento",
+        "Matrice di rischio per ogni punto critico"
+      ],
+      "common_failure": "Considerare il sistema come un'entità monolitica senza analizzare le interdipendenze esterne.",
+      "mitigation": "Utilizzo diagrammi chiari e modelli mentali condivisi per identificare e isolare le responsabilità."
+    },
+    {
+      "step": "Applica Complessità Strategica e Linearità Esplicita",
+      "description": "Introduco complessità (retry, circuit breaker, idempotenza, fall-back) solo nei punti critici identificati, per ridurre rischi misurabili. Il resto del codice è mantenuto il più lineare, esplicito e facile da leggere possibile.",
+      "artifacts_produced": [
+        "Codice con logica chiara e semplice",
+        "Pattern di resilienza applicati selettivamente",
+        "Confini ben definiti tra componenti"
+      ],
+      "common_failure": "Applicare pattern complessi ovunque, rendendo il codice illeggibile e difficile da debuggare.",
+      "mitigation": "Favorisco nomi di funzione e variabile descrittivi, evito astrazioni non necessarie e documentazione inline solo per spiegare il 'perché', non il 'cosa'."
+    },
+    {
+      "step": "Prioritizza Osservabilità e Test sugli Invarianti",
+      "description": "Integro logging dettagliato, tracing distribuito e metriche significative fin dall'inizio. Scrivo test che verificano gli invarianti del sistema, assicurando che il comportamento sia prevedibile anche in condizioni di stress o fallimento.",
+      "artifacts_produced": [
+        "Sistema di logging centralizzato",
+        "Tracer distribuito configurato",
+        "Set di test automatizzati robusti",
+        "Dashboard di monitoraggio"
+      ],
+      "common_failure": "Trascurare l'osservabilità e i test, affidandosi a 'funziona e basta'.",
+      "mitigation": "Considero sempre il 'fail-fast rumoroso' come primo obiettivo dei test e dell'osservabilità."
+    },
+    {
+      "step": "Deploy Frequenti e Rollback Veloci",
+      "description": "Eseguo rilasci piccoli e frequenti, supportati da una solida strategia di monitoraggio e da procedure di rollback rapide ed efficienti. Questo minimizza l'impatto di eventuali problemi.",
+      "artifacts_produced": [
+        "Pipeline CI/CD automatizzata",
+        "Procedure di rollback testate",
+        "Sistema di alerting reattivo"
+      ],
+      "common_failure": "Rilasci monolitici e rari, difficili da gestire e con alti rischi.",
+      "mitigation": "Automatizzo il più possibile il processo di rilascio e recupero."
+    }
+  ],
+  "failure_ledger": [
+    {
+      "failure": "Migrazione monolite a microservizi senza reale necessità",
+      "context": "Ho guidato la riscrittura di un monolite in microservizi seguendo una moda tecnologica, con l'obiettivo di migliorare scalabilità e manutenibilità. Il risultato è stato un sistema più complesso, costoso in termini di infrastruttura e gestione, con benefici operativi quasi nulli.",
+      "lesson": "La tecnologia deve risolvere problemi concreti, non inseguire trend. La complessità aggiunta deve sempre essere giustificata da un beneficio misurabile.",
+      "rule_created": "Non intraprendere refactoring architetturali maggiori senza un'analisi chiara e quantificabile del problema che si intende risolvere e dei benefici attesi.",
+      "what_changed": "Ora valuto attentamente se un problema è realmente causato dall'architettura monolitica o se può essere risolto con ottimizzazioni mirate o introducendo solo i pattern necessari.",
+      "evidence_refs": []
+    },
+    {
+      "failure": "Sottovalutazione dei test automatici",
+      "context": "In un progetto startup con ritmi frenetici, ho dato priorità allo sviluppo rapido a discapito della copertura dei test. La frase 'tanto funziona' mi ha portato a introdurre tre bug critici in produzione nel giro di una settimana, causando instabilità e perdita di fiducia.",
+      "lesson": "Una copertura di test adeguata è un investimento fondamentale, non un optional. I test sono la rete di sicurezza che permette di innovare velocemente senza paura.",
+      "rule_created": "Scrivere test (unitari, integrazione, e end-to-end) prima o parallelamente al codice di produzione. I test definiscono il comportamento atteso e validano la correttezza.",
+      "what_changed": "Adotto una strategia 'test-first' o 'test-driven development' per tutto il nuovo codice e pianifico attivamente l'aggiunta di test per il codice esistente."
+    },
+    {
+      "failure": "Accettazione di una deadline impossibile",
+      "context": "Per fare bella figura e dimostrare velocità, ho accettato una scadenza di progetto irrealistica. Il risultato è stato codice di bassa qualità, decisioni architetturali affrettate, un enorme debito tecnico accumulato e un esaurimento personale (burnout).",
+      "lesson": "La qualità a lungo termine è più importante della velocità a breve termine. Un rilascio di bassa qualità danneggia la reputazione e la capacità futura più di un ritardo.",
+      "rule_created": "Mai accettare una deadline che non permetta di mantenere gli standard di qualità attesi. Comunico proattivamente i rischi e propongo stime realistiche.",
+      "what_changed": "Ora nego attivamente le scadenze, comunicando chiaramente i trade-off tra tempo, scopo e qualità, e insistendo su un rilascio che sia sostenibile nel tempo."
+    },
+    {
+      "failure": "Irrobustimento eccessivo di un'integrazione esterna fallace",
+      "context": "Ho implementato un sistema di retry, circuit breaker e fallback complessi per un'integrazione esterna. Tecnicamente corretto, ma il servizio aveva variabilità imprevedibile nelle risposte, causando stati incoerenti a valle difficili da diagnosticare, peggio di un errore netto.",
+      "lesson": "La vera robustezza non è solo resistere ai fallimenti, ma rendere il fallimento comprensibile. La complessità deve portare chiarezza non nascondere problemi semantici.",
+      "rule_created": "Prima di aggiungere complessità difensiva, validare le assunzioni sui dati scambiati e considerare un 'fail-fast' rumoroso se il comportamento del servizio esterno è troppo instabile o ambiguo.",
+      "what_changed": "Ora do priorità alla comprensibilità del fallimento e alla chiarezza dei contratti rispetto al semplice 'mantenere il sistema attivo a tutti i costi'."
+    }
+  ],
+  "loves_hates": {
+    "loves": [
+      "Trovare la soluzione più semplice per un problema complesso.",
+      "Scrivere codice ben documentato e facile da capire.",
+      "Ottimizzare query SQL lente come se non ci fosse un domani.",
+      "Risolvere bug di memoria in produzione alle 3 del mattino.",
+      "Vedere team junior crescere grazie a mentoring efficace.",
+      "L'approccio 'Infrastructure as Code' che rende la gestione prevedibile."
+    ],
+    "hates": [
+      "Meeting inutili che potevano essere una semplice email.",
+      "L'atteggiamento 'abbiamo sempre fatto così' che soffoca l'innovazione.",
+      "Codice privo di test automatici, un invito al disastro.",
+      "Manager che impongono deadline irrealistiche senza consultare gli sviluppatori.",
+      "La tendenza a nascondere problemi con complessità aggiuntiva invece di risolverli alla radice.",
+      "Servizi esterni con contratti ambigui e semantiche mutevoli."
+    ],
+    "will_use_if_needed": [
+      "PHP (se strettamente necessario e solo per mantenimento legacy)",
+      "Python (per scripting o task specifici)",
+      "Frameworks ORM complessi (se giustificati da scale enormi e ben testati)"
+    ]
+  },
+  "superpowers": [
+    {
+      "claim": "Trasformare codice complesso e inaffidabile in sistemi performanti, leggibili e resilienti.",
+      "why_true": "La mia esperienza nell'ottimizzazione di query, nel debugging di produzione e nella gestione di sistemi ad alta performance, unita alla filosofia del 'fail-fast rumoroso', mi permette di identificare e risolvere colli di bottiglia e fragilità architetturali che altri trascurano.",
+      "scope": "Sistemi distribuiti, backend ad alta performance, ottimizzazione database, event-driven architectures.",
+      "boundaries": "Non sono un esperto di UI/UX o di frontend development.",
+      "evidence": [
+        "Sistema di pagamenti real-time (50k TPS, zero downtime)",
+        "Ottimizzazione costi infra post-migration (40%)"
+      ]
+    },
+    {
+      "claim": "Creare documentazione che le persone leggono e capiscono veramente.",
+      "why_true": "Credo che la documentazione debba essere parte integrante del codice, chiara, concisa e focalizzata sul 'perché' piuttosto che sul 'cosa'. Questo riduce il carico cognitivo e facilita la manutenzione.",
+      "scope": "Documentazione tecnica, README, commenti nel codice, guide operative.",
+      "boundaries": "Non scrivo manuali utente generici o marketing copy.",
+      "evidence": [
+        "Adozione di tool interni da 5 team, risparmiando 10h/settimana di debug manuale"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Gateway di Pagamenti Real-Time",
+      "role_function": "Backend Lead Developer",
+      "problem": "Costruire un sistema in grado di gestire 50.000 transazioni al secondo con zero downtime e latenza minima per un'azienda fintech.",
+      "approach": "Progettazione di un'architettura event-driven e distribuita utilizzando Go, PostgreSQL e Redis. Implementazione di pattern di idempotenza, backpressure e gestione robusta degli errori nelle integrazioni esterne. Monitoraggio costante e deploy frequenti con rollback rapidi.",
+      "outcome": "Sistema lanciato con successo, performance mantenute costantemente sopra i 50k TPS, zero downtime in oltre 2 anni di operatività.",
+      "metrics": [
+        "50.000+ transazioni/secondo",
+        "0 downtime in 2 anni",
+        "Latenza media delle transazioni < 50ms"
+      ],
+      "links": [
+        "https://github.com/mferretti/payment-gateway"
+      ]
+    },
+    {
+      "name": "Migration da Monolite a Servizi (Ottimizzata)",
+      "role_function": "Backend Architect / Lead Developer",
+      "problem": "Ridurre i costi operativi dell'infrastruttura e migliorare la manutenibilità di un'applicazione legacy, imparando dagli errori di una precedente migrazione fallimentare.",
+      "approach": "Analisi approfondita del monolite per identificare le aree di maggiore impatto. Suddivisione strategica in microservizi basata su domini di business chiari. Implementazione di contratti API ben definiti, automazione dei test e migrazione graduale dei dati e delle funzionalità. Utilizzo di Terraform per l'Infrastructure as Code.",
+      "outcome": "Riduzione dei costi infrastrutturali del 40% e miglioramento significativo della manutenibilità e della velocità di rilascio di nuove funzionalità.",
+      "metrics": [
+        "Riduzione costi infrastrutturali: 40%",
+        "Riduzione debito tecnico: stimato 30%",
+        "Aumento frequenza deploy: da mensile a settimanale"
+      ],
+      "links": [
+        "https://github.com/mferretti/go-monitoring-tool"
+      ]
+    },
+    {
+      "name": "Tool Interno di Monitoring e Debugging",
+      "role_function": "Developer",
+      "problem": "Mancanza di visibilità e difficoltà nel debug di sistemi distribuiti complessi, che portava a lunghe ore di troubleshooting manuale per i vari team di sviluppo.",
+      "approach": "Sviluppo di uno strumento in Go che aggrega log, metriche e trace da diverse fonti, fornendo un'interfaccia unificata per l'analisi dei problemi. Implementazione di alert intelligenti e correlazione automatica degli eventi.",
+      "outcome": "Lo strumento è stato adottato da 5 team interni, portando a un risparmio stimato di 10 ore settimanali di debugging manuale per team e accelerando la risoluzione dei problemi in produzione.",
+      "metrics": [
+        "Adozione da 5 team di sviluppo",
+        "Risparmio stimato: 10 ore/settimana/team",
+        "Riduzione tempo medio di risoluzione incidenti: 50%"
+      ],
+      "links": [
+        "https://github.com/mferretti/go-monitoring-tool"
+      ]
+    }
+  ],
+  "proof_layer": [
+    {
+      "claim_id": "edge-01",
+      "claim_text": "Progetto sistemi che convivono prestazioni elevate, affidabilità e semplicità senza sacrificare nessuna delle tre, mantenendoli leggibili e manutenibili sotto carico.",
+      "verifiability": "HIGH",
+      "evidence": [
+        {
+          "url": "https://github.com/mferretti/payment-gateway",
+          "label": "Architettura del Gateway di Pagamenti",
+          "note": "Dimostra l'applicazione di pattern di resilienza e performance nel codice Go."
+        },
+        {
+          "url": "https://dev.to/marcoferretti/building-a-high-performance-real-time-payment-gateway-4p4k",
+          "label": "Articolo sul Gateway di Pagamenti",
+          "note": "Descrive dettagli tecnici sull'architettura e le scelte implementative."
+        }
+      ]
+    },
+    {
+      "claim_id": "failure-01",
+      "claim_text": "Ho imparato da fallimenti architetturali, come trasformare un monolite senza motivo valido in un sistema più efficiente dopo una prima esperienza negativa.",
+      "verifiability": "HIGH",
+      "evidence": [
+        {
+          "url": "https://dev.to/marcoferretti/lessons-learned-from-microservice-migration-495a",
+          "label": "Articolo sulle Lezioni dalla Migrazione",
+          "note": "Spiega nel dettaglio il fallimento della prima migrazione e le lezioni apprese."
+        }
+      ]
+    },
+    {
+      "claim_id": "method-01",
+      "claim_text": "Implemento una strategia 'Fail-Fast Ruidoso' che privilegia la chiarezza del fallimento rispetto alla persistenza silenziosa di errori.",
+      "verifiability": "HIGH",
+      "evidence": [
+        {
+          "url": "https://dev.to/marcoferretti/when-to-fail-fast-and-loud-why-its-better-than-silence-269j",
+          "label": "Articolo sul Fail-Fast",
+          "note": "Dettaglia la filosofia e i casi d'uso di questa strategia applicata alle integrazioni."
+        }
+      ]
+    }
+  ],
+  "style_dna": {
+    "theme_name": "Rust & Resonance",
+    "section_order": [
+      "hero",
+      "edge",
+      "methodology",
+      "failures",
+      "projects",
+      "patterns",
+      "evidence",
+      "hates"
+    ],
+    "layout": {
+      "max_width": "1000px",
+      "content_align": "left",
+      "section_spacing": "4rem",
+      "inner_padding": "2.5rem"
+    },
+    "typography": {
+      "heading_font": "'Inter', sans-serif",
+      "body_font": "'Source Serif 4', serif",
+      "heading_size": "2.8rem",
+      "body_size": "1.1rem",
+      "heading_weight": "700",
+      "body_weight": "300",
+      "line_height": "1.7",
+      "letter_spacing": "0.02em",
+      "text_transform": "none"
+    },
+    "palette": {
+      "background": "#1a1a2e",
+      "surface": "#2a2a40",
+      "text": "#e0e0e0",
+      "accent": "#4fc3f7",
+      "secondary": "#7c4dff",
+      "border": "#4a4a60"
+    },
+    "borders": {
+      "radius": "6px",
+      "width": "1px",
+      "style": "solid"
+    },
+    "effects": {
+      "shadow": "0 8px 25px rgba(25, 118, 210, 0.15)",
+      "hover_transform": "translateY(-5px) scale(1.01)",
+      "transition": "all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)",
+      "background_pattern": "none"
+    },
+    "hero": {
+      "layout": "left-aligned",
+      "name_size": "4rem",
+      "show_avatar": false,
+      "show_location": true,
+      "decorative_element": "underline"
+    },
+    "cards": {
+      "style": "elevated",
+      "padding": "2rem",
+      "gap": "1.5rem",
+      "columns": "2"
+    },
+    "style_seed": 521
+  },
+  "section_labels": {
+    "edge": "La Mia Distinzione Unica",
+    "methodology": "Il Mio Processo: Dalla Teoria alla Pratica",
+    "failures": "Lezioni dal Campo: Il Mio Registro degli Errori",
+    "patterns": "Principi Guida nelle Decisioni",
+    "evidence": "Prove Tangibili",
+    "projects": "Sfide Affrontate e Risolte",
+    "anti_goals": "Cosa Rifiuto di Fare",
+    "hates": "Le Mie Frustrazioni nel Settore"
+  },
+  "generated_html": "<!DOCTYPE html>\n<html lang=\"it\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>M. F. - Architetto di Resilienza Silenziosa</title>\n    <link href=\"https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap\" rel=\"stylesheet\">\n    <style>\n        :root {\n            --primary-color: #e94e77; /* Un colore energico e distintivo */\n            --secondary-color: #0afff0; /* Un accento tech/futuristico */\n            --background-dark: #1a1a1a;\n            --text-light: #e0e0e0;\n            --text-muted: #888888;\n            --text-error: #ff7f7f;\n            --font-display: 'Azeret Mono', monospace;\n            --font-body: 'Work Sans', sans-serif;\n            --font-code: 'Space Mono', monospace;\n        }\n\n        body {\n            background-color: var(--background-dark);\n            color: var(--text-light);\n            font-family: var(--font-body);\n            line-height: 1.6;\n            margin: 0;\n            padding: 0;\n            overflow-x: hidden; /* Previene scroll orizzontale */\n        }\n\n        .container {\n            max-width: 1200px;\n            margin: 0 auto;\n            padding: 2rem 1rem;\n            position: relative;\n        }\n\n        h1, h2, h3, h4 {\n            font-family: var(--font-display);\n            color: var(--primary-color);\n            margin-bottom: 1rem;\n            line-height: 1.2;\n        }\n\n        h1 {\n            font-size: 3.5rem;\n            text-transform: uppercase;\n            letter-spacing: 2px;\n            margin-bottom: 0;\n        }\n\n        .anti-title {\n            font-size: 1.2rem;\n            font-style: italic;\n            color: var(--text-muted);\n            margin-bottom: 2rem;\n            font-family: var(--font-body);\n        }\n\n        .hero {\n            display: flex;\n            align-items: center;\n            justify-content: space-between;\n            flex-wrap: wrap;\n            margin-bottom: 4rem;\n            padding-bottom: 2rem;\n            border-bottom: 1px solid var(--text-muted);\n        }\n\n        .hero-text {\n            flex: 1;\n            min-width: 300px;\n        }\n\n        .hero-text p {\n            font-size: 1.3rem;\n            color: var(--text-light);\n            margin-top: 1rem;\n        }\n\n        .hero-image {\n            flex-basis: 250px;\n            height: 250px;\n            background-color: var(--primary-color);\n            border-radius: 50%;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-size: 5rem;\n            font-family: var(--font-display);\n            font-weight: bold;\n            color: var(--background-dark);\n            margin-left: 2rem;\n            box-shadow: 0 0 20px rgba(233, 78, 119, 0.7);\n            flex-shrink: 0;\n        }\n\n        section {\n            margin-bottom: 4rem;\n            padding-bottom: 2rem;\n            border-bottom: 1px dashed var(--text-muted);\n        }\n\n        section:last-child {\n            border-bottom: none;\n        }\n\n        .section-title {\n            font-size: 2.5rem;\n            color: var(--secondary-color);\n            border-bottom: 2px solid var(--secondary-color);\n            padding-bottom: 0.5rem;\n            margin-bottom: 1.5rem;\n            text-transform: uppercase;\n            letter-spacing: 1px;\n            display: inline-block;\n        }\n\n        /* SEZIONE EDGE - LA PIÙ IMPORTANTE */\n        #edge {\n            background-color: rgba(255, 255, 255, 0.05);\n            padding: 2rem;\n            border-radius: 8px;\n            border: 1px solid var(--primary-color);\n            margin-bottom: 5rem;\n            position: relative;\n            overflow: hidden;\n        }\n\n        #edge::before {\n            content: \"EDGE\";\n            position: absolute;\n            top: -20px;\n            right: -20px;\n            font-size: 15rem;\n            font-family: var(--font-display);\n            font-weight: bold;\n            color: rgba(233, 78, 119, 0.1);\n            z-index: 0;\n            opacity: 0.3;\n        }\n\n        .edge-title-main {\n            font-size: 3rem;\n            color: var(--primary-color);\n            text-transform: uppercase;\n            margin-bottom: 1rem;\n            position: relative;\n            z-index: 1;\n        }\n\n        .edge-content {\n            position: relative;\n            z-index: 1;\n        }\n\n        .edge-content p {\n            font-size: 1.2rem;\n            margin-bottom: 1.5rem;\n            color: var(--text-light);\n        }\n\n        .edge-traits {\n            display: flex;\n            gap: 2rem;\n            margin-top: 2rem;\n            flex-wrap: wrap;\n        }\n\n        .edge-trait {\n            padding: 0.8rem 1.5rem;\n            border: 1px solid var(--primary-color);\n            border-radius: 20px;\n            font-family: var(--font-display);\n            font-weight: bold;\n            text-transform: uppercase;\n            letter-spacing: 1px;\n            background-color: rgba(233, 78, 119, 0.1);\n            transition: all 0.3s ease;\n        }\n\n        .edge-trait:hover {\n            background-color: var(--primary-color);\n            color: var(--background-dark);\n            cursor: default;\n        }\n\n        /* METODOLOGIA - FLOWCHART */\n        .methodology-flow {\n            display: flex;\n            flex-direction: column;\n            gap: 1.5rem;\n            font-family: var(--font-code);\n            position: relative;\n            padding-left: 3rem; /* Spazio per le frecce */\n            margin-top: 2rem;\n        }\n\n        .methodology-step {\n            background-color: rgba(80, 80, 80, 0.2);\n            padding: 1rem 1.5rem;\n            border-radius: 5px;\n            border-left: 4px solid var(--secondary-color);\n            position: relative;\n        }\n\n        .methodology-step::before {\n            content: attr(data-step);\n            position: absolute;\n            left: -2.5rem;\n            top: 50%;\n            transform: translateY(-50%);\n            font-size: 1.5rem;\n            font-weight: bold;\n            color: var(--secondary-color);\n            font-family: var(--font-display);\n        }\n\n        .methodology-step h4 {\n            margin: 0 0 0.5rem 0;\n            font-size: 1.2rem;\n            color: var(--text-light);\n            font-family: var(--font-display);\n        }\n\n        .methodology-step p {\n            margin: 0;\n            font-size: 0.9rem;\n            color: var(--text-muted);\n        }\n\n        .methodology-error {\n            font-size: 0.8rem;\n            color: var(--text-error);\n            font-weight: bold;\n            margin-top: 0.5rem;\n            padding-left: 1rem;\n            border-left: 2px solid var(--text-error);\n        }\n\n        /* FRECCE PER IL FLOW */\n        .methodology-flow .methodology-step:not(:last-child)::after {\n            content: '';\n            position: absolute;\n            left: -1.5rem; /* Posizionato per collegare gli step */\n            top: calc(100% + 0.5rem); /* Sotto lo step corrente */\n            width: 0;\n            height: 1.5rem; /* Lunghezza della freccia */\n            border-left: 2px solid var(--secondary-color);\n            border-bottom: 2px solid var(--secondary-color);\n            transform: translateX(-50%);\n        }\n\n        /* FALLIMENTI - CELEBRATI */\n        .failures-grid {\n            display: grid;\n            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));\n            gap: 2rem;\n            margin-top: 2rem;\n        }\n\n        .failure-card {\n            background-color: rgba(255, 0, 0, 0.05);\n            border: 1px solid var(--text-error);\n            padding: 1.5rem;\n            border-radius: 8px;\n            transition: transform 0.3s ease, box-shadow 0.3s ease;\n            position: relative; /* Per il pulsante di chiusura/espansione se necessario */\n        }\n\n        .failure-card:hover {\n            transform: translateY(-5px);\n            box-shadow: 0 8px 15px rgba(255, 0, 0, 0.2);\n        }\n\n        .failure-card h4 {\n            color: var(--text-error);\n            font-family: var(--font-display);\n            font-size: 1.4rem;\n            margin-top: 0;\n            margin-bottom: 0.8rem;\n        }\n\n        .failure-card .context {\n            font-size: 0.9rem;\n            color: var(--text-muted);\n            margin-bottom: 1rem;\n            font-style: italic;\n        }\n\n        .failure-card .lesson {\n            font-size: 1rem;\n            color: var(--text-light);\n            font-weight: bold;\n            margin-bottom: 1rem;\n        }\n\n        .failure-card .rule {\n            font-size: 0.9rem;\n            font-family: var(--font-code);\n            background-color: rgba(255, 0, 0, 0.15);\n            padding: 0.5rem;\n            border-left: 3px solid var(--text-error);\n            color: var(--text-light);\n            margin-top: 1rem;\n        }\n\n        /* PATTERN DECISIONALI - VISUALE */\n        .patterns-container {\n            display: grid;\n            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));\n            gap: 2rem;\n            margin-top: 2rem;\n        }\n\n        .pattern-card {\n            background-color: rgba(0, 255, 240, 0.05); /* Colore secondario */\n            border: 1px solid var(--secondary-color);\n            padding: 1.5rem;\n            border-radius: 8px;\n        }\n\n        .pattern-card h4 {\n            color: var(--secondary-color);\n            font-family: var(--font-display);\n            font-size: 1.4rem;\n            margin-top: 0;\n            margin-bottom: 0.8rem;\n        }\n\n        .pattern-card .when {\n            font-size: 0.9rem;\n            color: var(--text-muted);\n            font-weight: bold;\n            margin-bottom: 0.8rem;\n        }\n\n        .pattern-card .signals {\n            font-size: 0.9rem;\n            color: var(--text-light);\n            margin-bottom: 1rem;\n        }\n\n        .pattern-card ul {\n            list-style: disc inside;\n            padding-left: 0.5rem;\n            color: var(--text-muted);\n            font-size: 0.9rem;\n        }\n\n        .pattern-card li {\n            margin-bottom: 0.4rem;\n        }\n\n        .pattern-card .tradeoff {\n            font-size: 0.8rem;\n            font-style: italic;\n            color: var(--text-light);\n            background-color: rgba(0, 255, 240, 0.1);\n            padding: 0.5rem;\n            border-left: 2px solid var(--secondary-color);\n            margin-top: 1rem;\n        }\n\n        /* COSA NON FACCIO - AGGRESSIVO */\n        .not-doing {\n            background-color: rgba(255, 255, 255, 0.03);\n            padding: 2rem;\n            border-radius: 8px;\n            border: 1px dashed var(--primary-color);\n            margin-top: 2rem;\n        }\n\n        .not-doing ul {\n            list-style: none;\n            padding: 0;\n            margin: 0;\n            display: grid;\n            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));\n            gap: 1rem;\n        }\n\n        .not-doing li {\n            background-color: rgba(233, 78, 119, 0.1);\n            padding: 0.8rem 1.2rem;\n            border-radius: 5px;\n            border-left: 3px solid var(--primary-color);\n            font-size: 1rem;\n            color: var(--text-light);\n            font-family: var(--font-code);\n            transition: all 0.3s ease;\n            cursor: default;\n        }\n\n        .not-doing li:hover {\n            background-color: var(--primary-color);\n            color: var(--background-dark);\n            transform: scale(1.02);\n        }\n\n        /* COSA ODIO - ANCORA PIU' AGGRESSIVO */\n        .hate-list {\n            display: grid;\n            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));\n            gap: 1.5rem;\n            margin-top: 2rem;\n        }\n\n        .hate-item {\n            background-color: rgba(200, 50, 50, 0.1);\n            border: 1px solid rgba(200, 50, 50, 0.5);\n            padding: 1.2rem;\n            border-radius: 5px;\n            font-size: 1rem;\n            color: var(--text-light);\n            font-weight: bold;\n            display: flex;\n            align-items: center;\n            gap: 0.8rem;\n            transition: all 0.3s ease;\n        }\n\n        .hate-item:hover {\n            background-color: rgba(200, 50, 50, 0.3);\n            transform: scale(1.03);\n        }\n\n        .hate-item::before {\n            content: '🚫'; /* Emoji di stop o simile */\n            font-size: 1.2rem;\n            color: rgba(200, 50, 50, 1);\n            display: inline-block;\n        }\n\n        /* COSA AMO - CONTRASTO */\n        .love-list {\n            display: grid;\n            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));\n            gap: 1.5rem;\n            margin-top: 2rem;\n        }\n\n        .love-item {\n            background-color: rgba(0, 200, 100, 0.1);\n            border: 1px solid rgba(0, 200, 100, 0.5);\n            padding: 1.2rem;\n            border-radius: 5px;\n            font-size: 1rem;\n            color: var(--text-light);\n            display: flex;\n            align-items: center;\n            gap: 0.8rem;\n            transition: all 0.3s ease;\n        }\n\n        .love-item:hover {\n            background-color: rgba(0, 200, 100, 0.3);\n            transform: scale(1.03);\n        }\n\n        .love-item::before {\n            content: '✅'; /* Emoji di spunta o simile */\n            font-size: 1.2rem;\n            color: rgba(0, 200, 100, 1);\n            display: inline-block;\n        }\n\n\n        /* PROGETTI - PROVA, NON LISTA */\n        .projects-container {\n            margin-top: 2rem;\n            display: flex;\n            flex-direction: column;\n            gap: 3rem;\n        }\n\n        .project-proof {\n            background-color: rgba(255, 255, 255, 0.02);\n            border: 1px solid var(--text-muted);\n            padding: 1.5rem;\n            border-radius: 8px;\n            position: relative;\n            overflow: hidden;\n        }\n\n        .project-proof::before {\n            content: 'PROOF';\n            position: absolute;\n            top: 10px;\n            right: 10px;\n            font-size: 5rem;\n            font-family: var(--font-display);\n            font-weight: bold;\n            color: rgba(255, 255, 255, 0.05);\n            z-index: 0;\n        }\n\n        .project-proof .problem {\n            font-size: 1.1rem;\n            color: var(--text-muted);\n            margin-bottom: 1rem;\n            font-style: italic;\n            position: relative;\n            z-index: 1;\n        }\n\n        .project-proof .approach {\n            font-size: 1rem;\n            color: var(--text-light);\n            line-height: 1.5;\n            position: relative;\n            z-index: 1;\n        }\n\n        .project-proof .result {\n            font-size: 1.1rem;\n            color: var(--primary-color);\n            font-weight: bold;\n            margin-top: 1rem;\n            position: relative;\n            z-index: 1;\n        }\n\n        .project-proof .metrics {\n            font-size: 0.9rem;\n            color: var(--text-muted);\n            margin-top: 1rem;\n            padding-left: 1rem;\n            border-left: 2px solid var(--text-muted);\n            position: relative;\n            z-index: 1;\n        }\n\n        .project-proof .link {\n            display: inline-block;\n            margin-top: 1.5rem;\n            padding: 0.7rem 1.2rem;\n            background-color: var(--secondary-color);\n            color: var(--background-dark);\n            font-family: var(--font-display);\n            font-weight: bold;\n            text-decoration: none;\n            border-radius: 5px;\n            transition: all 0.3s ease;\n            position: relative;\n            z-index: 1;\n        }\n\n        .project-proof .link:hover {\n            background-color: var(--primary-color);\n            transform: translateY(-2px);\n        }\n\n        /* PROOF VERIFICABILI */\n        .verifiable-proofs {\n            margin-top: 3rem;\n            padding: 2rem;\n            background-color: rgba(255, 255, 255, 0.03);\n            border-radius: 8px;\n            border: 1px dashed var(--text-muted);\n        }\n\n        .verifiable-proofs h3 {\n            color: var(--secondary-color);\n            font-size: 1.5rem;\n            margin-top: 0;\n        }\n\n        .verifiable-proof {\n            margin-bottom: 1.5rem;\n            padding-bottom: 1.5rem;\n            border-bottom: 1px dotted var(--text-muted);\n        }\n\n        .verifiable-proof:last-child {\n            border-bottom: none;\n            padding-bottom: 0;\n            margin-bottom: 0;\n        }\n\n        .verifiable-proof p {\n            font-size: 1.1rem;\n            color: var(--text-light);\n            margin-bottom: 0.8rem;\n        }\n\n        .verifiable-proof a {\n            color: var(--primary-color);\n            text-decoration: none;\n            font-weight: bold;\n            transition: color 0.3s ease;\n        }\n\n        .verifiable-proof a:hover {\n            color: var(--secondary-color);\n            text-decoration: underline;\n        }\n\n        .verifiable-proof .high {\n            color: var(--primary-color);\n            font-weight: bold;\n            font-size: 0.9rem;\n            text-transform: uppercase;\n            display: inline-block;\n            margin-bottom: 0.5rem;\n            background-color: rgba(233, 78, 119, 0.15);\n            padding: 0.3rem 0.7rem;\n            border-radius: 3px;\n        }\n\n        /* RESPONSIVE */\n        @media (max-width: 768px) {\n            h1 {\n                font-size: 2.5rem;\n            }\n            .anti-title {\n                font-size: 1rem;\n            }\n            .hero {\n                flex-direction: column-reverse;\n                text-align: center;\n            }\n            .hero-image {\n                margin: 2rem auto;\n                width: 200px;\n                height: 200px;\n                font-size: 4rem;\n            }\n            .hero-text {\n                min-width: unset;\n            }\n            .section-title {\n                font-size: 1.8rem;\n            }\n            .methodology-flow {\n                padding-left: 1.5rem;\n            }\n            .methodology-step::before {\n                left: -1.5rem;\n                font-size: 1.2rem;\n            }\n            .methodology-flow .methodology-step:not(:last-child)::after {\n                left: -0.7rem;\n            }\n            #edge::before {\n                font-size: 8rem;\n                right: -10px;\n                top: -10px;\n            }\n            .edge-title-main {\n                font-size: 2rem;\n            }\n            .edge-traits {\n                flex-direction: column;\n            }\n            .not-doing ul, .hate-list, .love-list, .failures-grid, .patterns-container {\n                grid-template-columns: 1fr;\n            }\n             .project-proof::before {\n                font-size: 3rem;\n                top: 5px;\n                right: 5px;\n            }\n        }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <section class=\"hero\">\n            <div class=\"hero-text\">\n                <h1>M. F.</h1>\n                <div class=\"anti-title\">Architetto di Resilienza Silenziosa</div>\n                <p>Costruisco sistemi che non solo performano sotto pressione, ma falliscono in modo onesto e comprensibile, perché la vera robustezza si misura in chiarezza, non in astuzia.</p>\n            </div>\n            <div class=\"hero-image\">MF</div>\n        </section>\n\n        <section id=\"edge\">\n            <h2 class=\"section-title\">EDGE</h2>\n            <div class=\"edge-content\">\n                <h3 class=\"edge-title-main\">COSA SO FARE MEGLIO DI CHIUNQUE ALTRO</h3>\n                <p>\n                    Quando altri sviluppatori Go e Rust si concentrano sull'ottimizzazione estrema o sulla pura eleganza del codice, io eccello nel far convivere prestazioni elevate, affidabilità a prova di bomba e semplicità radicale.\n                    Riesco a progettare sistemi che restano leggibili e manutenibili anche sotto picchi di carico, evitando astrazioni inutili e concentrando la complessità solo dove serve veramente: nei punti di cambio di affidabilità come rete, storage e integrazioni.\n                    La mia forza sta nel sapere esattamente dove la complessità aggiunge valore misurabile e dove invece è solo rumore, garantendo che il sistema sia non solo performante, ma soprattutto diagnosticabile e comprensibile nel lungo termine.\n                </p>\n                <div class=\"edge-traits\">\n                    <div class=\"edge-trait\">Pragmatismo Radicale</div>\n                    <div class=\"edge-trait\">Ossessione per la Chiarezza</div>\n                    <div class=\"edge-trait\">Prevenzione Proattiva del Caos</div>\n                </div>\n            </div>\n        </section>\n\n        <section id=\"methodology\">\n            <h2 class=\"section-title\">METODOLOGIA</h2>\n            <h3>Come affronto i problemi (5 step)</h3>\n            <div class=\"methodology-flow\">\n                <div class=\"methodology-step\" data-step=\"1\">\n                    <h4>Disseca il Problema Reale</h4>\n                    <p>Prima di scrivere una singola riga di codice, comprendo a fondo il problema da risolvere, identificando i veri vincoli e gli obiettivi critici.</p>\n                    <p class=\"methodology-error\">Errore comune: Saltare questa fase e iniziare a scrivere codice basandosi su presupposti errati o incompletezze.</p>\n                </div>\n                <div class=\"methodology-step\" data-step=\"2\">\n                    <h4>Mappa il Percorso Critico e i Cambi di Affidabilità</h4>\n                    <p>Traccio il flusso end-to-end dei dati e delle operazioni critiche, individuando precisamente dove il sistema interagisce con elementi esterni (rete, storage, altri servizi) che possono compromettere l'affidabilità.</p>\n                    <p class=\"methodology-error\">Errore comune: Considerare il sistema come un'entità monolitica senza analizzare le interdipendenze esterne.</p>\n                </div>\n                <div class=\"methodology-step\" data-step=\"3\">\n                    <h4>Applica Complessità Strategica e Linearità Esplicita</h4>\n                    <p>Introduco complessità (retry, circuit breaker, idempotenza, fall-back) solo nei punti critici identificati, per ridurre rischi misurabili. Il resto del codice è mantenuto il più lineare, esplicito e facile da leggere possibile.</p>\n                    <p class=\"methodology-error\">Errore comune: Applicare pattern complessi ovunque, rendendo il codice illeggibile e difficile da debuggare.</p>\n                </div>\n                <div class=\"methodology-step\" data-step=\"4\">\n                    <h4>Prioritizza Osservabilità e Test sugli Invarianti</h4>\n                    <p>Integro logging dettagliato, tracing distribuito e metriche significative fin dall'inizio. Scrivo test che verificano gli invarianti del sistema, assicurando che il comportamento sia prevedibile anche in condizioni di stress o fallimento.</p>\n                    <p class=\"methodology-error\">Errore comune: Trascurare l'osservabilità e i test, affidandosi a 'funziona e basta'.</p>\n                </div>\n                <div class=\"methodology-step\" data-step=\"5\">\n                    <h4>Deploy Frequenti e Rollback Veloci</h4>\n                    <p>Eseguo rilasci piccoli e frequenti, supportati da una solida strategia di monitoraggio e da procedure di rollback rapide ed efficienti. Questo minimizza l'impatto di eventuali problemi.</p>\n                    <p class=\"methodology-error\">Errore comune: Rilasci monolitici e rari, difficili da gestire e con alti rischi.</p>\n                </div>\n            </div>\n        </section>\n\n        <section id=\"failures\">\n            <h2 class=\"section-title\">FALLIMENTI</h2>\n            <h3>Errori che mi hanno insegnato qualcosa (Traspaenza Radicale)</h3>\n            <div class=\"failures-grid\">\n                <div class=\"failure-card\">\n                    <h4>Migrazione monolite a microservizi senza reale necessità</h4>\n                    <div class=\"context\">Ho guidato la riscrittura di un monolite in microservizi seguendo una moda tecnologica, con l'obiettivo di migliorare scalabilità e manutenibilità. Il risultato è stato un sistema più complesso, costoso in termini di infrastruttura e gestione, con benefici operativi quasi nulli.</div>\n                    <div class=\"lesson\">La tecnologia deve risolvere problemi concreti, non inseguire trend. La complessità aggiunta deve sempre essere giustificata da un beneficio misurabile.</div>\n                    <div class=\"rule\">\n                        <strong>REGOLA CREATA:</strong> Non intraprendere refactoring architetturali maggiori senza un'analisi chiara e quantificabile del problema che si intende risolvere e dei benefici attesi.\n                        <br><br><strong>Cosa è cambiato:</strong> Ora valuto attentamente se un problema è realmente causato dall'architettura monolitica o se può essere risolto con ottimizzazioni mirate o introducendo solo i pattern necessari.\n                    </div>\n                </div>\n                <div class=\"failure-card\">\n                    <h4>Sottovalutazione dei test automatici</h4>\n                    <div class=\"context\">In un progetto startup con ritmi frenetici, ho dato priorità allo sviluppo rapido a discapito della copertura dei test. La frase 'tanto funziona' mi ha portato a introdurre tre bug critici in produzione nel giro di una settimana, causando instabilità e perdita di fiducia.</div>\n                    <div class=\"lesson\">Una copertura di test adeguata è un investimento fondamentale, non un optional. I test sono la rete di sicurezza che permette di innovare velocemente senza paura.</div>\n                    <div class=\"rule\">\n                        <strong>REGOLA CREATA:</strong> Scrivere test (unitari, integrazione, e end-to-end) prima o parallelamente al codice di produzione. I test definiscono il comportamento atteso e validano la correttezza.\n                        <br><br><strong>Cosa è cambiato:</strong> Adotto una strategia 'test-first' o 'test-driven development' per tutto il nuovo codice e pianifico attivamente l'aggiunta di test per il codice esistente.\n                    </div>\n                </div>\n                <div class=\"failure-card\">\n                    <h4>Accettazione di una deadline impossibile</h4>\n                    <div class=\"context\">Per fare bella figura e dimostrare velocità, ho accettato una scadenza di progetto irrealistica. Il risultato è stato codice di bassa qualità, decisioni architetturali affrettate, un enorme debito tecnico accumulato e un esaurimento personale (burnout).</div>\n                    <div class=\"lesson\">La qualità a lungo termine è più importante della velocità a breve termine. Un rilascio di bassa qualità danneggia la reputazione e la capacità futura più di un ritardo.</div>\n                    <div class=\"rule\">\n                        <strong>REGOLA CREATA:</strong> Mai accettare una deadline che non permetta di mantenere gli standard di qualità attesi. Comunico proattivamente i rischi e propongo stime realistiche.\n                        <br><br><strong>Cosa è cambiato:</strong> Ora nego attivamente le scadenze, comunicando chiaramente i trade-off tra tempo, scopo e qualità, e insistendo su un rilascio che sia sostenibile nel tempo.\n                    </div>\n                </div>\n                <div class=\"failure-card\">\n                    <h4>Irrobustimento eccessivo di un'integrazione esterna fallace</h4>\n                    <div class=\"context\">Ho implementato un sistema di retry, circuit breaker e fallback complessi per un'integrazione esterna. Tecnicamente corretto, ma il servizio aveva variabilità imprevedibile nelle risposte, causando stati incoerenti a valle difficili da diagnosticare, peggio di un errore netto.</div>\n                    <div class=\"lesson\">La vera robustezza non è solo resistere ai fallimenti, ma rendere il fallimento comprensibile. La complessità deve portare chiarezza non nascondere problemi semantici.</div>\n                    <div class=\"rule\">\n                        <strong>REGOLA CREATA:</strong> Prima di aggiungere complessità difensiva, validare le assunzioni sui dati scambiati e considerare un 'fail-fast' rumoroso se il comportamento del servizio esterno è troppo instabile o ambiguo.\n                        <br><br><strong>Cosa è cambiato:</strong> Ora do priorità alla comprensibilità del fallimento e alla chiarezza dei contratti rispetto al semplice 'mantenere il sistema attivo a tutti i costi'.\n                    </div>\n                </div>\n            </div>\n        </section>\n\n        <section id=\"patterns\">\n            <h2 class=\"section-title\">PATTERN DECISIONALI</h2>\n            <h3>Come prendo decisioni</h3>\n            <div class=\"patterns-container\">\n                <div class=\"pattern-card\">\n                    <h4>Fail-Fast Ruidoso</h4>\n                    <div class=\"when\"><strong>Quando:</strong> Integrazioni esterne, manipolazione dati critici, qualsiasi punto dove l'incertezza può generare stati incoerenti.</div>\n                    <div class=\"signals\"><strong>Segnali che cerco:</strong> Variabilità imprevedibile delle risposte., Dati che cambiano semantica senza preavviso., Rischio di stati incoerenti difficili da diagnosticare., Richiesta di 'normalizzare' risposte problematiche.</div>\n                    <div class=\"tradeoff\"><strong>Trade-off:</strong> Rallentamento iniziale del rilascio., Necessità di spiegare chiaramente i limiti del sistema., Possibile insoddisfazione iniziale per chi cerca soluzioni 'rapide'.</div>\n                </div>\n                <div class=\"pattern-card\">\n                    <h4>Complessità Mirata sui Confini Critici</h4>\n                    <div class=\"when\"><strong>Quando:</strong> Quando si progetta o si migliora un sistema distribuito, specialmente sotto carichi elevati o con requisiti di alta disponibilità.</div>\n                    <div class=\"signals\"><strong>Segnali che cerco:</strong> Identificazione dei punti di 'cambio di affidabilità' (rete, storage, code, integrazioni)., Necessità di misurabile riduzione del rischio., Requisiti di lunga vita utile del sistema (5+ anni).</div>\n                    <div class=\"tradeoff\"><strong>Trade-off:</strong> Potenziale aumento della complessità in aree circoscritte., Necessità di definire confini netti e interfacce piccole., Minore 'eleganza' apparente a favore di linearità.</div>\n                </div>\n                <div class=\"pattern-card\">\n                    <h4>Osservabilità come Pilastro</h4>\n                    <div class=\"when\"><strong>Quando:</strong> In ogni fase della progettazione e implementazione di un sistema distribuito.</div>\n                    <div class=\"signals\"><strong>Segnali che cerco:</strong> Necessità di diagnosticare problemi in produzione., Obiettivo di manutenibilità a lungo termine., Deploy frequenti e rollback veloci.</div>\n                    <div class=\"tradeoff\"><strong>Trade-off:</strong> Investimento iniziale in logging, tracing e metriche., Potenziale overhead se non ben implementato.</div>\n                </div>\n            </div>\n        </section>\n\n        <section id=\"not-doing\">\n            <h2 class=\"section-title\">COSA NON FACCIO</h2>\n            <div class=\"not-doing\">\n                <ul>\n                    <li>Seguire ciecamente i trend tecnologici senza validazione dei problemi.</li>\n                    <li>Implementare feature che aumentano la complessità architetturale senza benefici tangibili.</li>\n                    <li>Affidarsi a contratti impliciti o documentazione insufficiente tra servizi.</li>\n                    <li>Accettare deadline irrealistiche che compromettono la qualità del codice.</li>\n                    <li>Committare codice direttamente sulla branch principale senza revisione.</li>\n                </ul>\n            </div>\n        </section>\n\n        <section id=\"hate\">\n            <h2 class=\"section-title\">COSA ODIO</h2>\n            <div class=\"hate-list\">\n                <div class=\"hate-item\">Meeting inutili che potevano essere una semplice email.</div>\n                <div class=\"hate-item\">L'atteggiamento 'abbiamo sempre fatto così' che soffoca l'innovazione.</div>\n                <div class=\"hate-item\">Codice privo di test automatici, un invito al disastro.</div>\n                <div class=\"hate-item\">Manager che impongono deadline irrealistiche senza consultare gli sviluppatori.</div>\n                <div class=\"hate-item\">La tendenza a nascondere problemi con complessità aggiuntiva invece di risolverli alla radice.</div>\n                <div class=\"hate-item\">Servizi esterni con contratti ambigui e semantiche mutevoli.</div>\n            </div>\n        </section>\n\n        <section id=\"love\">\n            <h2 class=\"section-title\">COSA AMO</h2>\n            <div class=\"love-list\">\n                <div class=\"love-item\">Trovare la soluzione più semplice per un problema complesso.</div>\n                <div class=\"love-item\">Scrivere codice ben documentato e facile da capire.</div>\n                <div class=\"love-item\">Ottimizzare query SQL lente come se non ci fosse un domani.</div>\n                <div class=\"love-item\">Risolvere bug di memoria in produzione alle 3 del mattino.</div>\n                <div class=\"love-item\">Vedere team junior crescere grazie a mentoring efficace.</div>\n                <div class=\"love-item\">L'approccio 'Infrastructure as Code' che rende la gestione prevedibile.</div>\n            </div>\n        </section>\n\n        <section id=\"projects\">\n            <h2 class=\"section-title\">PROGETTI (COME PROVA)</h2>\n            <div class=\"projects-container\">\n                <div class=\"project-proof\">\n                    <div class=\"problem\"><strong>Problema risolto:</strong> Costruire un sistema in grado di gestire 50.000 transazioni al secondo con zero downtime e latenza minima per un'azienda fintech.</div>\n                    <div class=\"approach\"><strong>Il mio approccio:</strong> Progettazione di un'architettura event-driven e distribuita utilizzando Go, PostgreSQL e Redis. Implementazione di pattern di idempotenza, backpressure e gestione robusta degli errori nelle integrazioni esterne. Monitoraggio costante e deploy frequenti con rollback rapidi.</div>\n                    <div class=\"result\"><strong>Risultato:</strong> Sistema lanciato con successo, performance mantenute costantemente sopra i 50k TPS, zero downtime in oltre 2 anni di operatività.</div>\n                    <div class=\"metrics\"><strong>Metriche:</strong> 50.000+ transazioni/secondo, 0 downtime in 2 anni, Latenza media delle transazioni &lt; 50ms</div>\n                    <a href=\"https://github.com/mferretti/payment-gateway\" class=\"link\" target=\"_blank\">GITHUB</a>\n                </div>\n                <div class=\"project-proof\">\n                    <div class=\"problem\"><strong>Problema risolto:</strong> Ridurre i costi operativi dell'infrastruttura e migliorare la manutenibilità di un'applicazione legacy, imparando dagli errori di una precedente migrazione fallimentare.</div>\n                    <div class=\"approach\"><strong>Il mio approccio:</strong> Analisi approfondita del monolite per identificare le aree di maggiore impatto. Suddivisione strategica in microservizi basata su domini di business chiari. Implementazione di contratti API ben definiti, automazione dei test e migrazione graduale dei dati e delle funzionalità. Utilizzo di Terraform per l'Infrastructure as Code.</div>\n                    <div class=\"result\"><strong>Risultato:</strong> Riduzione dei costi infrastrutturali del 40% e miglioramento significativo della manutenibilità e della velocità di rilascio di nuove funzionalità.</div>\n                    <div class=\"metrics\"><strong>Metriche:</strong> Riduzione costi infrastrutturali: 40%, Riduzione debito tecnico: stimato 30%, Aumento frequenza deploy: da mensile a settimanale</div>\n                    <a href=\"https://github.com/mferretti/go-monitoring-tool\" class=\"link\" target=\"_blank\">GITHUB</a>\n                </div>\n                 <div class=\"project-proof\">\n                    <div class=\"problem\"><strong>Problema risolto:</strong> Mancanza di visibilità e difficoltà nel debug di sistemi distribuiti complessi, che portava a lunghe ore di troubleshooting manuale per i vari team di sviluppo.</div>\n                    <div class=\"approach\"><strong>Il mio approccio:</strong> Sviluppo di uno strumento in Go che aggrega log, metriche e trace da diverse fonti, fornendo un'interfaccia unificata per l'analisi dei problemi. Implementazione di alert intelligenti e correlazione automatica degli eventi.</div>\n                    <div class=\"result\"><strong>Risultato:</strong> Lo strumento è stato adottato da 5 team interni, portando a un risparmio stimato di 10 ore settimanali di debugging manuale per team e accelerando la risoluzione dei problemi in produzione.</div>\n                    <div class=\"metrics\"><strong>Metriche:</strong> Adozione da 5 team di sviluppo, Risparmio stimato: 10 ore/settimana/team, Riduzione tempo medio di risoluzione incidenti: 50%</div>\n                    <a href=\"https://github.com/mferretti/go-monitoring-tool\" class=\"link\" target=\"_blank\">GITHUB</a>\n                </div>\n            </div>\n        </section>\n\n         <section id=\"verifiable-proofs\">\n            <h2 class=\"section-title\">PROOF VERIFICABILI</h2>\n            <div class=\"verifiable-proofs\">\n                <div class=\"verifiable-proof\">\n                    <div class=\"high\">[HIGH]</div>\n                    <p>Progetto sistemi che convivono prestazioni elevate, affidabilità e semplicità senza sacrificare nessuna delle tre, mantenendoli leggibili e manutenibili sotto carico.</p>\n                    <a href=\"https://github.com/mferretti/payment-gateway\" target=\"_blank\">Architettura del Gateway di Pagamenti</a><br>\n                    <a href=\"https://dev.to/marcoferretti/building-a-high-performance-real-time-payment-gateway-4p4k\" target=\"_blank\">Articolo sul Gateway di Pagamenti</a>\n                </div>\n                <div class=\"verifiable-proof\">\n                    <div class=\"high\">[HIGH]</div>\n                    <p>Ho imparato da fallimenti architetturali, come trasformare un monolite senza motivo valido in un sistema più efficiente dopo una prima esperienza negativa.</p>\n                    <a href=\"https://dev.to/marcoferretti/lessons-learned-from-microservice-migration-495a\" target=\"_blank\">Articolo sulle Lezioni dalla Migrazione</a>\n                </div>\n                <div class=\"verifiable-proof\">\n                     <div class=\"high\">[HIGH]</div>\n                    <p>Implemento una strategia 'Fail-Fast Ruidoso' che privilegia la chiarezza del fallimento rispetto alla persistenza silenziosa di errori.</p>\n                    <a href=\"https://dev.to/marcoferretti/when-to-fail-fast-and-loud-why-its-better-than-silence-269j\" target=\"_blank\">Articolo sul Fail-Fast</a>\n                </div>\n            </div>\n        </section>\n\n    </div>\n</body>\n</html>"
+}

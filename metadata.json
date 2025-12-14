@@ -1,0 +1,5 @@
+{
+  "name": "Anti-Portfolio Generator",
+  "description": "Generates a unique 'Anti-Portfolio' focusing on failures, decision patterns, and methodologies using Gemini AI. Features an adaptive interview and multiple rendering styles.",
+  "requestFramePermissions": []
+}

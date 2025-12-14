@@ -1,0 +1,79 @@
+================================================================================
+PROFILO 3: MARKETER / GROWTH
+================================================================================
+
+--- DATI PERSONALI ---
+Nome: Luca Martinelli
+Location: Torino, Italia
+Contatto: luca.martinelli@growthlab.io
+
+--- RAW TEXT (da incollare in "Primary Data Stream") ---
+
+Growth marketer con 5 anni di esperienza, principalmente in startup B2B SaaS. Ho iniziato facendo "un po' di tutto" (social media, content, ads) e poi mi sono specializzato in acquisition e lifecycle marketing.
+
+Il mio approccio: tutto e' un esperimento. Se non puoi misurarlo, non farlo. Se non puoi attribuirlo, non spenderci budget.
+
+COSA SO FARE:
+- Costruire funnel di acquisizione da zero
+- Ottimizzare CAC/LTV ratio (il mio record: da 1:2 a 1:5 in 8 mesi)
+- Scrivere copy che converte (email, landing, ads)
+- Leggere dati e trovare insight che altri non vedono
+- Dire "questo canale non funziona per noi" anche se tutti lo usano
+
+DOVE HO FALLITO:
+
+1. Ho speso 15k in una campagna influencer senza tracking adeguato. "Awareness" dicevano. Zero conversioni tracciate, impossibile capire il ROI. Mai piu' budget senza attribution chiara.
+
+2. Ho inseguito TikTok perche' "tutti ci sono". 3 mesi, 50 video, risultato: follower che non convertono, tempo buttato, team frustrato. Lezione: il canale deve matchare il prodotto E il team.
+
+3. Ho ottimizzato per metriche di vanita' (like, follower, open rate) invece che per revenue. Il CEO era contento dei numeri, poi ha visto che le vendite non crescevano. Ora parto sempre dalla metrica di business e lavoro a ritroso.
+
+METODOLOGIA:
+1. Definire la North Star Metric (una sola, chiara, legata al business)
+2. Mappare il funnel con conversion rate per step
+3. Identificare il collo di bottiglia (dove perdiamo piu' utenti?)
+4. Ipotesi: "Se facciamo X, Y aumentera' del Z%"
+5. Esperimento: budget minimo, tempo definito, success criteria PRIMA di partire
+6. Analisi: ha funzionato? Perche' si/no? Cosa abbiamo imparato?
+7. Scala o uccidi: se funziona, raddoppia. Se no, taglia subito.
+
+COSA ODIO:
+- "Facciamo viral" come se fosse una strategia
+- Budget decisi senza dati
+- Vanity metrics nei report
+- "Il nostro target e' tutti"
+- Agenzie che vendono follower invece di risultati
+- Meeting settimanali per "allinearsi" invece di lavorare
+
+CANALI IN CUI SONO FORTE:
+- Email marketing (deliverability, automazioni, lifecycle)
+- Paid search (Google Ads, non Facebook - li odio)
+- Content SEO (long-form, pillar pages)
+- Product-led growth (referral, viral loops)
+
+CANALI CHE EVITO:
+- Social organico (tempo/risultato pessimo per B2B)
+- Display advertising (click fraud, bassa qualita')
+- PR tradizionali (impossibile misurare)
+
+RISULTATI CONCRETI:
+1. Startup SaaS: da 0 a 10k MRR in 12 mesi, CAC 45 euro
+2. E-commerce B2B: +180% revenue YoY, ROAS 4.2 su Google Ads
+3. App mobile: referral program che porta il 35% dei nuovi utenti
+
+--- LINKEDIN/BIO ---
+
+Growth Marketing | B2B SaaS | Data-Driven Acquisition
+
+Costruisco engine di crescita misurabili. 5 anni in startup, focus su acquisition, lifecycle e revenue optimization. Se non si misura, non lo faccio.
+
+Expertise:
+- Funnel optimization e CRO
+- Email marketing e automation
+- Paid acquisition (Google, LinkedIn)
+- Growth experiments e A/B testing
+
+--- PROJECT LINKS ---
+https://github.com/lucamartinelli/growth-experiments
+https://lucamartinelli.substack.com
+https://www.linkedin.com/in/lucamartinelli-growth

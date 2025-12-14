@@ -1,0 +1,374 @@
+{
+  "meta": {
+    "name": "L. M.",
+    "location": "Torino, Italia",
+    "contact": "l.m@growthlab.io",
+    "primary_links": [
+      "https://github.com/lucamartinelli/growth-experiments",
+      "https://lucamartinelli.substack.com",
+      "https://www.linkedin.com/in/lucamartinelli-growth"
+    ]
+  },
+  "anti_title": "L'Architetto della Crescita con un Bisturi",
+  "signature": {
+    "one_sentence": "Costruisco macchine di crescita che funzionano perché proteggo l'utente dal prodotto finché non è pronto a usarlo, trasformando il valore da un concetto astratto a un risultato tangibile e immediato.",
+    "three_traits": [
+      "Ossessionato dai dati e dall'attribuzione",
+      "Radicalmente focalizzato sulla rimozione del superfluo",
+      "Scettico verso il 'pensiero di gruppo' e le mode"
+    ],
+    "edge": "Quando altri sprecano budget inseguendo canali \"alla moda\" o caricando gli utenti di informazioni fin dal primo click, io scavo a fondo nei dati di utilizzo per identificare i veri colli di bottiglia.\nNon mi limito a costruire funnel, li smonto pezzo per pezzo per rimuovere tutto ciò che non è strettamente necessario per portare l'utente al suo primo successo, perché è lì che risiede il vero LTV.",
+    "non_goals": [
+      "Spendere budget senza attribuzione chiara",
+      "Perseguire metriche di vanità (like, follower, open rate)",
+      "Implementare feature richieste senza analizzare il contesto d'uso e il timing"
+    ]
+  },
+  "decision_patterns": [
+    {
+      "pattern_name": "Eliminazione per Chiarezza",
+      "when_used": "Decisioni su feature, onboarding, funnel, canali",
+      "signals": [
+        "Dati di abbandono precoce nei primi giorni di utilizzo",
+        "Complessità percepita nel percorso utente",
+        "Mancanza di chiarezza sul 'primo valore reale'",
+        "Consumo di tempo utente su feature non centrali"
+      ],
+      "tradeoffs": [
+        "Possibile insoddisfazione iniziale da parte di utenti avanzati",
+        "Richiede coraggio nel 'tagliare' funzionalità esistenti",
+        "Investimento di tempo nell'analisi dei dati di utilizzo"
+      ],
+      "example": "Rimuovere una dashboard avanzata dal percorso iniziale di onboarding perché, sebbene valida, ritardava l'azione principale e aumentava il carico cognitivo dell'utente."
+    },
+    {
+      "pattern_name": "Attribution-First Budgeting",
+      "when_used": "Allocazione budget marketing, valutazione canali",
+      "signals": [
+        "Budget richiesti senza KPI chiari",
+        "Campagne con ROI ambiguo o non misurabile",
+        "Richieste di budget per canali 'popolari' ma non adatti"
+      ],
+      "tradeoffs": [
+        "Possibile perdita di opportunità su canali emergenti difficili da tracciare inizialmente",
+        "Richiede infrastruttura di tracking robusta",
+        "Può portare a resistenza se si deve dire 'no' a iniziative apparentemente promettenti"
+      ],
+      "example": "Rifiuto di investire in campagne influencer senza un sistema di tracciamento e attribuzione chiaro, anche se promesse come 'generatrici di awareness'."
+    }
+  ],
+  "method_stack": [
+    {
+      "step": "Definire la North Star Metric",
+      "description": "Identificare l'unica metrica fondamentale legata al valore di business e alla crescita sostenibile.",
+      "artifacts_produced": [
+        "North Star Metric documentata"
+      ],
+      "common_failure": "Definire troppe metriche chiave o metriche di vanità.",
+      "mitigation": "Focalizzarsi su un singolo KPI che rappresenta il successo dell'utente e dell'azienda."
+    },
+    {
+      "step": "Mappare e Quantificare il Funnel",
+      "description": "Visualizzare ogni step del percorso utente e misurare i tassi di conversione tra uno step e l'altro.",
+      "artifacts_produced": [
+        "Mappa del funnel con conversion rates",
+        "Identificazione dei punti di abbandono"
+      ],
+      "common_failure": "Non avere dati granulari sufficienti per identificare i veri colli di bottiglia.",
+      "mitigation": "Implementare un tracking robusto e definito fin dall'inizio per ogni interazione significativa."
+    },
+    {
+      "step": "Individuare e Analizzare il Collo di Bottiglia",
+      "description": "Determinare lo step del funnel con il più alto tasso di abbandono o la minore conversione.",
+      "artifacts_produced": [
+        "Report sul collo di bottiglia principale"
+      ],
+      "common_failure": "Concentrarsi su problemi marginali invece che sul punto di maggiore attrito.",
+      "mitigation": "Prioritizzare gli sforzi dove l'impatto potenziale è maggiore."
+    },
+    {
+      "step": "Formulare un'Ipotesi Misurabile",
+      "description": "Creare un'ipotesi chiara e testabile del tipo: 'Se interveniamo su X, Y aumenterà del Z%'.",
+      "artifacts_produced": [
+        "Ipotesi di esperimento documentata"
+      ],
+      "common_failure": "Ipotesi vaghe, non misurabili o non legate alla North Star Metric.",
+      "mitigation": "Assicurarsi che ogni esperimento abbia un obiettivo quantificabile e un'azione specifica."
+    },
+    {
+      "step": "Eseguire l'Esperimento (Budget Minimo, Tempo Definito)",
+      "description": "Testare l'ipotesi con un investimento controllato (tempo e denaro) e criteri di successo predefiniti.",
+      "artifacts_produced": [
+        "Risultati dell'esperimento",
+        "Dati di performance"
+      ],
+      "common_failure": "Lasciare correre esperimenti indefinitamente o investire troppo presto.",
+      "mitigation": "Stabilire chiaramente i limiti e i criteri di successo prima di iniziare."
+    },
+    {
+      "step": "Analizzare e Imparare",
+      "description": "Valutare i risultati dell'esperimento, capire il perché di successo o fallimento, e documentare le lezioni apprese.",
+      "artifacts_produced": [
+        "Report sull'analisi dell'esperimento",
+        "Lezioni apprese"
+      ],
+      "common_failure": "Non imparare dai fallimenti o non documentare i risultati.",
+      "mitigation": "Creare un 'failure ledger' e revisioni periodiche degli esperimenti."
+    },
+    {
+      "step": "Scalare o Decidere",
+      "description": "Se l'esperimento ha avuto successo, scalarlo. Altrimenti, abbandonarlo rapidamente per non sprecare ulteriori risorse.",
+      "artifacts_produced": [
+        "Decisione di scaling o 'kill'",
+        "Aggiornamenti del funnel/strategia"
+      ],
+      "common_failure": "Esitazione nel tagliare esperimenti falliti o nell'investire in quelli di successo.",
+      "mitigation": "Seguire rigorosamente le decisioni basate sui dati e sui criteri di successo stabiliti."
+    }
+  ],
+  "failure_ledger": [
+    {
+      "failure": "Campagna Influencer senza Tracking Adeguato",
+      "context": "Investiti 15.000€ in una campagna influencer con l'obiettivo dichiarato di 'awareness'. Mancava un sistema di tracciamento e attribuzione chiaro, rendendo impossibile misurare il ROI effettivo.",
+      "lesson": "Il budget, specialmente per canali meno tradizionali, deve essere giustificato da metriche di business misurabili e attribuibili. L'awareness da sola non paga le bollette.",
+      "rule_created": "Mai allocare budget significativi senza un piano di attribuzione dati chiaro e metriche di conversione definite.",
+      "what_changed": "Introduzione di protocolli obbligatori per il tracciamento delle campagne, inclusi codici promozionali unici, URL tracciabili e analisi a posteriori del traffico.",
+      "evidence_refs": [
+        "LinkedIn post sulla gestione budget marketing"
+      ]
+    },
+    {
+      "failure": "Inseguire TikTok per 'Trend'",
+      "context": "Investiti 3 mesi e risorse significative per entrare su TikTok, perché 'tutti ci sono'. Risultato: follower non qualificati, tempo del team sprecato e frustrazione, senza impatto sulle metriche di business.",
+      "lesson": "Un canale di marketing deve allinearsi sia con il prodotto che con le capacità e gli obiettivi del team. Non basta che sia popolare; deve essere il posto giusto per il nostro pubblico e compatibile con le nostre risorse.",
+      "rule_created": "Prima di entrare in un nuovo canale, condurre un'analisi di compatibilità prodotto-pubblico-team e definire KPI specifici per quel canale.",
+      "what_changed": "Rivalutazione strategica dei canali di acquisizione basata su dati di performance storici e sull'allineamento strategico, piuttosto che sulla popolarità del momento."
+    },
+    {
+      "failure": "Ottimizzazione per Metriche di Vanità",
+      "context": "Concentrazione su like, follower, open rate di email, portando a report che sembravano positivi ma non correlavano con la crescita delle vendite (revenue).",
+      "lesson": "Le metriche di vanità possono nascondere problemi strutturali. La vera crescita deriva da ottimizzazioni che impattano direttamente le metriche di business core (revenue, LTV, MRR).",
+      "rule_created": "Partire sempre dalle metriche di business chiave (revenue, profitto, LTV) e lavorare a ritroso per definire le metriche operative che le influenzano.",
+      "what_changed": "Ridefinizione dei KPI di team e prodotto, con report focalizzati primariamente sui risultati di business."
+    }
+  ],
+  "loves_hates": {
+    "loves": [
+      "Dati puliti che raccontano una storia chiara",
+      "Esperimenti che danno risposte definitive (sì o no)",
+      "Vedere il numero di utenti che raggiungono il loro primo successo",
+      "Email marketing che risuona davvero con il destinatario",
+      "La semplicità dietro un funnel ben oliato"
+    ],
+    "hates": [
+      "L'idea astratta di 'fare viral' senza un piano concreto",
+      "Budget di marketing decisi a sentimento o per 'allineamento'",
+      "Report pieni di metriche di vanità inutili",
+      "Il mantra 'il nostro target è tutti'",
+      "Agenzie che vendono fumo anziché crescita misurabile",
+      "Meeting infiniti per 'allinearsi' invece di agire"
+    ],
+    "will_use_if_needed": [
+      "LinkedIn Ads (per B2B SaaS mirato)",
+      "Google Ads (particolarmente search)",
+      "Strumenti di product analytics avanzati",
+      "Test A/B complessi sul prodotto/sito"
+    ]
+  },
+  "superpowers": [
+    {
+      "claim": "Trasformare il CAC/LTV da 1:2 a 1:5 in 8 mesi",
+      "why_true": "Ho spostato il focus dall'acquisizione all'ottimizzazione della prima settimana di utilizzo del prodotto, riducendo il tempo al 'primo valore reale' e aumentando la retention precoce.",
+      "scope": "Ottimizzazione del funnel di acquisizione e del lifecycle iniziale del cliente.",
+      "boundaries": "Applicabile a prodotti SaaS B2B con un ciclo di adozione definito. Richiede accesso ai dati di utilizzo del prodotto.",
+      "evidence": [
+        "Principale driver di miglioramento del rapporto CAC/LTV menzionato in intervista"
+      ]
+    },
+    {
+      "claim": "Leggere dati e trovare insight che altri non vedono",
+      "why_true": "Cerco attivamente dove gli utenti si bloccano o si perdono, non solo cosa dicono nei feedback, combinando dati di utilizzo con metriche di business per scoperte non ovvie.",
+      "scope": "Analisi di comportamento utente, funnel performance, metriche di business.",
+      "boundaries": "Richiede dati di qualità e la volontà di mettere in discussione ipotesi consolidate.",
+      "evidence": [
+        "Identificazione della dashboard 'strategica' controproducente",
+        "Analisi della prima settimana di utilizzo come driver LTV"
+      ]
+    },
+    {
+      "claim": "Costruire engine di crescita misurabili da zero",
+      "why_true": "Applicando una metodologia rigorosa di definizione metriche, mappatura funnel, esperimenti, attribuzione e iterazione rapida.",
+      "scope": "Acquisizione, attivazione, retention e monetizzazione in contesti startup.",
+      "boundaries": "Funziona meglio su prodotti con un percorso utente chiaro e definibile.",
+      "evidence": [
+        "Costruzione funnel da zero per startup SaaS (0 a 10k MRR)"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Startup SaaS B2B: Lancio e Crescita Iniziale",
+      "role_function": "Growth Marketer",
+      "problem": "Portare un prodotto SaaS B2B da 0 a 10k MRR in 12 mesi, mantenendo un CAC sostenibile.",
+      "approach": "Definizione della North Star Metric (MRR). Mappatura del funnel di acquisizione. Identificazione dei colli di bottiglia nell'onboarding e nel primo utilizzo. Implementazione di esperimenti mirati per migliorare la retention precoce e il tempo al primo valore. Ottimizzazione continua di copy per landing page, email e ads.",
+      "outcome": "Raggiungimento di 10k MRR in 12 mesi.",
+      "metrics": [
+        "MRR: 10k in 12 mesi",
+        "CAC: 45 Euro"
+      ],
+      "links": [
+        "https://github.com/lucamartinelli/growth-experiments"
+      ]
+    },
+    {
+      "name": "E-commerce B2B: Ottimizzazione Paid Acquisition",
+      "role_function": "Growth Marketer / Performance Specialist",
+      "problem": "Aumentare il fatturato di un e-commerce B2B e ottimizzare il ritorno sull'investimento pubblicitario.",
+      "approach": "Focus su Google Ads. Analisi approfondita delle keyword e delle intenti di ricerca. Creazione di landing page altamente performanti per campagne specifiche. Ottimizzazione del ROAS attraverso test A/B su creatività, copy e targeting. Analisi del customer journey per identificare punti di attrito.",
+      "outcome": "+180% fatturato YoY.",
+      "metrics": [
+        "Revenue: +180% YoY",
+        "ROAS (Google Ads): 4.2"
+      ],
+      "links": [
+        "https://lucamartinelli.substack.com"
+      ]
+    },
+    {
+      "name": "App Mobile: Implementazione Referral Program",
+      "role_function": "Growth Specialist",
+      "problem": "Aumentare l'acquisizione di nuovi utenti in modo organico ed efficiente per un'app mobile.",
+      "approach": "Progettazione e implementazione di un programma di referral basato su ricompense chiare e vantaggiose sia per chi invita che per chi viene invitato. Monitoraggio dei tassi di partecipazione e conversione del programma. Iterazione sul design delle ricompense e sulla comunicazione.",
+      "outcome": "Il programma di referral genera il 35% di tutti i nuovi utenti.",
+      "metrics": [
+        "Nuovi utenti da referral: 35% del totale"
+      ],
+      "links": [
+        "https://www.linkedin.com/in/lucamartinelli-growth"
+      ]
+    }
+  ],
+  "proof_layer": [
+    {
+      "claim_id": "CAC_LTV_Ratio_Improvement",
+      "claim_text": "Ottimizzato il rapporto CAC/LTV da 1:2 a 1:5 in 8 mesi lavorando sulla retention precoce e sul 'primo valore reale'.",
+      "verifiability": "HIGH",
+      "evidence": [
+        {
+          "url": "https://www.linkedin.com/in/lucamartinelli-growth",
+          "label": "Profilo LinkedIn - Sezione Esperienza/Descrizione",
+          "note": "Informazione chiave menzionata ripetutamente."
+        },
+        {
+          "url": "https://lucamartinelli.substack.com",
+          "label": "Substack - Articolo Potenziale su LTV/CAC",
+          "note": "Potrebbe contenere case study o spiegazioni dettagliate."
+        }
+      ]
+    },
+    {
+      "claim_id": "Data_Driven_Acquisition",
+      "claim_text": "Costruisce 'engine di crescita misurabili' con focus su acquisizione, lifecycle e revenue optimization, basandosi sul principio 'se non si misura, non lo faccio'.",
+      "verifiability": "HIGH",
+      "evidence": [
+        {
+          "url": "https://www.linkedin.com/in/lucamartinelli-growth",
+          "label": "Profilo LinkedIn - Headline e About",
+          "note": "Filosofia di lavoro chiaramente espressa."
+        },
+        {
+          "url": "https://github.com/lucamartinelli/growth-experiments",
+          "label": "GitHub - Repository 'growth-experiments'",
+          "note": "Prova tangibile di approccio sperimentale e data-driven."
+        }
+      ]
+    },
+    {
+      "claim_id": "Startup_Launch_Success",
+      "claim_text": "Ha contribuito a portare una startup SaaS B2B da 0 a 10k MRR in 12 mesi con un CAC di 45 Euro.",
+      "verifiability": "HIGH",
+      "evidence": [
+        {
+          "url": "https://www.linkedin.com/in/lucamartinelli-growth",
+          "label": "Profilo LinkedIn - Sezione Esperienza",
+          "note": "Risultato specifico menzionato."
+        }
+      ]
+    }
+  ],
+  "style_dna": {
+    "theme_name": "Data Alchemist",
+    "section_order": [
+      "hero",
+      "edge",
+      "methodology",
+      "failures",
+      "projects",
+      "patterns",
+      "proof",
+      "hates",
+      "non_goals"
+    ],
+    "layout": {
+      "max_width": "1000px",
+      "content_align": "left",
+      "section_spacing": "4rem",
+      "inner_padding": "2rem"
+    },
+    "typography": {
+      "heading_font": "'Inter', system-ui, sans-serif",
+      "body_font": "'Inter', system-ui, sans-serif",
+      "heading_size": "2.5rem",
+      "body_size": "1.1rem",
+      "heading_weight": "700",
+      "body_weight": "300",
+      "line_height": "1.7",
+      "letter_spacing": "0",
+      "text_transform": "none"
+    },
+    "palette": {
+      "background": "#0a0a0f",
+      "surface": "#1a1a2e",
+      "text": "#e0e0e0",
+      "accent": "#00ff88",
+      "secondary": "#4fc3f7",
+      "border": "#3a3a5a"
+    },
+    "borders": {
+      "radius": "4px",
+      "width": "1px",
+      "style": "solid"
+    },
+    "effects": {
+      "shadow": "0 10px 30px rgba(0, 255, 136, 0.2)",
+      "hover_transform": "translateY(-4px) scale(1.02)",
+      "transition": "all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)",
+      "background_pattern": "radial-gradient(circle at 20% 80%, rgba(0, 255, 136, 0.1) 0%, transparent 40%)"
+    },
+    "hero": {
+      "layout": "left-aligned",
+      "name_size": "4rem",
+      "show_avatar": false,
+      "show_location": true,
+      "decorative_element": "underline"
+    },
+    "cards": {
+      "style": "elevated",
+      "padding": "1.5rem",
+      "gap": "1.5rem",
+      "columns": "2"
+    },
+    "style_seed": 513
+  },
+  "section_labels": {
+    "edge": "L'Essenza: Il Mio Vantaggio Competitivo",
+    "methodology": "Il Processo: Come Costruisco Crescita",
+    "failures": "Lezioni dal Campo: Il Mio Lume",
+    "patterns": "Decisioni Guidate: I Filtri del Mio Ragionamento",
+    "evidence": "Prove Tangibili: Il Mio Track Record",
+    "projects": "Casi Studio: La Mia Efficacia in Azione",
+    "anti_goals": "Confini Delineati: Cosa Rifiuto di Fare",
+    "hates": "Disgusti del Mestiere: Ciò Che Mi Fa Rabbrividire"
+  },
+  "generated_html": "<!DOCTYPE html>\n<html lang=\"it\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>L. M. - L'Architetto della Crescita con un Bisturi</title>\n    <style>\n        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Space+Mono:wght@400;700&display=swap');\n\n        :root {\n            --primary-color: #000000;\n            --secondary-color: #FF6B6B;\n            --accent-color: #4CAF50;\n            --background-color: #F4F4F4;\n            --light-gray: #E0E0E0;\n            --dark-gray: #424242;\n        }\n\n        body {\n            font-family: 'Inter', sans-serif;\n            line-height: 1.6;\n            color: var(--primary-color);\n            background-color: var(--background-color);\n            margin: 0;\n            padding: 0;\n            scroll-behavior: smooth;\n        }\n\n        h1, h2, h3, h4 {\n            font-weight: 700;\n            margin-bottom: 1em;\n            line-height: 1.2;\n        }\n\n        p {\n            margin-bottom: 1em;\n        }\n\n        a {\n            color: var(--primary-color);\n            text-decoration: none;\n            border-bottom: 1px dashed var(--primary-color);\n            transition: all 0.3s ease;\n        }\n\n        a:hover {\n            color: var(--secondary-color);\n            border-bottom-color: var(--secondary-color);\n        }\n\n        strong, b {\n            font-weight: 700;\n        }\n\n        em, i {\n            font-style: italic;\n        }\n\n        .container {\n            max-width: 1200px;\n            margin: 0 auto;\n            padding: 40px 20px;\n        }\n\n        /* === HERO === */\n        .hero {\n            position: relative;\n            display: flex;\n            flex-direction: column;\n            justify-content: center;\n            align-items: flex-start;\n            min-height: 80vh;\n            padding: 40px 0;\n            overflow: hidden;\n        }\n\n        .hero::before {\n            content: '';\n            position: absolute;\n            top: 0;\n            left: 0;\n            width: 100%;\n            height: 100%;\n            background-color: var(--primary-color);\n            color: var(--background-color);\n            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); /* Default: invisible */\n            z-index: 1;\n            animation: revealHero 1.5s cubic-bezier(0.86, 0, 0.07, 1) forwards;\n        }\n\n        @keyframes revealHero {\n            0% { clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); }\n            50% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }\n            100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }\n        }\n\n        .hero-content {\n            position: relative;\n            z-index: 2;\n            padding: 40px;\n            background-color: rgba(255, 255, 255, 0.9);\n            border-left: 8px solid var(--secondary-color);\n            margin-left: -20px; /* Overlap container padding */\n            width: fit-content;\n            max-width: 80%;\n            box-shadow: 0 10px 20px rgba(0,0,0,0.1);\n        }\n\n        .hero-content .anti-title {\n            font-family: 'Space Mono', monospace;\n            font-size: 3.5em;\n            font-weight: 700;\n            color: var(--primary-color);\n            margin-bottom: 0.2em;\n            letter-spacing: -1px;\n            display: block;\n            animation: fadeIn 1s 0.5s forwards;\n            opacity: 0;\n        }\n\n        .hero-content .tagline {\n            font-size: 1.5em;\n            color: var(--dark-gray);\n            font-weight: 400;\n            animation: fadeIn 1s 0.8s forwards;\n            opacity: 0;\n        }\n\n        .hero-content p {\n            max-width: 600px;\n            font-size: 1.1em;\n            color: var(--dark-gray);\n            margin-top: 1.5em;\n            animation: fadeIn 1s 1.1s forwards;\n            opacity: 0;\n        }\n\n        @keyframes fadeIn {\n            from { opacity: 0; transform: translateY(20px); }\n            to { opacity: 1; transform: translateY(0); }\n        }\n\n        /* === SECTIONS === */\n        .section {\n            padding: 80px 0;\n            margin-bottom: 40px;\n            border-bottom: 1px dashed var(--light-gray);\n        }\n        .section:last-child {\n            border-bottom: none;\n        }\n\n        .section h2 {\n            font-size: 2.8em;\n            color: var(--secondary-color);\n            margin-bottom: 1.5em;\n            text-align: center;\n            position: relative;\n            display: inline-block;\n        }\n        .section h2::after {\n            content: '';\n            position: absolute;\n            left: 0;\n            bottom: -10px;\n            width: 60%;\n            height: 4px;\n            background-color: var(--primary-color);\n        }\n\n        .section-title-edge {\n            text-align: left;\n            margin-bottom: 2em;\n            position: relative;\n        }\n        .section-title-edge h2 {\n            text-align: left;\n            font-size: 3.5em;\n            color: var(--primary-color);\n            margin-bottom: 0;\n            padding-bottom: 0;\n        }\n        .section-title-edge h2::after {\n            content: '🔥';\n            position: absolute;\n            left: auto;\n            right: -40px;\n            top: -10px;\n            font-size: 2em;\n            width: auto;\n            height: auto;\n            background: none;\n        }\n\n        .edge-content {\n            display: grid;\n            grid-template-columns: 1fr 1fr;\n            gap: 40px;\n            align-items: center;\n        }\n\n        .edge-text {\n            font-size: 1.2em;\n            color: var(--dark-gray);\n            padding: 30px;\n            border-left: 4px solid var(--accent-color);\n            background-color: #fff;\n            box-shadow: 0 5px 15px rgba(0,0,0,0.05);\n        }\n        .edge-text ul {\n            list-style: none;\n            padding: 0;\n            margin-top: 20px;\n        }\n        .edge-text li {\n            margin-bottom: 10px;\n            padding-left: 25px;\n            position: relative;\n        }\n        .edge-text li::before {\n            content: '✓';\n            position: absolute;\n            left: 0;\n            color: var(--accent-color);\n            font-weight: 700;\n        }\n\n        .edge-image {\n            text-align: center;\n        }\n        .edge-image img {\n            max-width: 100%;\n            height: auto;\n            border: 2px dashed var(--light-gray);\n            padding: 10px;\n        }\n\n        .methodology-chart {\n            display: flex;\n            flex-direction: column;\n            align-items: center;\n            gap: 30px;\n            margin-top: 40px;\n        }\n\n        .methodology-step {\n            background-color: #fff;\n            padding: 25px 35px;\n            border-radius: 8px;\n            box-shadow: 0 4px 15px rgba(0,0,0,0.07);\n            width: 80%;\n            max-width: 600px;\n            border-left: 6px solid var(--primary-color);\n            transition: transform 0.3s ease, box-shadow 0.3s ease;\n            position: relative;\n        }\n        .methodology-step:hover {\n            transform: translateY(-5px);\n            box-shadow: 0 8px 25px rgba(0,0,0,0.1);\n        }\n\n        .methodology-step .step-number {\n            font-family: 'Space Mono', monospace;\n            font-size: 2em;\n            font-weight: 700;\n            color: var(--light-gray);\n            position: absolute;\n            top: -20px;\n            left: 15px;\n            z-index: 0;\n        }\n\n        .methodology-step .step-title {\n            font-size: 1.4em;\n            font-weight: 700;\n            color: var(--primary-color);\n            margin-bottom: 10px;\n            position: relative;\n            z-index: 1;\n        }\n\n        .methodology-step .step-description {\n            font-size: 0.95em;\n            color: var(--dark-gray);\n        }\n\n        .methodology-step .step-output {\n            font-size: 0.9em;\n            color: var(--primary-color);\n            font-style: italic;\n            margin-top: 15px;\n            padding-top: 10px;\n            border-top: 1px solid var(--light-gray);\n        }\n\n        .methodology-step .error-common {\n            font-size: 0.85em;\n            color: var(--secondary-color);\n            background-color: rgba(255, 107, 107, 0.1);\n            padding: 5px 10px;\n            border-radius: 4px;\n            margin-top: 10px;\n            font-weight: 700;\n            border-left: 2px solid var(--secondary-color);\n        }\n\n        /* Connections for the flowchart */\n        .methodology-chart .methodology-step:not(:last-child)::after {\n            content: '';\n            position: absolute;\n            bottom: -30px; /* Half of the step height below */\n            left: 50%;\n            transform: translateX(-50%);\n            width: 2px;\n            height: 30px; /* Connects to the next step */\n            background-color: var(--light-gray);\n            z-index: 1;\n        }\n        .methodology-chart .methodology-step:not(:last-child):before {\n            content: '\\25BC'; /* Down arrow */\n            position: absolute;\n            bottom: -45px;\n            left: 50%;\n            transform: translateX(-50%);\n            color: var(--light-gray);\n            font-size: 1.2em;\n            z-index: 1;\n        }\n\n\n        .failures-grid {\n            display: grid;\n            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));\n            gap: 40px;\n            margin-top: 40px;\n        }\n\n        .failure-card {\n            background-color: #fff;\n            padding: 30px;\n            border-radius: 8px;\n            box-shadow: 0 4px 15px rgba(0,0,0,0.05);\n            border: 2px solid var(--secondary-color);\n            transition: transform 0.3s ease, box-shadow 0.3s ease;\n        }\n        .failure-card:hover {\n            transform: translateY(-5px);\n            box-shadow: 0 8px 25px rgba(0,0,0,0.1);\n        }\n\n        .failure-card .failure-title {\n            font-size: 1.8em;\n            font-weight: 900;\n            color: var(--secondary-color);\n            margin-bottom: 15px;\n            letter-spacing: -0.5px;\n            display: block;\n        }\n\n        .failure-card .context {\n            font-size: 0.9em;\n            color: var(--dark-gray);\n            font-style: italic;\n            margin-bottom: 20px;\n            padding-left: 15px;\n            border-left: 3px solid var(--light-gray);\n        }\n\n        .failure-card .lesson {\n            font-size: 1.1em;\n            font-weight: 700;\n            color: var(--primary-color);\n            margin-bottom: 15px;\n        }\n\n        .failure-card .rule-created {\n            font-size: 0.9em;\n            color: var(--primary-color);\n            background-color: var(--accent-color);\n            color: white;\n            padding: 8px 12px;\n            border-radius: 4px;\n            display: inline-block;\n            margin-bottom: 15px;\n            font-weight: 700;\n        }\n        .failure-card .changed {\n            font-size: 0.9em;\n            color: var(--dark-gray);\n            padding-left: 15px;\n            border-left: 3px solid var(--accent-color);\n        }\n\n        .pattern-decision-wrapper {\n            display: grid;\n            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));\n            gap: 40px;\n            margin-top: 40px;\n        }\n\n        .pattern-card {\n            background-color: #fff;\n            padding: 30px;\n            border-radius: 8px;\n            box-shadow: 0 4px 15px rgba(0,0,0,0.05);\n            border-top: 4px solid var(--primary-color);\n            transition: transform 0.3s ease, box-shadow 0.3s ease;\n        }\n        .pattern-card:hover {\n            transform: translateY(-5px);\n            box-shadow: 0 8px 25px rgba(0,0,0,0.1);\n        }\n\n        .pattern-card .pattern-title {\n            font-size: 1.6em;\n            font-weight: 700;\n            color: var(--primary-color);\n            margin-bottom: 15px;\n            position: relative;\n            padding-left: 40px;\n        }\n        .pattern-card .pattern-title::before {\n            content: '💡';\n            position: absolute;\n            left: 0;\n            top: -5px;\n            font-size: 2em;\n        }\n\n        .pattern-card .pattern-when,\n        .pattern-card .pattern-signals,\n        .pattern-card .pattern-tradeoffs {\n            margin-bottom: 20px;\n        }\n        .pattern-card .pattern-when strong,\n        .pattern-card .pattern-signals strong,\n        .pattern-card .pattern-tradeoffs strong {\n            display: block;\n            font-size: 1.1em;\n            color: var(--primary-color);\n            margin-bottom: 8px;\n        }\n        .pattern-card .pattern-when ul,\n        .pattern-card .pattern-signals ul,\n        .pattern-card .pattern-tradeoffs ul {\n            list-style: disc;\n            padding-left: 25px;\n            margin: 0;\n        }\n        .pattern-card .pattern-when li,\n        .pattern-card .pattern-signals li,\n        .pattern-card .pattern-tradeoffs li {\n            margin-bottom: 5px;\n            font-size: 0.95em;\n            color: var(--dark-gray);\n        }\n        .pattern-card .pattern-signals li {\n            font-weight: 500;\n        }\n\n        .not-do-section, .hate-section {\n            background-color: #fff;\n            padding: 40px;\n            border-radius: 8px;\n            box-shadow: 0 4px 15px rgba(0,0,0,0.05);\n            margin-top: 20px;\n        }\n\n        .hate-section {\n            border: 2px solid var(--secondary-color);\n            background-color: rgba(255, 107, 107, 0.05);\n        }\n\n        .hate-section h2::after {\n            background-color: var(--secondary-color);\n        }\n\n        .hate-list, .not-do-list {\n            list-style: none;\n            padding: 0;\n            display: grid;\n            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));\n            gap: 20px;\n            margin-top: 30px;\n        }\n\n        .hate-list li, .not-do-list li {\n            background-color: var(--light-gray);\n            padding: 15px 20px;\n            border-radius: 4px;\n            font-size: 1em;\n            font-weight: 700;\n            color: var(--primary-color);\n            transition: background-color 0.3s ease;\n            position: relative;\n            padding-left: 40px;\n        }\n\n        .hate-list li::before {\n            content: '❌';\n            position: absolute;\n            left: 10px;\n            top: 12px;\n            font-size: 1.2em;\n        }\n        .not-do-list li::before {\n            content: '🚫';\n            position: absolute;\n            left: 10px;\n            top: 12px;\n            font-size: 1.2em;\n        }\n\n        .hate-list li:hover, .not-do-list li:hover {\n            background-color: var(--secondary-color);\n            color: white;\n        }\n\n        .love-section {\n            background-color: var(--accent-color);\n            color: white;\n            padding: 40px;\n            border-radius: 8px;\n            box-shadow: 0 4px 15px rgba(0,0,0,0.05);\n            margin-top: 20px;\n        }\n        .love-section h2 {\n            color: white;\n            text-align: center;\n        }\n        .love-section h2::after {\n            background-color: white;\n            width: 100%;\n        }\n\n        .love-list {\n            list-style: none;\n            padding: 0;\n            display: grid;\n            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));\n            gap: 20px;\n            margin-top: 30px;\n        }\n        .love-list li {\n            background-color: rgba(255, 255, 255, 0.2);\n            padding: 15px 20px;\n            border-radius: 4px;\n            font-size: 1em;\n            font-weight: 700;\n            color: white;\n            transition: background-color 0.3s ease;\n            position: relative;\n            padding-left: 40px;\n        }\n        .love-list li::before {\n            content: '❤️';\n            position: absolute;\n            left: 10px;\n            top: 12px;\n            font-size: 1.2em;\n        }\n        .love-list li:hover {\n            background-color: rgba(255, 255, 255, 0.4);\n        }\n\n\n        /* === PROJECTS AS PROOF === */\n        .projects-section .section-title-edge {\n            text-align: center;\n            margin-bottom: 2em;\n        }\n        .projects-section .section-title-edge h2 {\n            text-align: center;\n            font-size: 2.8em;\n            color: var(--primary-color);\n        }\n         .projects-section .section-title-edge h2::after {\n            left: 50%;\n            transform: translateX(-50%);\n        }\n\n        .project-grid {\n            display: grid;\n            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));\n            gap: 40px;\n            margin-top: 40px;\n        }\n\n        .project-card {\n            background-color: #fff;\n            padding: 30px;\n            border-radius: 8px;\n            box-shadow: 0 4px 15px rgba(0,0,0,0.05);\n            border-left: 5px solid var(--primary-color);\n            transition: transform 0.3s ease, box-shadow 0.3s ease;\n        }\n        .project-card:hover {\n            transform: translateY(-5px);\n            box-shadow: 0 8px 25px rgba(0,0,0,0.1);\n        }\n\n        .project-card .project-title {\n            font-size: 1.8em;\n            font-weight: 700;\n            color: var(--primary-color);\n            margin-bottom: 15px;\n            display: block;\n        }\n\n        .project-card .project-problem {\n            font-size: 1.1em;\n            font-weight: 700;\n            color: var(--dark-gray);\n            margin-bottom: 15px;\n        }\n\n        .project-card .project-approach {\n            font-size: 0.95em;\n            color: var(--dark-gray);\n            margin-bottom: 20px;\n            padding-left: 15px;\n            border-left: 3px solid var(--light-gray);\n        }\n\n        .project-card .project-result-title {\n            font-size: 1em;\n            font-weight: 700;\n            color: var(--primary-color);\n            margin-bottom: 5px;\n        }\n\n        .project-card .project-metrics {\n            font-size: 0.9em;\n            color: var(--primary-color);\n            margin-bottom: 15px;\n            display: flex;\n            flex-direction: column;\n            gap: 5px;\n        }\n         .project-card .project-metrics span {\n             font-weight: 700;\n         }\n\n\n        /* === PROOF VERIFICABILI === */\n        .proof-section h2::after {\n            background-color: var(--secondary-color);\n        }\n        .proof-list {\n            margin-top: 40px;\n            display: grid;\n            grid-template-columns: 1fr;\n            gap: 30px;\n        }\n        .proof-item {\n            background-color: #fff;\n            padding: 25px 30px;\n            border-radius: 8px;\n            box-shadow: 0 4px 15px rgba(0,0,0,0.05);\n            border-left: 5px solid var(--secondary-color);\n        }\n        .proof-item .proof-level {\n            font-family: 'Space Mono', monospace;\n            font-size: 1.2em;\n            font-weight: 700;\n            color: var(--secondary-color);\n            display: block;\n            margin-bottom: 15px;\n        }\n        .proof-item .proof-statement {\n            font-size: 1.1em;\n            font-weight: 700;\n            color: var(--primary-color);\n            margin-bottom: 15px;\n        }\n        .proof-item .proof-links {\n            font-size: 0.95em;\n            color: var(--dark-gray);\n            display: flex;\n            flex-direction: column;\n            gap: 10px;\n        }\n        .proof-item .proof-links a {\n            border-bottom: 1px dashed var(--dark-gray);\n        }\n        .proof-item .proof-links a:hover {\n            border-bottom-color: var(--secondary-color);\n        }\n\n\n        /* === FOOTER === */\n        footer {\n            text-align: center;\n            padding: 40px 0;\n            margin-top: 80px;\n            background-color: var(--primary-color);\n            color: white;\n            font-size: 0.9em;\n        }\n        footer a {\n            color: white;\n            border-bottom-color: white;\n        }\n        footer a:hover {\n            color: var(--secondary-color);\n            border-bottom-color: var(--secondary-color);\n        }\n\n        /* === RESPONSIVE === */\n        @media (max-width: 768px) {\n            .hero-content .anti-title {\n                font-size: 2.5em;\n            }\n            .hero-content .tagline {\n                font-size: 1.2em;\n            }\n            .section h2 {\n                font-size: 2em;\n            }\n            .section-title-edge h2 {\n                font-size: 2.8em;\n            }\n            .edge-content {\n                grid-template-columns: 1fr;\n            }\n            .methodology-step {\n                width: 90%;\n            }\n            .failures-grid, .pattern-decision-wrapper, .project-grid {\n                grid-template-columns: 1fr;\n            }\n        }\n\n        @media (max-width: 480px) {\n            .hero-content {\n                margin-left: 0;\n                width: 100%;\n                max-width: 100%;\n            }\n            .container {\n                padding: 20px 10px;\n            }\n            .section {\n                padding: 40px 0;\n            }\n            .hero-content .anti-title {\n                font-size: 2em;\n            }\n            .hero-content .tagline {\n                font-size: 1em;\n            }\n            .hero-content p {\n                font-size: 1em;\n            }\n            .hate-list li, .not-do-list li, .love-list li {\n                font-size: 0.9em;\n            }\n        }\n    </style>\n</head>\n<body>\n\n    <header class=\"hero\">\n        <div class=\"container\">\n            <div class=\"hero-content\">\n                <span class=\"anti-title\">L'Architetto della Crescita con un Bisturi</span>\n                <p>Costruisco macchine di crescita che funzionano perché proteggo l'utente dal prodotto finché non è pronto a usarlo, trasformando il valore da un concetto astratto a un risultato tangibile e immediato.</p>\n            </div>\n        </div>\n    </header>\n\n    <main class=\"container\">\n        <section id=\"edge\" class=\"section\">\n            <div class=\"section-title-edge\">\n                <h2>COSA SO FARE MEGLIO DI CHIUNQUE ALTRO</h2>\n            </div>\n            <div class=\"edge-content\">\n                <div class=\"edge-text\">\n                    <p>\n                        Quando altri sprecano budget inseguendo canali \"alla moda\" o caricando gli utenti di informazioni fin dal primo click, io scavo a fondo nei dati di utilizzo per identificare i veri colli di bottiglia.\n                        Non mi limito a costruire funnel, li smonto pezzo per pezzo per rimuovere tutto ciò che non è strettamente necessario per portare l'utente al suo primo successo, perché è lì che risiede il vero LTV.\n                    </p>\n                    <ul>\n                        <li>Ossessionato dai dati e dall'attribuzione</li>\n                        <li>Radicalmente focalizzato sulla rimozione del superfluo</li>\n                        <li>Scettico verso il 'pensiero di gruppo' e le mode</li>\n                    </ul>\n                </div>\n                <div class=\"edge-image\">\n                    <img src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MDAgNTAwIj48cmVjdCB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iI0VQRUVQRSUiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSI1MHB4IiBmb250LWZhbWlseT0iQXJpYWwiIGZpbGw9IiM4ODgiPjUwMCB4IDUwMCBCaWd0aGFuPC90ZXh0Pjwvc3ZnPg==\" alt=\"Diagramma astratto di un funnel ottimizzato\">\n                </div>\n            </div>\n        </section>\n\n        <section id=\"methodology\" class=\"section\">\n            <h2>IL MIO PROCESSO: 7 STEP PER LA CRESCITA RADICALE</h2>\n            <div class=\"methodology-chart\">\n                <div class=\"methodology-step\">\n                    <div class=\"step-number\">01</div>\n                    <div class=\"step-title\">Definire la North Star Metric</div>\n                    <p class=\"step-description\">Identificare l'unica metrica fondamentale legata al valore di business e alla crescita sostenibile.</p>\n                    <div class=\"step-output\">Produce: North Star Metric documentata</div>\n                    <div class=\"error-common\">Errore comune: Definire troppe metriche chiave o metriche di vanità.</div>\n                </div>\n                <div class=\"methodology-step\">\n                    <div class=\"step-number\">02</div>\n                    <div class=\"step-title\">Mappare e Quantificare il Funnel</div>\n                    <p class=\"step-description\">Visualizzare ogni step del percorso utente e misurare i tassi di conversione tra uno step e l'altro.</p>\n                    <div class=\"step-output\">Produce: Mappa del funnel con conversion rates, Identificazione dei punti di abbandono</div>\n                    <div class=\"error-common\">Errore comune: Non avere dati granulari sufficienti per identificare i veri colli di bottiglia.</div>\n                </div>\n                <div class=\"methodology-step\">\n                    <div class=\"step-number\">03</div>\n                    <div class=\"step-title\">Individuare e Analizzare il Collo di Bottiglia</div>\n                    <p class=\"step-description\">Determinare lo step del funnel con il più alto tasso di abbandono o la minore conversione.</p>\n                    <div class=\"step-output\">Produce: Report sul collo di bottiglia principale</div>\n                    <div class=\"error-common\">Errore comune: Concentrarsi su problemi marginali invece che sul punto di maggiore attrito.</div>\n                </div>\n                <div class=\"methodology-step\">\n                    <div class=\"step-number\">04</div>\n                    <div class=\"step-title\">Formulare un'Ipotesi Misurabile</div>\n                    <p class=\"step-description\">Creare un'ipotesi chiara e testabile del tipo: 'Se interveniamo su X, Y aumenterà del Z%'.</p>\n                    <div class=\"step-output\">Produce: Ipotesi di esperimento documentata</div>\n                    <div class=\"error-common\">Errore comune: Ipotesi vaghe, non misurabili o non legate alla North Star Metric.</div>\n                </div>\n                <div class=\"methodology-step\">\n                    <div class=\"step-number\">05</div>\n                    <div class=\"step-title\">Eseguire l'Esperimento (Budget Minimo, Tempo Definito)</div>\n                    <p class=\"step-description\">Testare l'ipotesi con un investimento controllato (tempo e denaro) e criteri di successo predefiniti.</p>\n                    <div class=\"step-output\">Produce: Risultati dell'esperimento, Dati di performance</div>\n                    <div class=\"error-common\">Errore comune: Lasciare correre esperimenti indefinitamente o investire troppo presto.</div>\n                </div>\n                <div class=\"methodology-step\">\n                    <div class=\"step-number\">06</div>\n                    <div class=\"step-title\">Analizzare e Imparare</div>\n                    <p class=\"step-description\">Valutare i risultati dell'esperimento, capire il perché di successo o fallimento, e documentare le lezioni apprese.</p>\n                    <div class=\"step-output\">Produce: Report sull'analisi dell'esperimento, Lezioni apprese</div>\n                    <div class=\"error-common\">Errore comune: Non imparare dai fallimenti o non documentare i risultati.</div>\n                </div>\n                <div class=\"methodology-step\">\n                    <div class=\"step-number\">07</div>\n                    <div class=\"step-title\">Scalare o Decidere</div>\n                    <p class=\"step-description\">Se l'esperimento ha avuto successo, scalarlo. Altrimenti, abbandonarlo rapidamente per non sprecare ulteriori risorse.</p>\n                    <div class=\"step-output\">Produce: Decisione di scaling o 'kill', Aggiornamenti del funnel/strategia</div>\n                    <div class=\"error-common\">Errore comune: Esitazione nel tagliare esperimenti falliti o nell'investire in quelli di successo.</div>\n                </div>\n            </div>\n        </section>\n\n        <section id=\"failures\" class=\"section\">\n            <h2>FALLIMENTI CHE MI HANNO FORGIATO (E Cosa Ho Imparato)</h2>\n            <div class=\"failures-grid\">\n                <div class=\"failure-card\">\n                    <span class=\"failure-title\">Campagna Influencer senza Tracking</span>\n                    <div class=\"context\">Investiti 15.000€ in una campagna influencer con l'obiettivo dichiarato di 'awareness'. Mancava un sistema di tracciamento e attribuzione chiaro, rendendo impossibile misurare il ROI effettivo.</div>\n                    <div class=\"lesson\">Il budget, specialmente per canali meno tradizionali, deve essere giustificato da metriche di business misurabili e attribuibili. L'awareness da sola non paga le bollette.</div>\n                    <div class=\"rule-created\">REGOLA CREATA: Mai allocare budget significativi senza un piano di attribuzione dati chiaro e metriche di conversione definite.</div>\n                    <div class=\"changed\">Cosa è cambiato: Introduzione di protocolli obbligatori per il tracciamento delle campagne, inclusi codici promozionali unici, URL tracciabili e analisi a posteriori del traffico.</div>\n                </div>\n                <div class=\"failure-card\">\n                    <span class=\"failure-title\">Inseguire TikTok per 'Trend'</span>\n                    <div class=\"context\">Investiti 3 mesi e risorse significative per entrare su TikTok, perché 'tutti ci sono'. Risultato: follower non qualificati, tempo del team sprecato e frustrazione, senza impatto sulle metriche di business.</div>\n                    <div class=\"lesson\">Un canale di marketing deve allinearsi sia con il prodotto che con le capacità e gli obiettivi del team. Non basta che sia popolare; deve essere il posto giusto per il nostro pubblico e compatibile con le nostre risorse.</div>\n                    <div class=\"rule-created\">REGOLA CREATA: Prima di entrare in un nuovo canale, condurre un'analisi di compatibilità prodotto-pubblico-team e definire KPI specifici per quel canale.</div>\n                    <div class=\"changed\">Cosa è cambiato: Rivalutazione strategica dei canali di acquisizione basata su dati di performance storici e sull'allineamento strategico, piuttosto che sulla popolarità del momento.</div>\n                </div>\n                <div class=\"failure-card\">\n                    <span class=\"failure-title\">Ottimizzazione per Metriche di Vanità</span>\n                    <div class=\"context\">Concentrazione su like, follower, open rate di email, portando a report che sembravano positivi ma non correlavano con la crescita delle vendite (revenue).</div>\n                    <div class=\"lesson\">Le metriche di vanità possono nascondere problemi strutturali. La vera crescita deriva da ottimizzazioni che impattano direttamente le metriche di business core (revenue, LTV, MRR).</div>\n                    <div class=\"rule-created\">REGOLA CREATA: Partire sempre dalle metriche di business chiave (revenue, profitto, LTV) e lavorare a ritroso per definire le metriche operative che le influenzano.</div>\n                    <div class=\"changed\">Cosa è cambiato: Ridefinizione dei KPI di team e prodotto, con report focalizzati primariamente sui risultati di business.</div>\n                </div>\n            </div>\n        </section>\n\n        <section id=\"patterns\" class=\"section\">\n            <h2>COME PRENDO DECISIONI: PATTERN RADICALI</h2>\n            <div class=\"pattern-decision-wrapper\">\n                <div class=\"pattern-card\">\n                    <h3 class=\"pattern-title\">Eliminazione per Chiarezza</h3>\n                    <div class=\"pattern-when\">\n                        <strong>Quando:</strong>\n                        <ul>\n                            <li>Decisioni su feature</li>\n                            <li>Onboarding</li>\n                            <li>Funnel</li>\n                            <li>Canali</li>\n                        </ul>\n                    </div>\n                    <div class=\"pattern-signals\">\n                        <strong>Segnali che cerco:</strong>\n                        <ul>\n                            <li>Dati di abbandono precoce nei primi giorni di utilizzo</li>\n                            <li>Complessità percepita nel percorso utente</li>\n                            <li>Mancanza di chiarezza sul 'primo valore reale'</li>\n                            <li>Consumo di tempo utente su feature non centrali</li>\n                        </ul>\n                    </div>\n                    <div class=\"pattern-tradeoffs\">\n                        <strong>Trade-off:</strong>\n                        <ul>\n                            <li>Possibile insoddisfazione iniziale da parte di utenti avanzati</li>\n                            <li>Richiede coraggio nel 'tagliare' funzionalità esistenti</li>\n                            <li>Investimento di tempo nell'analisi dei dati di utilizzo</li>\n                        </ul>\n                    </div>\n                </div>\n                <div class=\"pattern-card\">\n                    <h3 class=\"pattern-title\">Attribution-First Budgeting</h3>\n                    <div class=\"pattern-when\">\n                        <strong>Quando:</strong>\n                        <ul>\n                            <li>Allocazione budget marketing</li>\n                            <li>Valutazione canali</li>\n                        </ul>\n                    </div>\n                    <div class=\"pattern-signals\">\n                        <strong>Segnali che cerco:</strong>\n                        <ul>\n                            <li>Budget richiesti senza KPI chiari</li>\n                            <li>Campagne con ROI ambiguo o non misurabile</li>\n                            <li>Richieste di budget per canali 'popolari' ma non adatti</li>\n                        </ul>\n                    </div>\n                    <div class=\"pattern-tradeoffs\">\n                        <strong>Trade-off:</strong>\n                        <ul>\n                            <li>Possibile perdita di opportunità su canali emergenti difficili da tracciare inizialmente</li>\n                            <li>Richiede infrastruttura di tracking robusta</li>\n                            <li>Può portare a resistenza se si deve dire 'no' a iniziative apparentemente promettenti</li>\n                        </ul>\n                    </div>\n                </div>\n            </div>\n        </section>\n\n        <section id=\"not-do\" class=\"section\">\n            <div class=\"not-do-section\">\n                <h2>COSA NON FACCIO (E Perché)</h2>\n                <ul class=\"not-do-list\">\n                    <li>Spendere budget senza attribuzione chiara</li>\n                    <li>Perseguire metriche di vanità (like, follower, open rate)</li>\n                    <li>Implementare feature richieste senza analizzare il contesto d'uso e il timing</li>\n                </ul>\n            </div>\n        </section>\n\n        <section id=\"hate\" class=\"section\">\n             <div class=\"hate-section\">\n                <h2>COSA ODIO PROFONDAMENTE</h2>\n                <ul class=\"hate-list\">\n                    <li>L'idea astratta di 'fare viral' senza un piano concreto</li>\n                    <li>Budget di marketing decisi a sentimento o per 'allineamento'</li>\n                    <li>Report pieni di metriche di vanità inutili</li>\n                    <li>Il mantra 'il nostro target è tutti'</li>\n                    <li>Agenzie che vendono fumo anziché crescita misurabile</li>\n                    <li>Meeting infiniti per 'allinearsi' invece di agire</li>\n                </ul>\n            </div>\n        </section>\n\n        <section id=\"love\" class=\"section\">\n             <div class=\"love-section\">\n                <h2>COSA AMO VEDERE (E FARE)</h2>\n                <ul class=\"love-list\">\n                    <li>Dati puliti che raccontano una storia chiara</li>\n                    <li>Esperimenti che danno risposte definitive (sì o no)</li>\n                    <li>Vedere il numero di utenti che raggiungono il loro primo successo</li>\n                    <li>Email marketing che risuona davvero con il destinatario</li>\n                    <li>La semplicità dietro un funnel ben oliato</li>\n                </ul>\n            </div>\n        </section>\n\n        <section id=\"projects\" class=\"section projects-section\">\n             <div class=\"section-title-edge\">\n                <h2>PROGETTI: SOLO COME PROVA DEL METODO</h2>\n             </div>\n            <div class=\"project-grid\">\n                <div class=\"project-card\">\n                    <span class=\"project-title\">Startup SaaS B2B: Lancio e Crescita Iniziale</span>\n                    <div class=\"project-problem\">Problema risolto: Portare un prodotto SaaS B2B da 0 a 10k MRR in 12 mesi, mantenendo un CAC sostenibile.</div>\n                    <div class=\"project-approach\">\n                        Il mio approccio: Definizione della North Star Metric (MRR). Mappatura del funnel di acquisizione. Identificazione dei colli di bottiglia nell'onboarding e nel primo utilizzo. Implementazione di esperimenti mirati per migliorare la retention precoce e il tempo al primo valore. Ottimizzazione continua di copy per landing page, email e ads.\n                    </div>\n                    <div class=\"project-result-title\">Risultato:</div>\n                    <div class=\"project-metrics\">\n                         Raggiungimento di 10k MRR in 12 mesi. <br>\n                         <span>CAC:</span> 45 Euro\n                    </div>\n                    <a href=\"https://github.com/lucamartinelli/growth-experiments\" target=\"_blank\">Vedi Esperimenti su GitHub</a>\n                </div>\n                <div class=\"project-card\">\n                    <span class=\"project-title\">E-commerce B2B: Ottimizzazione Paid Acquisition</span>\n                    <div class=\"project-problem\">Problema risolto: Aumentare il fatturato di un e-commerce B2B e ottimizzare il ritorno sull'investimento pubblicitario.</div>\n                    <div class=\"project-approach\">\n                        Focus su Google Ads. Analisi approfondita delle keyword e delle intenti di ricerca. Creazione di landing page altamente performanti per campagne specifiche. Ottimizzazione del ROAS attraverso test A/B su creatività, copy e targeting. Analisi del customer journey per identificare punti di attrito.\n                    </div>\n                    <div class=\"project-result-title\">Risultato:</div>\n                    <div class=\"project-metrics\">\n                         +180% fatturato YoY. <br>\n                         <span>ROAS (Google Ads):</span> 4.2\n                    </div>\n                    <a href=\"https://lucamartinelli.substack.com\" target=\"_blank\">Leggi Case Study su Substack</a>\n                </div>\n                <div class=\"project-card\">\n                    <span class=\"project-title\">App Mobile: Implementazione Referral Program</span>\n                    <div class=\"project-problem\">Problema risolto: Aumentare l'acquisizione di nuovi utenti in modo organico ed efficiente per un'app mobile.</div>\n                    <div class=\"project-approach\">\n                        Progettazione e implementazione di un programma di referral basato su ricompense chiare e vantaggiose sia per chi invita che per chi viene invitato. Monitoraggio dei tassi di partecipazione e conversione del programma. Iterazione sul design delle ricompense e sulla comunicazione.\n                    </div>\n                     <div class=\"project-result-title\">Risultato:</div>\n                    <div class=\"project-metrics\">\n                        Il programma di referral genera il 35% di tutti i nuovi utenti.\n                    </div>\n                    <a href=\"https://www.linkedin.com/in/lucamartinelli-growth\" target=\"_blank\">Vedi Profilo LinkedIn</a>\n                </div>\n            </div>\n        </section>\n\n        <section id=\"proof\" class=\"section\">\n            <h2>PROOF VERIFICABILI</h2>\n            <div class=\"proof-list\">\n                <div class=\"proof-item\">\n                    <span class=\"proof-level\">[HIGH]</span>\n                    <p class=\"proof-statement\">Ottimizzato il rapporto CAC/LTV da 1:2 a 1:5 in 8 mesi lavorando sulla retention precoce e sul 'primo valore reale'.</p>\n                    <div class=\"proof-links\">\n                        <a href=\"https://www.linkedin.com/in/lucamartinelli-growth\" target=\"_blank\">Profilo LinkedIn - Sezione Esperienza/Descrizione</a>\n                        <a href=\"https://lucamartinelli.substack.com\" target=\"_blank\">Substack - Articolo Potenziale su LTV/CAC</a>\n                    </div>\n                </div>\n                <div class=\"proof-item\">\n                    <span class=\"proof-level\">[HIGH]</span>\n                    <p class=\"proof-statement\">Costruisce 'engine di crescita misurabili' con focus su acquisizione, lifecycle e revenue optimization, basandosi sul principio 'se non si misura, non lo faccio'.</p>\n                    <div class=\"proof-links\">\n                         <a href=\"https://www.linkedin.com/in/lucamartinelli-growth\" target=\"_blank\">Profilo LinkedIn - Headline e About</a>\n                        <a href=\"https://github.com/lucamartinelli/growth-experiments\" target=\"_blank\">GitHub - Repository 'growth-experiments'</a>\n                    </div>\n                </div>\n                <div class=\"proof-item\">\n                    <span class=\"proof-level\">[HIGH]</span>\n                    <p class=\"proof-statement\">Ha contribuito a portare una startup SaaS B2B da 0 a 10k MRR in 12 mesi con un CAC di 45 Euro.</p>\n                     <div class=\"proof-links\">\n                         <a href=\"https://www.linkedin.com/in/lucamartinelli-growth\" target=\"_blank\">Profilo LinkedIn - Sezione Esperienza</a>\n                    </div>\n                </div>\n            </div>\n        </section>\n    </main>\n\n    <footer>\n        <div class=\"container\">\n            <p>&copy; 2024 L. M. - L'Architetto della Crescita con un Bisturi. Tutti i diritti negati.</p>\n        </div>\n    </footer>\n\n</body>\n</html>"
+}

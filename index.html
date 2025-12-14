@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anti-Portfolio Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              ink: '#050505',
+              'ink-light': '#0f0f11',
+              'ink-glass': 'rgba(15, 15, 17, 0.7)',
+              paper: '#e0d8c8',
+              'paper-muted': '#8a857f',
+              brass: '#c2a878',
+              'brass-hover': '#e3c68f',
+              'brass-dim': '#4a4233',
+              'terminal-green': '#355e3b',
+              alert: '#cf4646',
+              border: '#1f1f1f'
+            },
+            fontFamily: {
+              mono: ['"JetBrains Mono"', 'monospace'],
+              sans: ['"Inter"', 'sans-serif'],
+              serif: ['"Playfair Display"', 'serif'],
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+              'slide-up': 'slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+              'slide-down': 'slideDown 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'glitch': 'glitch 1s linear infinite',
+              'ripple': 'ripple 0.6s ease-out forwards',
+              'flash': 'flash 0.15s ease-out forwards',
+              'reveal': 'reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+              'scan': 'scan 2s linear infinite',
+              'float': 'float 6s ease-in-out infinite',
+              'glow-pulse': 'glowPulse 2s ease-in-out infinite',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              slideUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              slideDown: {
+                '0%': { opacity: '0', transform: 'translateY(-10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              glitch: {
+                '2%, 64%': { transform: 'translate(2px,0) skew(0deg)' },
+                '4%, 60%': { transform: 'translate(-2px,0) skew(0deg)' },
+                '62%': { transform: 'translate(0,0) skew(5deg)' },
+              },
+              ripple: {
+                '0%': { width: '0', height: '0', opacity: '0.5' },
+                '100%': { width: '200px', height: '200px', opacity: '0' },
+              },
+              flash: {
+                '0%': { opacity: '0.3' },
+                '100%': { opacity: '0' },
+              },
+              reveal: {
+                '0%': { opacity: '0', transform: 'translateY(30px)', filter: 'blur(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)', filter: 'blur(0)' },
+              },
+              scan: {
+                '0%': { transform: 'translateY(-100%)' },
+                '100%': { transform: 'translateY(100vh)' },
+              },
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-10px)' },
+              },
+              glowPulse: {
+                '0%, 100%': { boxShadow: '0 0 5px rgba(194, 168, 120, 0.3)' },
+                '50%': { boxShadow: '0 0 20px rgba(194, 168, 120, 0.6)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #050505;
+        color: #e0d8c8;
+        background-image: 
+          linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+          linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+        background-size: 100% 2px, 3px 100%;
+        min-height: 100vh;
+      }
+      
+      /* Subtle Vignette */
+      body::after {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: radial-gradient(circle, rgba(0,0,0,0) 60%, rgba(0,0,0,0.6) 100%);
+        pointer-events: none;
+        z-index: -1;
+      }
+
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #050505; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #1f1f1f; 
+        border-radius: 2px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #c2a878; 
+      }
+
+      /* Utility classes for specific effects */
+      .glass-panel {
+        background: rgba(15, 15, 17, 0.6);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(194, 168, 120, 0.1);
+      }
+      
+      .text-glow {
+        text-shadow: 0 0 10px rgba(194, 168, 120, 0.3);
+      }
+
+      .input-focus-ring:focus-within {
+        box-shadow: 0 0 0 1px #c2a878, 0 0 15px rgba(194, 168, 120, 0.1);
+        border-color: #c2a878;
+      }
+
+      /* Typewriter cursor effect */
+      .typewriter-cursor::after {
+        content: '_';
+        animation: cursor-blink 1s step-end infinite;
+      }
+      @keyframes cursor-blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+      }
+
+
+      /* Glitch text effect */
+      .glitch-active {
+        animation: glitch-text 0.3s linear;
+      }
+      @keyframes glitch-text {
+        0%, 100% { text-shadow: none; }
+        25% { text-shadow: -2px 0 #ff0000, 2px 0 #00ffff; }
+        50% { text-shadow: 2px 0 #ff0000, -2px 0 #00ffff; }
+        75% { text-shadow: -1px 0 #ff0000, 1px 0 #00ffff; }
+      }
+
+      /* Glitch line animation for page transitions */
+      @keyframes glitch-line {
+        0% { transform: scaleX(0); opacity: 1; }
+        50% { transform: scaleX(1); opacity: 1; }
+        100% { transform: scaleX(0); opacity: 0; }
+      }
+
+      /* Enhanced hover effects */
+      .hover-lift {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .hover-lift:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 40px rgba(194, 168, 120, 0.15);
+      }
+
+      .hover-glow {
+        transition: box-shadow 0.3s ease, border-color 0.3s ease;
+      }
+      .hover-glow:hover {
+        box-shadow: 0 0 20px rgba(194, 168, 120, 0.3);
+        border-color: #c2a878;
+      }
+
+      .hover-scale {
+        transition: transform 0.2s ease;
+      }
+      .hover-scale:hover {
+        transform: scale(1.02);
+      }
+
+      /* Progress ring */
+      .progress-ring {
+        transform: rotate(-90deg);
+      }
+      .progress-ring-circle {
+        transition: stroke-dashoffset 0.5s ease;
+      }
+
+      /* Drag and drop zone */
+      .drop-zone {
+        transition: all 0.3s ease;
+      }
+      .drop-zone.dragging {
+        border-color: #c2a878;
+        background: rgba(194, 168, 120, 0.1);
+        box-shadow: inset 0 0 30px rgba(194, 168, 120, 0.1);
+      }
+
+      /* Scan line effect */
+      .scan-line::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, rgba(194, 168, 120, 0.5), transparent);
+        animation: scan 2s linear infinite;
+      }
+
+      /* Decryption text effect */
+      .decrypt-text {
+        font-family: "JetBrains Mono", monospace;
+      }
+
+      /* Corner brackets decoration */
+      .corner-brackets::before,
+      .corner-brackets::after {
+        content: '';
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        border-color: #c2a878;
+        opacity: 0.5;
+        transition: opacity 0.3s ease;
+      }
+      .corner-brackets::before {
+        top: -1px;
+        left: -1px;
+        border-top: 1px solid;
+        border-left: 1px solid;
+      }
+      .corner-brackets::after {
+        bottom: -1px;
+        right: -1px;
+        border-bottom: 1px solid;
+        border-right: 1px solid;
+      }
+      .corner-brackets:hover::before,
+      .corner-brackets:hover::after {
+        opacity: 1;
+      }
+
+      /* Mini-map navigation */
+      .minimap-item {
+        transition: all 0.2s ease;
+      }
+      .minimap-item:hover,
+      .minimap-item.active {
+        background: rgba(194, 168, 120, 0.2);
+        border-left-color: #c2a878;
+      }
+
+      /* Staggered reveal animation */
+      .reveal-stagger > * {
+        opacity: 0;
+        animation: reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+      .reveal-stagger > *:nth-child(1) { animation-delay: 0.1s; }
+      .reveal-stagger > *:nth-child(2) { animation-delay: 0.2s; }
+      .reveal-stagger > *:nth-child(3) { animation-delay: 0.3s; }
+      .reveal-stagger > *:nth-child(4) { animation-delay: 0.4s; }
+      .reveal-stagger > *:nth-child(5) { animation-delay: 0.5s; }
+      .reveal-stagger > *:nth-child(6) { animation-delay: 0.6s; }
+      .reveal-stagger > *:nth-child(7) { animation-delay: 0.7s; }
+      .reveal-stagger > *:nth-child(8) { animation-delay: 0.8s; }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "recharts": "https://esm.sh/recharts@^3.5.1",
+    "pdfjs-dist": "https://esm.sh/pdfjs-dist@3.11.174",
+    "mammoth": "https://esm.sh/mammoth@1.6.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

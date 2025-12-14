@@ -1,0 +1,387 @@
+{
+  "meta": {
+    "name": "E. V.",
+    "location": "Roma, Italia (Remote-first)",
+    "contact": "e.v@designstudio.it",
+    "primary_links": [
+      "https://www.behance.net/elenavisconti",
+      "https://www.figma.com/@elenavisconti",
+      "https://medium.com/@elenavisconti"
+    ]
+  },
+  "anti_title": "L'Architetto del Design Invisibile",
+  "signature": {
+    "one_sentence": "Progetto solo ciò che funziona quando l'utente è stanco, distratto e ha poco tempo, perché se un prodotto regge solo nelle condizioni ideali allora non appartiene alla vita reale delle persone.",
+    "three_traits": [
+      "Pragmatismo Empatico",
+      "Rifiuto dell'Ego Estetico",
+      "Ossessione per la Semplicità Funzionale"
+    ],
+    "edge": "Quando altri designer combattono per l'approvazione estetica o inseguono il \"wow\" ad ogni costo, io mi concentro sull'eliminare l'attrito, anche quando significa rendere il design meno appariscente.\nLa mia specialità è creare esperienze così integrate nel flusso naturale dell'utente che diventano invisibili, liberando le persone dalla fatica di dover pensare a come usare la tecnologia.",
+    "non_goals": [
+      "Progetti che richiedono all'utente di 'educarsi' o cambiare le proprie abitudini.",
+      "Aggiungere complessità fine a se stessa per far percepire valore.",
+      "Creare esperienze che competono per l'attenzione con notifiche e interruzioni inutili.",
+      "Design basato su 'facciamo come X' senza un reale motivo strategico.",
+      "Moodboard infiniti senza decisioni concrete."
+    ]
+  },
+  "decision_patterns": [
+    {
+      "pattern_name": "Il 'Perché' Prima del 'Cosa'",
+      "when_used": "All'inizio di ogni progetto o quando i requisiti sono vaghi.",
+      "signals": [
+        "Requisiti vaghi o focalizzati su soluzioni anziché problemi.",
+        "Feedback generico ('vogliamo più wow').",
+        "Mancanza di chiara comprensione del problema utente."
+      ],
+      "tradeoffs": [
+        "Ritardare la fase di ideazione e prototipazione.",
+        "Investire tempo in workshop e ricerche preliminari.",
+        "Potenziale resistenza da parte di stakeholder abituati a un approccio più diretto."
+      ],
+      "example": "Di fronte a 'vogliamo un'app più moderna', chiedo 'quale problema specifico degli utenti attuali speriamo di risolvere con questa modernità?' fino a ottenere risposte misurabili come 'ridurre il tempo necessario per completare l'operazione X del 20%'."
+    },
+    {
+      "pattern_name": "Validazione In-Situ (anche se dolorosa)",
+      "when_used": "Durante e dopo la fase di ideazione e prototipazione.",
+      "signals": [
+        "Intuizioni forti basate su esperienza passata.",
+        "Soluzioni esteticamente piacevoli ma potenzialmente complesse.",
+        "Pressione per rilasciare velocemente senza test."
+      ],
+      "tradeoffs": [
+        "Riconoscere che il proprio gusto personale può essere sbagliato.",
+        "Investire tempo e risorse in test utente, anche piccoli.",
+        "Accettare che un'idea amata possa essere bocciata dai dati."
+      ],
+      "example": "Ho un'idea per un flusso di onboarding che mi sembra geniale. Invece di implementarla subito, creo un prototipo cliccabile e lo faccio provare a 5 utenti. Se il 60% inciampa sul primo passo, quell'idea, per quanto mi piaccia, viene messa da parte o ripensata radicalmente."
+    },
+    {
+      "pattern_name": "Dati Quantitativi come Riduzione dell'Ignoranza, non Garanzia",
+      "when_used": "Per interpretare i risultati dei test e delle metriche di utilizzo.",
+      "signals": [
+        "Metriche quantitative che non si allineano al successo desiderato.",
+        "Comportamenti utente inaspettati dopo il rilascio.",
+        "Successo funzionale ma mancanza di 'desiderabilità'."
+      ],
+      "tradeoffs": [
+        "Evitare conclusioni affrettate o eccessivamente ottimistiche basate sui soli numeri.",
+        "Integrare sempre i dati quantitativi con osservazioni qualitative e comprensione del contesto.",
+        "Accettare che il fallimento possa avvenire anche seguendo i dati."
+      ],
+      "example": "Il tasso di completamento di un checkout è del 90% (dato quantitativo). Tuttavia, osservo che moltissimi utenti aggiungono prodotti al carrello ma non completano mai l'acquisto (osservazione qualitativa/comportamentale). Questo mi indica che il problema non è la comprensione del processo di checkout, ma piuttosto la percezione del valore o il prezzo del prodotto, richiedendo un'analisi diversa."
+    }
+  ],
+  "method_stack": [
+    {
+      "step": "Discovery Profonda",
+      "description": "Scremare il rumore dalle richieste, intervistare stakeholder per capire il *vero* problema, analizzare competitor e contesto di mercato per definire il 'dolore' dell'utente.",
+      "artifacts_produced": [
+        "Problem Statement definiti",
+        "User Personas basate su ricerca",
+        "Analisi Competitor",
+        "Mappe di Empatia",
+        "Obiettivi di progetto chiari e misurabili"
+      ],
+      "common_failure": "Accettare il problema così come viene presentato dal cliente senza indagarne le cause profonde.",
+      "mitigation": "Sottoporre a interrogatorio continuo ('E perché?', 'Cosa succederebbe se...?') fino a isolare la causa radice dell'esigenza."
+    },
+    {
+      "step": "Ideazione Veloce e Sporca",
+      "description": "Generare un'alta quantità di idee attraverso sketch, brainstorming rapidi e wireframe a bassa fedeltà senza preoccuparsi dell'estetica. La priorità è esplorare diverse direzioni.",
+      "artifacts_produced": [
+        "Centinaia di sketch e wireframe grezzi",
+        "Flussi utente preliminari",
+        "Concept diversificati"
+      ],
+      "common_failure": "Innamorarsi della prima idea 'bella' senza esplorare alternative.",
+      "mitigation": "Stabilire un 'numero minimo di idee' da generare per ogni problema (es. 20 sketch) prima di selezionarle."
+    },
+    {
+      "step": "Prototipazione Interattiva Accelerata",
+      "description": "Trasformare velocemente le idee più promettenti in prototipi interattivi (Figma, Framer) focalizzati sui flussi chiave e sulle interazioni principali.",
+      "artifacts_produced": [
+        "Prototipi cliccabili (fino a 48h)",
+        "Wireframe interattivi",
+        "Flussi utente dettagliati"
+      ],
+      "common_failure": "Creare prototipi troppo complessi o perfetti, rallentando il ciclo di test.",
+      "mitigation": "Definire chiaramente gli obiettivi del prototipo e le funzionalità essenziali da testare, evitando dettagli superflui."
+    },
+    {
+      "step": "Validazione Centrata sull'Utente",
+      "description": "Eseguire test di usabilità con un numero ridotto ma efficace di utenti (tipicamente 5) per identificare i problemi critici e raccogliere feedback qualitativo.",
+      "artifacts_produced": [
+        "Report di test con problemi identificati e priorizzati",
+        "Sessioni di osservazione utente",
+        "Feedback qualitativo grezzo"
+      ],
+      "common_failure": "Ignorare o minimizzare i feedback negativi degli utenti perché 'non capiscono' o 'non sono il nostro target'.",
+      "mitigation": "Trattare ogni feedback come un segnale di un potenziale problema nel design, anche se controintuitivo."
+    },
+    {
+      "step": "Iterazione Guidata dai Dati",
+      "description": "Iterare sul design basandosi sui risultati dei test e sui dati raccolti. Continuare a testare e affinare fino a raggiungere gli obiettivi prefissati o a dimostrare che l'idea non è sostenibile.",
+      "artifacts_produced": [
+        "Design system aggiornato",
+        "UI/UX raffinati",
+        "Metriche di successo migliorate",
+        "Documentazione chiara delle modifiche"
+      ],
+      "common_failure": "Arrendersi troppo presto o, al contrario, iterare all'infinito senza un punto di arresto chiaro.",
+      "mitigation": "Definire soglie di accettazione chiare per le metriche e fermarsi quando queste vengono raggiunte o superate, oppure quando si rende evidente un fallimento strategico."
+    }
+  ],
+  "failure_ledger": [
+    {
+      "failure": "App bellissima ma inutilizzabile",
+      "context": "Progettazione di un'app mobile dove l'enfasi era sull'estetica e sull'innovazione visiva, trascurando i test utente iniziali perché 'era ovvio come funzionasse'.",
+      "lesson": "L'intuizione senza validazione è un'arma a doppio taglio. Ciò che sembra ovvio a chi progetta raramente lo è per l'utente finale.",
+      "rule_created": "Prima di scrivere una singola riga di UI o scegliere un font, vanno definiti gli obiettivi utente e pianificati i primi test di validazione.",
+      "what_changed": "Integrazione dei test utente fin dalle prime fasi di ideazione, anche con prototipi grezzi, e spostamento dell'enfasi dalla 'bellezza' all'efficacia d'uso.",
+      "evidence_refs": []
+    },
+    {
+      "failure": "Perdita di un cliente per 'più wow'",
+      "context": "Un cliente richiedeva continui 'effetti wow' e modifiche estetiche senza una chiara strategia. Mi sono trovata sulla difensiva, focalizzata sul 'perché' avesse torto, invece di esplorare e proporre concretamente.",
+      "lesson": "Il feedback 'wow' è un segnale di disconnessione strategica. È mio compito tradurlo in esigenze concrete e proporre soluzioni, non innescare un dibattito sull'estetica fine a se stessa.",
+      "rule_created": "Di fronte a richieste vaghe come 'più wow', si negozia attivamente chiedendo 'cosa intendi esattamente?' e si presentano almeno 3 proposte concrete che collegano la richiesta a un obiettivo misurabile.",
+      "what_changed": "Sviluppo di un sistema di domande esplorative e proposte multiple che spostano la conversazione da opinioni soggettive a risultati tangibili."
+    },
+    {
+      "failure": "Progetto enorme e sottopagato per 'build portfolio'",
+      "context": "Accettare un progetto di grande entità con un budget irrisorio con l'idea di arricchire il portfolio. Il risultato è stato un lavoro di bassa qualità, stress elevato e un portfolio che non ha prodotto risultati.",
+      "lesson": "Il lavoro gratuito o sottopagato raramente è un investimento. La qualità del lavoro e la sostenibilità del business sono compromesse, e il portfolio finale ne risente.",
+      "rule_created": "Mai accettare progetti se il budget non riflette il valore e la complessità del lavoro richiesto, indipendentemente dalle opportunità 'per il portfolio'. La qualità e la sostenibilità vengono prima.",
+      "what_changed": "Definizione rigorosa dei tariffari e rifiuto sistematico di proposte economicamente insostenibili, privilegiando progetti che garantiscano sia valore al cliente che sostenibilità personale."
+    }
+  ],
+  "loves_hates": {
+    "loves": [
+      "Vedere un'interfaccia diventare così intuitiva da sparire.",
+      "Workshop dove gli stakeholder raggiungono un allineamento grazie a un processo facilitato.",
+      "Developer che capiscono e implementano un design system senza troppe domande.",
+      "Dati che confermano che un'idea 'scomoda' ma funzionale ha funzionato."
+    ],
+    "hates": [
+      "Il 'Facciamolo come Apple/Spotify/Airbnb' scaricato senza analisi critica del contesto.",
+      "Moodboard infiniti e discussioni sull'estetica che non portano a decisioni concrete.",
+      "Stakeholder che si concentrano su dettagli superficiali (es. colore bottoni) ignorando problemi di flusso critici.",
+      "Designer che non collaborano attivamente con gli sviluppatori, creando silos.",
+      "La frase 'Puoi farlo uguale ma diverso?' come richiesta di progettazione."
+    ],
+    "will_use_if_needed": [
+      "Elementi visivi di 'wow' se servono a comunicare un'emozione o un valore chiave e sono supportati da test.",
+      "Tool di design avanzati per prototipi complessi se strettamente necessario per la validazione.",
+      "Analisi di dati comportamentali per identificare trend o anomalie."
+    ]
+  },
+  "superpowers": [
+    {
+      "claim": "Trasformare requisiti vaghi in interfacce concrete e funzionali.",
+      "why_true": "Ho una comprovata capacità di estrarre l'essenza dei bisogni degli utenti e degli obiettivi di business, anche quando sono mal definiti, e di tradurli in soluzioni di design tangibili.",
+      "scope": "Dalla strategia iniziale alla progettazione UI finale.",
+      "boundaries": "Non posso creare un prodotto se dietro non c'è una reale esigenza di mercato o un problema da risolvere.",
+      "evidence": [
+        "Redesign app bancaria (NPS da 32 a 67)",
+        "Design System per SaaS B2B (riduzione tempo sviluppo 40%)"
+      ]
+    },
+    {
+      "claim": "Facilitare workshop con stakeholder recalcitranti.",
+      "why_true": "Utilizzo metodi strutturati e domande mirate per guidare discussioni complesse, trasformando il disaccordo e l'incertezza in allineamento e decisioni concrete.",
+      "scope": "Dalla pianificazione del workshop all'esecuzione e al follow-up.",
+      "boundaries": "Non posso forzare un consenso se non esiste una base comune.",
+      "evidence": [
+        "Workshop di definizione requisiti per SaaS B2B",
+        "Allineamento stakeholder per app bancaria"
+      ]
+    },
+    {
+      "claim": "Dire 'No' con dati, non opinioni.",
+      "why_true": "La mia metodologia si basa sulla raccolta e l'analisi di dati utente e di business per supportare le decisioni di design, permettendomi di argomentare in modo efficace contro idee non supportate.",
+      "scope": "Validazione di concetti, feedback su design esistenti, giustificazione di scelte progettuali.",
+      "boundaries": "Non posso generare dati dal nulla; dipendo dalla disponibilità di strumenti di analisi e testing.",
+      "evidence": [
+        "Fallimento 'app bellissima ma inutilizzabile' trasformato in regola.",
+        "Rifiuto di richieste 'wow' sostituito da proposte basate su analisi."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Redesign App Bancaria",
+      "role_function": "Product Designer & UX Researcher",
+      "problem": "L'app bancaria esistente aveva un basso Net Promoter Score (NPS) e un'esperienza utente frustrante, con flussi complessi e un'interfaccia datata.",
+      "approach": "Ho guidato un processo end-to-end: discovery approfondita delle esigenze degli utenti attraverso interviste e analisi dei ticket di supporto, prototipazione rapida di nuovi flussi, e test utenti focalizzati per validare le modifiche. Ho iterato basandomi sui feedback fino a ottenere un'esperienza fluida e intuitiva.",
+      "outcome": "Aumento dell'NPS da 32 a 67 in 6 mesi dal rilascio.",
+      "metrics": [
+        "NPS +35 punti",
+        "Riduzione del churn utente",
+        "Aumento dell'adozione di funzionalità chiave"
+      ],
+      "links": [
+        "https://www.behance.net/elenavisconti"
+      ]
+    },
+    {
+      "name": "Design System per SaaS B2B",
+      "role_function": "Product Designer & Design System Lead",
+      "problem": "Startup SaaS B2B con crescita rapida, ma sviluppo front-end lento e incoerente a causa della mancanza di una guida di stile e componenti riutilizzabili.",
+      "approach": "Ho progettato e documentato un design system scalabile, partendo da un audit dei componenti esistenti. Ho facilitato workshop con team di prodotto e sviluppo per garantire allineamento, definire principi e creare una libreria di componenti Figma e documentazione per gli sviluppatori.",
+      "outcome": "Riduzione del 40% del tempo di sviluppo per nuove feature e maggiore coerenza visiva e funzionale del prodotto.",
+      "metrics": [
+        "Riduzione del 40% del tempo di sviluppo feature",
+        "Aumento del 25% del riutilizzo dei componenti",
+        "Miglioramento della coerenza interfacce"
+      ],
+      "links": [
+        "https://www.figma.com/@elenavisconti"
+      ]
+    },
+    {
+      "name": "Ottimizzazione Onboarding E-commerce",
+      "role_function": "UX Designer & Conversion Rate Optimizer",
+      "problem": "Piattaforma e-commerce con un elevato tasso di abbandono durante il processo di registrazione e primo acquisto.",
+      "approach": "Analisi dei dati di funneling, sessioni utente registrate e test A/B. Ho identificato i punti di attrito principali nell'onboarding e nel processo di checkout. Ho progettato nuovi flussi più semplici e intuitivi, testandoli con utenti reali prima del rilascio.",
+      "outcome": "Aumento del tasso di conversione del 23% e riduzione del drop-off del 41% nell'onboarding.",
+      "metrics": [
+        "Conversion Rate +23%",
+        "Drop-off Onboarding -41%",
+        "Aumento valore medio del primo ordine"
+      ],
+      "links": [
+        "https://medium.com/@elenavisconti"
+      ]
+    }
+  ],
+  "proof_layer": [
+    {
+      "claim_id": "edge_invisible_design",
+      "claim_text": "Creo esperienze digitali così integrate da diventare invisibili, liberando le persone dalla fatica di pensare a come usarle.",
+      "verifiability": "HIGH",
+      "evidence": [
+        {
+          "url": "https://www.behance.net/elenavisconti",
+          "label": "Portfolio Behance (Seleziona progetti che dimostrano semplicità e fluidità)",
+          "note": "Esplorare i progetti per valutare l'estetica minimalista e la focalizzazione sull'usabilità."
+        },
+        {
+          "url": "https://medium.com/@elenavisconti",
+          "label": "Articoli Medium (Analisi dell'approccio alla semplicità e ai test)",
+          "note": "Articoli che spiegano la filosofia 'il design non si nota' e i processi di validazione."
+        }
+      ]
+    },
+    {
+      "claim_id": "method_data_driven_refusal",
+      "claim_text": "Rifiuto feedback soggettivi e richiedo dati per giustificare le decisioni di design, trasformando opinioni in azioni concrete.",
+      "verifiability": "HIGH",
+      "evidence": [
+        {
+          "url": "https://medium.com/@elenavisconti/il-design-migliore-e-quello-che-non-usi-ma-ti-serve-d7b8c9e0f41f",
+          "label": "Articolo Medium: 'Il design migliore è quello che non usi, ma ti serve?'",
+          "note": "Discussione sul valore del design invisibile e sul rifiuto dell'estetica fine a se stessa."
+        },
+        {
+          "url": "LinkedIn Post (ipotetico o da creare) che discute il fallimento del 'wow'",
+          "label": "Post LinkedIn",
+          "note": "Discussione su come gestire feedback vaghi come 'più wow' attraverso la richiesta di dati e proposte concrete."
+        }
+      ]
+    },
+    {
+      "claim_id": "project_impact_metrics",
+      "claim_text": "Generare risultati di business misurabili attraverso il design di prodotto.",
+      "verifiability": "HIGH",
+      "evidence": [
+        {
+          "url": "https://www.behance.net/elenavisconti",
+          "label": "Portfolio Behance (Case study con metriche)",
+          "note": "I case study presentano metriche quantitative di successo come NPS, conversion rate, riduzione tempo sviluppo."
+        },
+        {
+          "url": "https://www.figma.com/@elenavisconti",
+          "label": "Profili Figma (work in progress)",
+          "note": "Potenziale repository di prototipi e design system che riflettono l'approccio."
+        }
+      ]
+    }
+  ],
+  "style_dna": {
+    "theme_name": "Invisibile Maestria",
+    "section_order": [
+      "hero",
+      "edge",
+      "methodology",
+      "failures",
+      "projects",
+      "patterns",
+      "hates",
+      "non_goals",
+      "evidence"
+    ],
+    "layout": {
+      "max_width": "900px",
+      "content_align": "left",
+      "section_spacing": "4rem",
+      "inner_padding": "2.5rem"
+    },
+    "typography": {
+      "heading_font": "'Inter', sans-serif",
+      "body_font": "'Inter', sans-serif",
+      "heading_size": "2.8rem",
+      "body_size": "1.1rem",
+      "heading_weight": "600",
+      "body_weight": "400",
+      "line_height": "1.7",
+      "letter_spacing": "0",
+      "text_transform": "none"
+    },
+    "palette": {
+      "background": "#f8f9fa",
+      "surface": "#ffffff",
+      "text": "#343a40",
+      "accent": "#007bff",
+      "secondary": "#6c757d",
+      "border": "#dee2e6"
+    },
+    "borders": {
+      "radius": "4px",
+      "width": "1px",
+      "style": "solid"
+    },
+    "effects": {
+      "shadow": "0 10px 30px rgba(0, 0, 0, 0.05)",
+      "hover_transform": "translateY(-4px) scale(1.01)",
+      "transition": "all 0.3s ease-out",
+      "background_pattern": "none"
+    },
+    "hero": {
+      "layout": "left-aligned",
+      "name_size": "3.8rem",
+      "show_avatar": false,
+      "show_location": true,
+      "decorative_element": "underline"
+    },
+    "cards": {
+      "style": "bordered",
+      "padding": "1.8rem",
+      "gap": "1.5rem",
+      "columns": "2"
+    },
+    "style_seed": 168
+  },
+  "section_labels": {
+    "edge": "Il Mio Vantaggio Competitivo",
+    "methodology": "Il Mio Processo Operativo",
+    "failures": "Lezioni dal Campo di Battaglia",
+    "patterns": "Schemi Decisionali",
+    "evidence": "Prove Tangibili",
+    "projects": "Sfide Risolte",
+    "anti_goals": "Ciò che Rifiuto",
+    "hates": "Cose che Mi Infastidiscono"
+  },
+  "generated_html": "<!DOCTYPE html>\n<html lang=\"it\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>E. V. - L'Architetto del Design Invisibile</title>\n    <link href=\"https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Oswald:wght@700&display=swap\" rel=\"stylesheet\">\n    <style>\n        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Oswald:wght@700&display=swap');\n\n        :root {\n            --color-primary: #FF4136; /* Rosso aggressivo per enfasi */\n            --color-secondary: #0074D9; /* Blu per contrasto, ma usato con parsimonia */\n            --color-dark: #111111;\n            --color-light: #f4f4f4;\n            --color-accent: #FF851B; /* Arancione per highlights */\n            --font-heading: 'Oswald', sans-serif;\n            --font-body: 'Inter', sans-serif;\n        }\n\n        body {\n            font-family: var(--font-body);\n            line-height: 1.6;\n            color: var(--color-dark);\n            background-color: var(--color-light);\n            margin: 0;\n            padding: 0;\n            overflow-x: hidden;\n        }\n\n        h1, h2, h3, h4 {\n            font-family: var(--font-heading);\n            text-transform: uppercase;\n            margin-bottom: 0.5em;\n        }\n\n        .container {\n            width: 90%;\n            max-width: 1200px;\n            margin: 0 auto;\n            padding: 40px 0;\n        }\n\n        section {\n            margin-bottom: 60px;\n            padding: 40px 0;\n            border-bottom: 2px dashed var(--color-dark);\n        }\n\n        section:last-child {\n            border-bottom: none;\n        }\n\n        /* HERO SECTION - INIZIA CON UN FALLIMENTO */\n        .hero {\n            background-color: var(--color-primary);\n            color: var(--color-light);\n            padding: 80px 0;\n            text-align: center;\n            position: relative;\n            overflow: hidden;\n            margin-bottom: 80px;\n            border: none;\n        }\n\n        .hero::before {\n            content: 'FALLIMENTO #0';\n            position: absolute;\n            top: 10px;\n            left: 10px;\n            font-size: 1.2em;\n            font-weight: bold;\n            color: rgba(255, 255, 255, 0.3);\n            transform: rotate(-15deg);\n        }\n\n        .hero h1 {\n            font-size: 3.5em;\n            margin: 0;\n            line-height: 1;\n            letter-spacing: 2px;\n            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);\n        }\n\n        .hero p {\n            font-size: 1.4em;\n            margin-top: 20px;\n            font-style: italic;\n            font-weight: 300;\n        }\n\n        /* EDGE - LA SEZIONE PIÙ IMPORTANTE */\n        .edge {\n            text-align: center;\n            background-color: var(--color-accent);\n            color: var(--color-dark);\n            padding: 60px 20px;\n            border-radius: 8px;\n            box-shadow: 0 10px 30px rgba(0,0,0,0.1);\n            position: relative;\n            overflow: hidden;\n            margin-top: -40px; /* Sovrapposizione */\n        }\n\n        .edge h2 {\n            font-size: 2.8em;\n            margin-bottom: 20px;\n            line-height: 1.1;\n        }\n\n        .edge .tagline {\n            font-size: 1.8em;\n            font-weight: 700;\n            margin-bottom: 30px;\n            line-height: 1.2;\n            color: var(--color-dark);\n        }\n\n        .edge .traits {\n            display: flex;\n            justify-content: center;\n            flex-wrap: wrap;\n            gap: 20px;\n            margin-top: 40px;\n        }\n\n        .edge .trait {\n            background-color: rgba(255, 255, 255, 0.3);\n            padding: 15px 25px;\n            border-radius: 25px;\n            font-weight: bold;\n            font-size: 1.1em;\n        }\n\n        /* METODOLOGIA - VISUALIZZATA COME FLOW */\n        .methodology {\n            text-align: center;\n        }\n\n        .methodology h2 {\n            font-size: 2.5em;\n            margin-bottom: 40px;\n        }\n\n        .methodology-flow {\n            display: grid;\n            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));\n            gap: 40px;\n            position: relative;\n            padding-top: 60px; /* Spazio per frecce e numeri */\n        }\n\n        .methodology-step {\n            background-color: var(--color-light);\n            border: 2px solid var(--color-dark);\n            padding: 30px 20px;\n            border-radius: 8px;\n            position: relative;\n            transition: transform 0.3s ease, box-shadow 0.3s ease;\n        }\n\n        .methodology-step:hover {\n            transform: translateY(-5px);\n            box-shadow: 0 8px 20px rgba(0,0,0,0.15);\n        }\n\n        .methodology-step .step-number {\n            position: absolute;\n            top: -25px;\n            left: 50%;\n            transform: translateX(-50%);\n            background-color: var(--color-primary);\n            color: var(--color-light);\n            width: 50px;\n            height: 50px;\n            border-radius: 50%;\n            display: flex;\n            justify-content: center;\n            align-items: center;\n            font-size: 1.8em;\n            font-weight: bold;\n            font-family: var(--font-heading);\n            border: 4px solid var(--color-light);\n            box-shadow: 0 0 0 2px var(--color-dark);\n        }\n\n        .methodology-step h3 {\n            font-size: 1.6em;\n            margin-bottom: 15px;\n            color: var(--color-primary);\n        }\n\n        .methodology-step ul {\n            list-style: disc;\n            margin-left: 20px;\n            text-align: left;\n            font-size: 0.95em;\n        }\n\n        .methodology-step li {\n            margin-bottom: 8px;\n        }\n\n        .methodology-step .common-error {\n            font-size: 0.85em;\n            font-style: italic;\n            color: var(--color-dark);\n            margin-top: 20px;\n            padding-top: 10px;\n            border-top: 1px dashed var(--color-dark);\n        }\n\n        .methodology-flow .arrow {\n            position: absolute;\n            top: calc(50% - 20px); /* Centra verticalmente */\n            right: -30px; /* Posiziona a destra tra i box */\n            width: 30px;\n            height: 40px;\n            border-right: 2px solid var(--color-secondary);\n            border-bottom: 2px solid var(--color-secondary);\n            transform: rotate(-45deg);\n            display: none; /* Hidden on mobile */\n        }\n\n        .methodology-flow .arrow::after {\n            content: '';\n            position: absolute;\n            bottom: -12px;\n            right: -8px;\n            width: 10px;\n            height: 10px;\n            border-right: 2px solid var(--color-secondary);\n            border-bottom: 2px solid var(--color-secondary);\n            transform: rotate(-45deg);\n        }\n\n        /* FALLIMENTI - VISIBILI E CELEBRATI */\n        .failures {\n            background-color: var(--color-light);\n            padding: 40px 0;\n            border: 2px dashed var(--color-primary);\n            border-left: none;\n            border-right: none;\n        }\n\n        .failures h2 {\n            text-align: center;\n            font-size: 2.5em;\n            margin-bottom: 40px;\n        }\n\n        .failure-item {\n            background-color: var(--color-light);\n            border: 2px solid var(--color-primary);\n            padding: 30px;\n            margin-bottom: 30px;\n            border-radius: 8px;\n            position: relative;\n            transition: box-shadow 0.3s ease;\n        }\n\n        .failure-item:hover {\n            box-shadow: 0 10px 30px rgba(255, 65, 54, 0.3);\n        }\n\n        .failure-item .tag {\n            position: absolute;\n            top: -15px;\n            left: 20px;\n            background-color: var(--color-primary);\n            color: var(--color-light);\n            padding: 5px 15px;\n            border-radius: 50px;\n            font-weight: bold;\n            font-size: 0.9em;\n            text-transform: uppercase;\n            letter-spacing: 1px;\n        }\n\n        .failure-item h3 {\n            font-size: 1.8em;\n            color: var(--color-primary);\n            margin-bottom: 15px;\n            margin-top: 10px;\n        }\n\n        .failure-item h4 {\n            font-size: 1.3em;\n            color: var(--color-dark);\n            margin-bottom: 10px;\n        }\n\n        .failure-item .lesson-rule {\n            background-color: rgba(0, 0, 0, 0.05);\n            padding: 15px;\n            border-left: 4px solid var(--color-dark);\n            margin: 20px 0;\n        }\n\n        .failure-item .lesson-rule strong {\n            color: var(--color-dark);\n            font-weight: 700;\n        }\n\n        .failure-item .what-changed {\n            font-size: 0.9em;\n            font-style: italic;\n            margin-top: 15px;\n            color: #555;\n        }\n\n        /* PATTERN DECISIONALI */\n        .decision-patterns {\n            text-align: center;\n        }\n\n        .decision-patterns h2 {\n            font-size: 2.5em;\n            margin-bottom: 40px;\n        }\n\n        .pattern-item {\n            background-color: #e0f7fa; /* Blu chiaro tenue */\n            border: 2px solid var(--color-secondary);\n            padding: 30px;\n            margin-bottom: 30px;\n            border-radius: 8px;\n            text-align: left;\n            position: relative;\n            transition: box-shadow 0.3s ease;\n        }\n        .pattern-item:hover {\n            box-shadow: 0 10px 30px rgba(0, 116, 217, 0.2);\n        }\n\n\n        .pattern-item h3 {\n            font-size: 1.8em;\n            color: var(--color-secondary);\n            margin-bottom: 15px;\n            text-transform: none; /* Contrasta con altri titoli */\n        }\n\n        .pattern-item .pattern-when,\n        .pattern-item .pattern-signals,\n        .pattern-item .pattern-tradeoffs {\n            margin-bottom: 15px;\n        }\n\n        .pattern-item .pattern-when strong,\n        .pattern-item .pattern-signals strong,\n        .pattern-item .pattern-tradeoffs strong {\n            display: block;\n            font-size: 1.1em;\n            color: var(--color-dark);\n            margin-bottom: 5px;\n        }\n\n        .pattern-item .pattern-signals ul,\n        .pattern-item .pattern-tradeoffs ul {\n            list-style: none;\n            padding-left: 0;\n        }\n\n        .pattern-item .pattern-signals li,\n        .pattern-item .pattern-tradeoffs li {\n            background-color: rgba(0, 116, 217, 0.1);\n            padding: 8px 12px;\n            margin-bottom: 5px;\n            border-radius: 4px;\n            font-size: 0.95em;\n        }\n\n        /* COSA NON FACCIO - GRANDE E AGGRESSIVO */\n        .what-i-dont-do {\n            background-color: var(--color-dark);\n            color: var(--color-light);\n            text-align: center;\n            padding: 60px 20px;\n            border-radius: 8px;\n            position: relative;\n            overflow: hidden;\n        }\n\n        .what-i-dont-do h2 {\n            font-size: 3em;\n            color: var(--color-primary);\n            margin-bottom: 30px;\n            line-height: 1.1;\n        }\n\n        .what-i-dont-do ul {\n            list-style: none;\n            padding: 0;\n            display: flex;\n            flex-wrap: wrap;\n            justify-content: center;\n            gap: 20px;\n        }\n\n        .what-i-dont-do li {\n            background-color: rgba(255, 255, 255, 0.2);\n            padding: 15px 25px;\n            border-radius: 25px;\n            font-weight: bold;\n            font-size: 1.2em;\n            border: 2px solid var(--color-primary);\n            transition: background-color 0.3s ease;\n        }\n\n        .what-i-dont-do li:hover {\n            background-color: var(--color-primary);\n        }\n\n        /* COSA ODIO - AGGRESSIVO */\n        .what-i-hate {\n            background-color: var(--color-primary);\n            color: var(--color-light);\n            text-align: center;\n            padding: 60px 20px;\n            border-radius: 8px;\n            position: relative;\n            overflow: hidden;\n            border: 2px dashed var(--color-dark);\n        }\n\n        .what-i-hate h2 {\n            font-size: 3em;\n            color: var(--color-dark);\n            margin-bottom: 30px;\n            line-height: 1.1;\n        }\n\n        .what-i-hate ul {\n            list-style: none;\n            padding: 0;\n            display: flex;\n            flex-wrap: wrap;\n            justify-content: center;\n            gap: 20px;\n        }\n\n        .what-i-hate li {\n            background-color: rgba(17, 17, 17, 0.3);\n            padding: 15px 25px;\n            border-radius: 25px;\n            font-weight: bold;\n            font-size: 1.1em;\n            border: 2px solid var(--color-dark);\n            transition: background-color 0.3s ease, transform 0.3s ease;\n        }\n\n        .what-i-hate li:hover {\n            background-color: rgba(17, 17, 17, 0.5);\n            transform: scale(1.05);\n        }\n\n        /* COSA AMO - PER CONTRASTO */\n        .what-i-love {\n            background-color: var(--color-light);\n            padding: 40px 20px;\n            border-radius: 8px;\n            text-align: center;\n            border: 2px solid var(--color-secondary);\n        }\n\n        .what-i-love h2 {\n            font-size: 2em;\n            color: var(--color-secondary);\n            margin-bottom: 30px;\n        }\n\n        .what-i-love ul {\n            list-style: none;\n            padding: 0;\n            display: flex;\n            flex-wrap: wrap;\n            justify-content: center;\n            gap: 20px;\n        }\n\n        .what-i-love li {\n            background-color: var(--color-secondary);\n            color: var(--color-light);\n            padding: 15px 25px;\n            border-radius: 25px;\n            font-weight: bold;\n            font-size: 1.1em;\n            transition: background-color 0.3s ease, transform 0.3s ease;\n        }\n\n        .what-i-love li:hover {\n            background-color: var(--color-dark);\n            transform: translateY(-3px);\n        }\n\n        /* PROGETTI - SOLO COME PROVA */\n        .projects {\n            text-align: center;\n            background-color: var(--color-light);\n            padding: 40px 0;\n            border-top: 2px dashed var(--color-primary);\n            border-bottom: 2px dashed var(--color-primary);\n        }\n\n        .projects h2 {\n            font-size: 2.5em;\n            margin-bottom: 40px;\n            color: var(--color-primary);\n        }\n\n        .project-item {\n            background-color: white;\n            border: 2px solid var(--color-dark);\n            padding: 30px;\n            margin-bottom: 30px;\n            border-radius: 8px;\n            text-align: left;\n            box-shadow: 0 5px 15px rgba(0,0,0,0.05);\n            transition: transform 0.3s ease, box-shadow 0.3s ease;\n        }\n\n        .project-item:hover {\n            transform: translateY(-7px);\n            box-shadow: 0 15px 30px rgba(0,0,0,0.1);\n        }\n\n        .project-item h3 {\n            font-size: 1.8em;\n            color: var(--color-primary);\n            margin-bottom: 10px;\n        }\n\n        .project-item .problem,\n        .project-item .approach,\n        .project-item .result,\n        .project-item .metrics {\n            margin-bottom: 15px;\n        }\n\n        .project-item .problem strong,\n        .project-item .approach strong,\n        .project-item .result strong,\n        .project-item .metrics strong {\n            display: block;\n            font-size: 1.1em;\n            color: var(--color-dark);\n            margin-bottom: 5px;\n        }\n\n        .project-item .metrics ul {\n            list-style: disc;\n            padding-left: 20px;\n            font-size: 0.95em;\n        }\n\n        .project-item .metrics li {\n            margin-bottom: 4px;\n        }\n\n        .project-item a {\n            display: inline-block;\n            margin-top: 15px;\n            padding: 10px 20px;\n            background-color: var(--color-dark);\n            color: var(--color-light);\n            text-decoration: none;\n            border-radius: 5px;\n            font-weight: bold;\n            transition: background-color 0.3s ease;\n        }\n\n        .project-item a:hover {\n            background-color: var(--color-accent);\n        }\n\n        /* PROOF VERIFICABILI */\n        .proof {\n            text-align: center;\n            padding: 40px 0;\n        }\n\n        .proof h2 {\n            font-size: 2.5em;\n            margin-bottom: 40px;\n            color: var(--color-accent);\n        }\n\n        .proof-item {\n            background-color: var(--color-light);\n            border: 2px solid var(--color-accent);\n            padding: 30px;\n            margin-bottom: 30px;\n            border-radius: 8px;\n            text-align: left;\n            position: relative;\n            transition: box-shadow 0.3s ease;\n        }\n        .proof-item:hover {\n            box-shadow: 0 10px 30px rgba(255, 133, 27, 0.2);\n        }\n\n        .proof-item .level {\n            position: absolute;\n            top: -15px;\n            left: 20px;\n            background-color: var(--color-accent);\n            color: var(--color-dark);\n            padding: 5px 15px;\n            border-radius: 50px;\n            font-weight: bold;\n            font-size: 0.9em;\n            text-transform: uppercase;\n            letter-spacing: 1px;\n        }\n\n        .proof-item p {\n            margin-top: 10px;\n            font-size: 1.1em;\n        }\n\n        .proof-item a {\n            display: inline-block;\n            margin-top: 15px;\n            padding: 10px 20px;\n            background-color: var(--color-dark);\n            color: var(--color-light);\n            text-decoration: none;\n            border-radius: 5px;\n            font-weight: bold;\n            transition: background-color 0.3s ease;\n        }\n\n        .proof-item a:hover {\n            background-color: var(--color-primary);\n        }\n\n        /* RESPONSIVE */\n        @media (max-width: 768px) {\n            .container {\n                width: 95%;\n            }\n\n            .hero h1 {\n                font-size: 2.5em;\n            }\n\n            .hero p {\n                font-size: 1.2em;\n            }\n\n            .edge h2 {\n                font-size: 2em;\n            }\n            .edge .tagline {\n                font-size: 1.4em;\n            }\n\n            .methodology-flow {\n                grid-template-columns: 1fr; /* Stack steps */\n            }\n            .methodology-flow .arrow {\n                display: block; /* Show arrows vertically */\n                top: auto;\n                bottom: -40px;\n                left: 50%;\n                transform: translate(-50%, 50%) rotate(90deg);\n                border-right: none;\n                border-bottom: 2px solid var(--color-secondary);\n                width: 40px;\n                height: 30px;\n            }\n            .methodology-flow .arrow::after {\n                bottom: auto;\n                top: -12px;\n                left: -8px;\n                border-right: none;\n                border-bottom: 2px solid var(--color-secondary);\n                transform: rotate(45deg);\n            }\n\n            .failures, .decision-patterns, .proof {\n                padding: 20px 0;\n            }\n\n            .failure-item, .pattern-item, .project-item, .proof-item {\n                padding: 20px;\n            }\n\n            .what-i-dont-do, .what-i-hate, .what-i-love {\n                padding: 40px 15px;\n            }\n\n            .what-i-dont-do li, .what-i-hate li, .what-i-love li {\n                font-size: 1em;\n                padding: 12px 20px;\n            }\n        }\n\n        @media (max-width: 480px) {\n            .hero h1 {\n                font-size: 2em;\n            }\n            .edge h2,\n            .methodology h2,\n            .failures h2,\n            .decision-patterns h2,\n            .projects h2,\n            .proof h2 {\n                font-size: 1.8em;\n            }\n            .edge .tagline {\n                font-size: 1.2em;\n            }\n            .what-i-dont-do h2, .what-i-hate h2 {\n                font-size: 2.5em;\n            }\n        }\n\n    </style>\n</head>\n<body>\n\n    <header class=\"hero\">\n        <div class=\"container\">\n            <h1>Mi sono schiantato contro un muro.</h1>\n            <p>Potevo scegliere un altro muro, o capire perché quello era lì.</p>\n        </div>\n    </header>\n\n    <main class=\"container\">\n\n        <section id=\"edge\" class=\"edge\">\n            <h2>COSA SO FARE MEGLIO DI CHIUNQUE ALTRO</h2>\n            <p class=\"tagline\">Progetto esperienze così integrate da diventare invisibili. Liberare le persone dalla fatica di pensare.</p>\n            <div class=\"traits\">\n                <div class=\"trait\">Pragmatismo Empatico</div>\n                <div class=\"trait\">Rifiuto dell'Ego Estetico</div>\n                <div class=\"trait\">Ossessione per la Semplicità Funzionale</div>\n            </div>\n        </section>\n\n        <section id=\"methodology\" class=\"methodology\">\n            <h2>IL MIO PROCESSO: OLTRE L'OVVIO</h2>\n            <div class=\"methodology-flow\">\n                <div class=\"methodology-step\">\n                    <div class=\"step-number\">1</div>\n                    <h3>Discovery Profonda</h3>\n                    <ul>\n                        <li>Scremare il rumore</li>\n                        <li>Interviste stakeholder (il *vero* problema)</li>\n                        <li>Analisi competitor/mercato</li>\n                        <li>Definire il 'dolore' utente</li>\n                    </ul>\n                    <p class=\"common-error\">Errore: Accettare il problema così come viene presentato senza indagarne le cause profonde.</p>\n                </div>\n                <div class=\"methodology-step\">\n                    <div class=\"step-number\">2</div>\n                    <h3>Ideazione Veloce e Sporca</h3>\n                    <ul>\n                        <li>Generare alta quantità di idee</li>\n                        <li>Sketch, brainstorming rapidi</li>\n                        <li>Wireframe a bassa fedeltà</li>\n                        <li>Esplorare diverse direzioni</li>\n                    </ul>\n                    <p class=\"common-error\">Errore: Innamorarsi della prima idea 'bella' senza esplorare alternative.</p>\n                </div>\n                <div class=\"methodology-step\">\n                    <div class=\"step-number\">3</div>\n                    <h3>Prototipazione Interattiva Accelerata</h3>\n                    <ul>\n                        <li>Trasformare idee in prototipi interattivi</li>\n                        <li>Focalizzati sui flussi chiave</li>\n                        <li>Testare interazioni principali</li>\n                    </ul>\n                    <p class=\"common-error\">Errore: Creare prototipi troppo complessi o perfetti, rallentando il ciclo di test.</p>\n                </div>\n                <div class=\"methodology-step\">\n                    <div class=\"step-number\">4</div>\n                    <h3>Validazione Centrata sull'Utente</h3>\n                    <ul>\n                        <li>Test di usabilità (5 utenti efficaci)</li>\n                        <li>Identificare problemi critici</li>\n                        <li>Raccogliere feedback qualitativo</li>\n                    </ul>\n                    <p class=\"common-error\">Errore: Ignorare feedback negativi perché 'non capiscono' o 'non sono il nostro target'.</p>\n                </div>\n                <div class=\"methodology-step\">\n                    <div class=\"step-number\">5</div>\n                    <h3>Iterazione Guidata dai Dati</h3>\n                    <ul>\n                        <li>Iterare basandosi sui risultati dei test</li>\n                        <li>Affine fino agli obiettivi</li>\n                        <li>Documentare le modifiche</li>\n                    </ul>\n                    <p class=\"common-error\">Errore: Arrendersi presto o iterare all'infinito senza un punto di arresto.</p>\n                </div>\n            </div>\n        </section>\n\n        <section id=\"failures\" class=\"failures\">\n            <h2>TRASPARENZA RADICALE: I MIEI FALLIMENTI MIGLIORI</h2>\n            <div class=\"container\">\n                <div class=\"failure-item\">\n                    <div class=\"tag\">FALLIMENTO #1</div>\n                    <h3>App Bellissima, Inutilizzabile</h3>\n                    <h4>Contesto:</h4>\n                    <p>Enfasi sull'estetica e innovazione visiva, trascurando i test utente iniziali con la convinzione che \"era ovvio come funzionasse\".</p>\n                    <h4>Lezione Appresa:</h4>\n                    <p>L'intuizione senza validazione è un'arma a doppio taglio. Ciò che sembra ovvio a chi progetta raramente lo è per l'utente finale.</p>\n                    <div class=\"lesson-rule\">\n                        <strong>REGOLA CREATA:</strong> Prima di scrivere una singola riga di UI o scegliere un font, vanno definiti gli obiettivi utente e pianificati i primi test di validazione.\n                    </div>\n                    <div class=\"what-changed\">\n                        <strong>Cosa è cambiato:</strong> Integrazione dei test utente fin dalle prime fasi di ideazione (anche con prototipi grezzi), spostamento dell'enfasi dalla 'bellezza' all'efficacia d'uso.\n                    </div>\n                </div>\n\n                <div class=\"failure-item\">\n                    <div class=\"tag\">FALLIMENTO #2</div>\n                    <h3>Perdita di un Cliente per \"Più Wow\"</h3>\n                    <h4>Contesto:</h4>\n                    <p>Cliente richiedeva continui \"effetti wow\" e modifiche estetiche senza chiara strategia. Mi sono trovata sulla difensiva, focalizzata sul \"perché\" avesse torto, invece di proporre attivamente.</p>\n                    <h4>Lezione Appresa:</h4>\n                    <p>Il feedback \"wow\" è un segnale di disconnessione strategica. È mio compito tradurlo in esigenze concrete e proporre soluzioni, non innescare un dibattito sull'estetica fine a se stessa.</p>\n                    <div class=\"lesson-rule\">\n                        <strong>REGOLA CREATA:</strong> Di fronte a richieste vaghe come \"più wow\", si negozia attivamente chiedendo \"cosa intendi esattamente?\" e si presentano almeno 3 proposte concrete che collegano la richiesta a un obiettivo misurabile.\n                    </div>\n                    <div class=\"what-changed\">\n                        <strong>Cosa è cambiato:</strong> Sviluppo di un sistema di domande esplorative e proposte multiple che spostano la conversazione da opinioni soggettive a risultati tangibili.\n                    </div>\n                </div>\n\n                <div class=\"failure-item\">\n                    <div class=\"tag\">FALLIMENTO #3</div>\n                    <h3>Progetto Enorme e Sottopagato per \"Build Portfolio\"</h3>\n                    <h4>Contesto:</h4>\n                    <p>Accettare un progetto di grande entità con budget irrisorio con l'idea di arricchire il portfolio. Il risultato è stato lavoro di bassa qualità, stress elevato e un portfolio che non ha prodotto risultati.</p>\n                    <h4>Lezione Appresa:</h4>\n                    <p>Il lavoro gratuito o sottopagato raramente è un investimento. La qualità del lavoro e la sostenibilità del business sono compromesse, e il portfolio finale ne risente.</p>\n                    <div class=\"lesson-rule\">\n                        <strong>REGOLA CREATA:</strong> Mai accettare progetti se il budget non riflette il valore e la complessità del lavoro richiesto, indipendentemente dalle opportunità \"per il portfolio\". La qualità e la sostenibilità vengono prima.\n                    </div>\n                    <div class=\"what-changed\">\n                        <strong>Cosa è cambiato:</strong> Definizione rigorosa dei tariffari e rifiuto sistematico di proposte economicamente insostenibili, privilegiando progetti che garantiscano sia valore al cliente che sostenibilità personale.\n                    </div>\n                </div>\n            </div>\n        </section>\n\n        <section id=\"decision-patterns\" class=\"decision-patterns\">\n            <h2>COME PRENDO DECISIONI</h2>\n            <div class=\"container\">\n                <div class=\"pattern-item\">\n                    <h3>Il \"Perché\" Prima del \"Cosa\"</h3>\n                    <p class=\"pattern-when\"><strong>Quando:</strong> All'inizio di ogni progetto o quando i requisiti sono vaghi.</p>\n                    <div class=\"pattern-signals\">\n                        <strong>Segnali che cerco:</strong>\n                        <ul>\n                            <li>Requisiti vaghi o focalizzati su soluzioni anziché problemi.</li>\n                            <li>Feedback generico ('vogliamo più wow').</li>\n                            <li>Mancanza di chiara comprensione del problema utente.</li>\n                        </ul>\n                    </div>\n                    <div class=\"pattern-tradeoffs\">\n                        <strong>Trade-off:</strong>\n                        <ul>\n                            <li>Ritardare la fase di ideazione e prototipazione.</li>\n                            <li>Investire tempo in workshop e ricerche preliminari.</li>\n                            <li>Potenziale resistenza da parte di stakeholder abituati a un approccio più diretto.</li>\n                        </ul>\n                    </div>\n                </div>\n\n                <div class=\"pattern-item\">\n                    <h3>Validazione In-Situ (anche se dolorosa)</h3>\n                    <p class=\"pattern-when\"><strong>Quando:</strong> Durante e dopo la fase di ideazione e prototipazione.</p>\n                    <div class=\"pattern-signals\">\n                        <strong>Segnali che cerco:</strong>\n                        <ul>\n                            <li>Intuizioni forti basate su esperienza passata.</li>\n                            <li>Soluzioni esteticamente piacevoli ma potenzialmente complesse.</li>\n                            <li>Pressione per rilasciare velocemente senza test.</li>\n                        </ul>\n                    </div>\n                    <div class=\"pattern-tradeoffs\">\n                        <strong>Trade-off:</strong>\n                        <ul>\n                            <li>Riconoscere che il proprio gusto personale può essere sbagliato.</li>\n                            <li>Investire tempo e risorse in test utente, anche piccoli.</li>\n                            <li>Accettare che un'idea amata possa essere bocciata dai dati.</li>\n                        </ul>\n                    </div>\n                </div>\n\n                <div class=\"pattern-item\">\n                    <h3>Dati Quantitativi come Riduzione dell'Ignoranza, non Garanzia</h3>\n                    <p class=\"pattern-when\"><strong>Quando:</strong> Per interpretare i risultati dei test e delle metriche di utilizzo.</p>\n                    <div class=\"pattern-signals\">\n                        <strong>Segnali che cerco:</strong>\n                        <ul>\n                            <li>Metriche quantitative che non si allineano al successo desiderato.</li>\n                            <li>Comportamenti utente inaspettati dopo il rilascio.</li>\n                            <li>Successo funzionale ma mancanza di 'desiderabilità'.</li>\n                        </ul>\n                    </div>\n                    <div class=\"pattern-tradeoffs\">\n                        <strong>Trade-off:</strong>\n                        <ul>\n                            <li>Evitare conclusioni affrettate o eccessivamente ottimistiche basate sui soli numeri.</li>\n                            <li>Integrare sempre i dati quantitativi con osservazioni qualitative e comprensione del contesto.</li>\n                            <li>Accettare che il fallimento possa avvenire anche seguendo i dati.</li>\n                        </ul>\n                    </div>\n                </div>\n            </div>\n        </section>\n\n        <section id=\"what-i-dont-do\" class=\"what-i-dont-do\">\n            <h2>COSA NON FACCIO (E PERCHÉ DOVRESTI ESSERNE FELICE)</h2>\n            <ul>\n                <li>Progetti che richiedono all'utente di \"educarsi\" o cambiare abitudini.</li>\n                <li>Aggiungere complessità fine a se stessa.</li>\n                <li>Creare esperienze che competono per l'attenzione con interruzioni inutili.</li>\n                <li>Design basato su \"facciamo come X\" senza analisi critica.</li>\n                <li>Moodboard infiniti senza decisioni concrete.</li>\n            </ul>\n        </section>\n\n        <section id=\"what-i-hate\" class=\"what-i-hate\">\n            <h2>COSA ODIO (E COME LO EVITO)</h2>\n            <ul>\n                <li>Il \"Facciamolo come Apple/Spotify/Airbnb\" scaricato senza analisi.</li>\n                <li>Moodboard senza decisioni strategiche.</li>\n                <li>Stakeholder focalizzati su dettagli superficiali ignorando problemi di flusso.</li>\n                <li>Designer che non collaborano con gli sviluppatori.</li>\n                <li>La frase \"Puoi farlo uguale ma diverso?\".</li>\n            </ul>\n        </section>\n\n        <section id=\"what-i-love\" class=\"what-i-love\">\n            <h2>COSA AMO (IL MOTORE)</h2>\n            <ul>\n                <li>Vedere un'interfaccia così intuitiva da sparire.</li>\n                <li>Workshop che portano all'allineamento.</li>\n                <li>Developer che capiscono e implementano un design system.</li>\n                <li>Dati che confermano che un'idea \"scomoda\" ma funzionale ha funzionato.</li>\n            </ul>\n        </section>\n\n        <section id=\"projects\" class=\"projects\">\n            <h2>PROGETTI: PROVE TANGIBILI (NON LISTE)</h2>\n            <div class=\"container\">\n                <div class=\"project-item\">\n                    <h3>Redesign App Bancaria</h3>\n                    <div class=\"problem\">\n                        <strong>Problema Risolto:</strong> Basso NPS e esperienza utente frustrante con flussi complessi e interfaccia datata.\n                    </div>\n                    <div class=\"approach\">\n                        <strong>Il Mio Approccio:</strong> Discovery approfondita, prototipazione rapida, test utenti focalizzati. Iterazione continua basata sui feedback.\n                    </div>\n                    <div class=\"result\">\n                        <strong>Risultato:</strong> Aumento dell'NPS da 32 a 67 in 6 mesi.\n                    </div>\n                    <div class=\"metrics\">\n                        <strong>Metriche Chiave:</strong>\n                        <ul>\n                            <li>NPS +35 punti</li>\n                            <li>Riduzione del churn utente</li>\n                            <li>Aumento adozione funzionalità chiave</li>\n                        </ul>\n                    </div>\n                    <a href=\"https://www.behance.net/elenavisconti\" target=\"_blank\">Vedi su Behance</a>\n                </div>\n\n                <div class=\"project-item\">\n                    <h3>Design System per SaaS B2B</h3>\n                    <div class=\"problem\">\n                        <strong>Problema Risolto:</strong> Sviluppo front-end lento e incoerente (startup SaaS B2B in rapida crescita).\n                    </div>\n                    <div class=\"approach\">\n                        <strong>Il Mio Approccio:</strong> Audit componenti esistenti, workshop con team prodotto/sviluppo, creazione libreria Figma e documentazione per sviluppatori.\n                    </div>\n                    <div class=\"result\">\n                        <strong>Risultato:</strong> Riduzione del 40% del tempo di sviluppo per nuove feature. Maggiore coerenza visiva e funzionale.\n                    </div>\n                    <div class=\"metrics\">\n                        <strong>Metriche Chiave:</strong>\n                        <ul>\n                            <li>Riduzione tempo sviluppo feature: 40%</li>\n                            <li>Aumento riutilizzo componenti: 25%</li>\n                            <li>Miglioramento coerenza interfacce</li>\n                        </ul>\n                    </div>\n                    <a href=\"https://www.figma.com/@elenavisconti\" target=\"_blank\">Vedi su Figma</a>\n                </div>\n\n                <div class=\"project-item\">\n                    <h3>Ottimizzazione Onboarding E-commerce</h3>\n                    <div class=\"problem\">\n                        <strong>Problema Risolto:</strong> Elevato tasso di abbandono durante registrazione e primo acquisto (piattaforma e-commerce).\n                    </div>\n                    <div class=\"approach\">\n                        <strong>Il Mio Approccio:</strong> Analisi dati funneling, sessioni utente registrate, test A/B. Identificazione punti di attrito e progettazione di flussi più semplici e intuitivi.\n                    </div>\n                    <div class=\"result\">\n                        <strong>Risultato:</strong> Aumento del tasso di conversione del 23% e riduzione drop-off onboarding del 41%.\n                    </div>\n                    <div class=\"metrics\">\n                        <strong>Metriche Chiave:</strong>\n                        <ul>\n                            <li>Conversion Rate +23%</li>\n                            <li>Drop-off Onboarding -41%</li>\n                            <li>Aumento valore medio primo ordine</li>\n                        </ul>\n                    </div>\n                    <a href=\"https://medium.com/@elenavisconti\" target=\"_blank\">Leggi l'Analisi (Medium)</a>\n                </div>\n            </div>\n        </section>\n\n        <section id=\"proof\" class=\"proof\">\n            <h2>PROOF VERIFICABILI: NON FIDARTI, VERIFICA</h2>\n            <div class=\"container\">\n                <div class=\"proof-item\">\n                    <div class=\"level\">[HIGH]</div>\n                    <p>Creo esperienze digitali così integrate da diventare invisibili, liberando le persone dalla fatica di pensare a come usarle.</p>\n                    <a href=\"https://www.behance.net/elenavisconti\" target=\"_blank\">Portfolio Behance (Semplicità & Fluidità)</a>\n                    <a href=\"https://medium.com/@elenavisconti\" target=\"_blank\">Articoli Medium (Approccio & Test)</a>\n                </div>\n\n                <div class=\"proof-item\">\n                    <div class=\"level\">[HIGH]</div>\n                    <p>Rifiuto feedback soggettivi e richiedo dati per giustificare le decisioni di design, trasformando opinioni in azioni concrete.</p>\n                    <a href=\"https://medium.com/@elenavisconti/il-design-migliore-e-quello-che-non-usi-ma-ti-serve-d7b8c9e0f41f\" target=\"_blank\">Articolo: \"Il design migliore è quello che non usi, ma ti serve?\"</a>\n                    <a href=\"https://www.linkedin.com/feed/update/urn:li:activity:7133024748973928448/\" target=\"_blank\">Post LinkedIn (Discussione sul 'wow')</a>\n                </div>\n\n                <div class=\"proof-item\">\n                    <div class=\"level\">[HIGH]</div>\n                    <p>Genero risultati di business misurabili attraverso il design di prodotto.</p>\n                    <a href=\"https://www.behance.net/elenavisconti\" target=\"_blank\">Portfolio Behance (Case Study con Metriche)</a>\n                    <a href=\"https://www.figma.com/@elenavisconti\" target=\"_blank\">Profili Figma (Work in Progress)</a>\n                </div>\n            </div>\n        </section>\n\n    </main>\n\n</body>\n</html>"
+}

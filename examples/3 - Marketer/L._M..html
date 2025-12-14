@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L. M. - L'Architetto della Crescita con un Bisturi</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Space+Mono:wght@400;700&display=swap');
+
+        :root {
+            --primary-color: #000000;
+            --secondary-color: #FF6B6B;
+            --accent-color: #4CAF50;
+            --background-color: #F4F4F4;
+            --light-gray: #E0E0E0;
+            --dark-gray: #424242;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--primary-color);
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            margin-bottom: 1em;
+            line-height: 1.2;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+            border-bottom-color: var(--secondary-color);
+        }
+
+        strong, b {
+            font-weight: 700;
+        }
+
+        em, i {
+            font-style: italic;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* === HERO === */
+        .hero {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 80vh;
+            padding: 40px 0;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--primary-color);
+            color: var(--background-color);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); /* Default: invisible */
+            z-index: 1;
+            animation: revealHero 1.5s cubic-bezier(0.86, 0, 0.07, 1) forwards;
+        }
+
+        @keyframes revealHero {
+            0% { clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); }
+            50% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+            100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-left: 8px solid var(--secondary-color);
+            margin-left: -20px; /* Overlap container padding */
+            width: fit-content;
+            max-width: 80%;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .hero-content .anti-title {
+            font-family: 'Space Mono', monospace;
+            font-size: 3.5em;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.2em;
+            letter-spacing: -1px;
+            display: block;
+            animation: fadeIn 1s 0.5s forwards;
+            opacity: 0;
+        }
+
+        .hero-content .tagline {
+            font-size: 1.5em;
+            color: var(--dark-gray);
+            font-weight: 400;
+            animation: fadeIn 1s 0.8s forwards;
+            opacity: 0;
+        }
+
+        .hero-content p {
+            max-width: 600px;
+            font-size: 1.1em;
+            color: var(--dark-gray);
+            margin-top: 1.5em;
+            animation: fadeIn 1s 1.1s forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* === SECTIONS === */
+        .section {
+            padding: 80px 0;
+            margin-bottom: 40px;
+            border-bottom: 1px dashed var(--light-gray);
+        }
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section h2 {
+            font-size: 2.8em;
+            color: var(--secondary-color);
+            margin-bottom: 1.5em;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+        }
+        .section h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 60%;
+            height: 4px;
+            background-color: var(--primary-color);
+        }
+
+        .section-title-edge {
+            text-align: left;
+            margin-bottom: 2em;
+            position: relative;
+        }
+        .section-title-edge h2 {
+            text-align: left;
+            font-size: 3.5em;
+            color: var(--primary-color);
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .section-title-edge h2::after {
+            content: '🔥';
+            position: absolute;
+            left: auto;
+            right: -40px;
+            top: -10px;
+            font-size: 2em;
+            width: auto;
+            height: auto;
+            background: none;
+        }
+
+        .edge-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .edge-text {
+            font-size: 1.2em;
+            color: var(--dark-gray);
+            padding: 30px;
+            border-left: 4px solid var(--accent-color);
+            background-color: #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .edge-text ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+        .edge-text li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        .edge-text li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: 700;
+        }
+
+        .edge-image {
+            text-align: center;
+        }
+        .edge-image img {
+            max-width: 100%;
+            height: auto;
+            border: 2px dashed var(--light-gray);
+            padding: 10px;
+        }
+
+        .methodology-chart {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .methodology-step {
+            background-color: #fff;
+            padding: 25px 35px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+            width: 80%;
+            max-width: 600px;
+            border-left: 6px solid var(--primary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+        .methodology-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .methodology-step .step-number {
+            font-family: 'Space Mono', monospace;
+            font-size: 2em;
+            font-weight: 700;
+            color: var(--light-gray);
+            position: absolute;
+            top: -20px;
+            left: 15px;
+            z-index: 0;
+        }
+
+        .methodology-step .step-title {
+            font-size: 1.4em;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .methodology-step .step-description {
+            font-size: 0.95em;
+            color: var(--dark-gray);
+        }
+
+        .methodology-step .step-output {
+            font-size: 0.9em;
+            color: var(--primary-color);
+            font-style: italic;
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px solid var(--light-gray);
+        }
+
+        .methodology-step .error-common {
+            font-size: 0.85em;
+            color: var(--secondary-color);
+            background-color: rgba(255, 107, 107, 0.1);
+            padding: 5px 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+            font-weight: 700;
+            border-left: 2px solid var(--secondary-color);
+        }
+
+        /* Connections for the flowchart */
+        .methodology-chart .methodology-step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            bottom: -30px; /* Half of the step height below */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 30px; /* Connects to the next step */
+            background-color: var(--light-gray);
+            z-index: 1;
+        }
+        .methodology-chart .methodology-step:not(:last-child):before {
+            content: '\25BC'; /* Down arrow */
+            position: absolute;
+            bottom: -45px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--light-gray);
+            font-size: 1.2em;
+            z-index: 1;
+        }
+
+
+        .failures-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .failure-card {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 2px solid var(--secondary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .failure-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .failure-card .failure-title {
+            font-size: 1.8em;
+            font-weight: 900;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
+            display: block;
+        }
+
+        .failure-card .context {
+            font-size: 0.9em;
+            color: var(--dark-gray);
+            font-style: italic;
+            margin-bottom: 20px;
+            padding-left: 15px;
+            border-left: 3px solid var(--light-gray);
+        }
+
+        .failure-card .lesson {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .failure-card .rule-created {
+            font-size: 0.9em;
+            color: var(--primary-color);
+            background-color: var(--accent-color);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        .failure-card .changed {
+            font-size: 0.9em;
+            color: var(--dark-gray);
+            padding-left: 15px;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        .pattern-decision-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .pattern-card {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--primary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .pattern-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .pattern-card .pattern-title {
+            font-size: 1.6em;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 40px;
+        }
+        .pattern-card .pattern-title::before {
+            content: '💡';
+            position: absolute;
+            left: 0;
+            top: -5px;
+            font-size: 2em;
+        }
+
+        .pattern-card .pattern-when,
+        .pattern-card .pattern-signals,
+        .pattern-card .pattern-tradeoffs {
+            margin-bottom: 20px;
+        }
+        .pattern-card .pattern-when strong,
+        .pattern-card .pattern-signals strong,
+        .pattern-card .pattern-tradeoffs strong {
+            display: block;
+            font-size: 1.1em;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+        .pattern-card .pattern-when ul,
+        .pattern-card .pattern-signals ul,
+        .pattern-card .pattern-tradeoffs ul {
+            list-style: disc;
+            padding-left: 25px;
+            margin: 0;
+        }
+        .pattern-card .pattern-when li,
+        .pattern-card .pattern-signals li,
+        .pattern-card .pattern-tradeoffs li {
+            margin-bottom: 5px;
+            font-size: 0.95em;
+            color: var(--dark-gray);
+        }
+        .pattern-card .pattern-signals li {
+            font-weight: 500;
+        }
+
+        .not-do-section, .hate-section {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-top: 20px;
+        }
+
+        .hate-section {
+            border: 2px solid var(--secondary-color);
+            background-color: rgba(255, 107, 107, 0.05);
+        }
+
+        .hate-section h2::after {
+            background-color: var(--secondary-color);
+        }
+
+        .hate-list, .not-do-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .hate-list li, .not-do-list li {
+            background-color: var(--light-gray);
+            padding: 15px 20px;
+            border-radius: 4px;
+            font-size: 1em;
+            font-weight: 700;
+            color: var(--primary-color);
+            transition: background-color 0.3s ease;
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .hate-list li::before {
+            content: '❌';
+            position: absolute;
+            left: 10px;
+            top: 12px;
+            font-size: 1.2em;
+        }
+        .not-do-list li::before {
+            content: '🚫';
+            position: absolute;
+            left: 10px;
+            top: 12px;
+            font-size: 1.2em;
+        }
+
+        .hate-list li:hover, .not-do-list li:hover {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        .love-section {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-top: 20px;
+        }
+        .love-section h2 {
+            color: white;
+            text-align: center;
+        }
+        .love-section h2::after {
+            background-color: white;
+            width: 100%;
+        }
+
+        .love-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .love-list li {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 15px 20px;
+            border-radius: 4px;
+            font-size: 1em;
+            font-weight: 700;
+            color: white;
+            transition: background-color 0.3s ease;
+            position: relative;
+            padding-left: 40px;
+        }
+        .love-list li::before {
+            content: '❤️';
+            position: absolute;
+            left: 10px;
+            top: 12px;
+            font-size: 1.2em;
+        }
+        .love-list li:hover {
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+
+
+        /* === PROJECTS AS PROOF === */
+        .projects-section .section-title-edge {
+            text-align: center;
+            margin-bottom: 2em;
+        }
+        .projects-section .section-title-edge h2 {
+            text-align: center;
+            font-size: 2.8em;
+            color: var(--primary-color);
+        }
+         .projects-section .section-title-edge h2::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .project-card {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--primary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .project-card .project-title {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .project-card .project-problem {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: var(--dark-gray);
+            margin-bottom: 15px;
+        }
+
+        .project-card .project-approach {
+            font-size: 0.95em;
+            color: var(--dark-gray);
+            margin-bottom: 20px;
+            padding-left: 15px;
+            border-left: 3px solid var(--light-gray);
+        }
+
+        .project-card .project-result-title {
+            font-size: 1em;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .project-card .project-metrics {
+            font-size: 0.9em;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+         .project-card .project-metrics span {
+             font-weight: 700;
+         }
+
+
+        /* === PROOF VERIFICABILI === */
+        .proof-section h2::after {
+            background-color: var(--secondary-color);
+        }
+        .proof-list {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+        .proof-item {
+            background-color: #fff;
+            padding: 25px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--secondary-color);
+        }
+        .proof-item .proof-level {
+            font-family: 'Space Mono', monospace;
+            font-size: 1.2em;
+            font-weight: 700;
+            color: var(--secondary-color);
+            display: block;
+            margin-bottom: 15px;
+        }
+        .proof-item .proof-statement {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        .proof-item .proof-links {
+            font-size: 0.95em;
+            color: var(--dark-gray);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .proof-item .proof-links a {
+            border-bottom: 1px dashed var(--dark-gray);
+        }
+        .proof-item .proof-links a:hover {
+            border-bottom-color: var(--secondary-color);
+        }
+
+
+        /* === FOOTER === */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 80px;
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 0.9em;
+        }
+        footer a {
+            color: white;
+            border-bottom-color: white;
+        }
+        footer a:hover {
+            color: var(--secondary-color);
+            border-bottom-color: var(--secondary-color);
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 768px) {
+            .hero-content .anti-title {
+                font-size: 2.5em;
+            }
+            .hero-content .tagline {
+                font-size: 1.2em;
+            }
+            .section h2 {
+                font-size: 2em;
+            }
+            .section-title-edge h2 {
+                font-size: 2.8em;
+            }
+            .edge-content {
+                grid-template-columns: 1fr;
+            }
+            .methodology-step {
+                width: 90%;
+            }
+            .failures-grid, .pattern-decision-wrapper, .project-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content {
+                margin-left: 0;
+                width: 100%;
+                max-width: 100%;
+            }
+            .container {
+                padding: 20px 10px;
+            }
+            .section {
+                padding: 40px 0;
+            }
+            .hero-content .anti-title {
+                font-size: 2em;
+            }
+            .hero-content .tagline {
+                font-size: 1em;
+            }
+            .hero-content p {
+                font-size: 1em;
+            }
+            .hate-list li, .not-do-list li, .love-list li {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="anti-title">L'Architetto della Crescita con un Bisturi</span>
+                <p>Costruisco macchine di crescita che funzionano perché proteggo l'utente dal prodotto finché non è pronto a usarlo, trasformando il valore da un concetto astratto a un risultato tangibile e immediato.</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="edge" class="section">
+            <div class="section-title-edge">
+                <h2>COSA SO FARE MEGLIO DI CHIUNQUE ALTRO</h2>
+            </div>
+            <div class="edge-content">
+                <div class="edge-text">
+                    <p>
+                        Quando altri sprecano budget inseguendo canali "alla moda" o caricando gli utenti di informazioni fin dal primo click, io scavo a fondo nei dati di utilizzo per identificare i veri colli di bottiglia.
+                        Non mi limito a costruire funnel, li smonto pezzo per pezzo per rimuovere tutto ciò che non è strettamente necessario per portare l'utente al suo primo successo, perché è lì che risiede il vero LTV.
+                    </p>
+                    <ul>
+                        <li>Ossessionato dai dati e dall'attribuzione</li>
+                        <li>Radicalmente focalizzato sulla rimozione del superfluo</li>
+                        <li>Scettico verso il 'pensiero di gruppo' e le mode</li>
+                    </ul>
+                </div>
+                <div class="edge-image">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MDAgNTAwIj48cmVjdCB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iI0VQRUVQRSUiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSI1MHB4IiBmb250LWZhbWlseT0iQXJpYWwiIGZpbGw9IiM4ODgiPjUwMCB4IDUwMCBCaWd0aGFuPC90ZXh0Pjwvc3ZnPg==" alt="Diagramma astratto di un funnel ottimizzato">
+                </div>
+            </div>
+        </section>
+
+        <section id="methodology" class="section">
+            <h2>IL MIO PROCESSO: 7 STEP PER LA CRESCITA RADICALE</h2>
+            <div class="methodology-chart">
+                <div class="methodology-step">
+                    <div class="step-number">01</div>
+                    <div class="step-title">Definire la North Star Metric</div>
+                    <p class="step-description">Identificare l'unica metrica fondamentale legata al valore di business e alla crescita sostenibile.</p>
+                    <div class="step-output">Produce: North Star Metric documentata</div>
+                    <div class="error-common">Errore comune: Definire troppe metriche chiave o metriche di vanità.</div>
+                </div>
+                <div class="methodology-step">
+                    <div class="step-number">02</div>
+                    <div class="step-title">Mappare e Quantificare il Funnel</div>
+                    <p class="step-description">Visualizzare ogni step del percorso utente e misurare i tassi di conversione tra uno step e l'altro.</p>
+                    <div class="step-output">Produce: Mappa del funnel con conversion rates, Identificazione dei punti di abbandono</div>
+                    <div class="error-common">Errore comune: Non avere dati granulari sufficienti per identificare i veri colli di bottiglia.</div>
+                </div>
+                <div class="methodology-step">
+                    <div class="step-number">03</div>
+                    <div class="step-title">Individuare e Analizzare il Collo di Bottiglia</div>
+                    <p class="step-description">Determinare lo step del funnel con il più alto tasso di abbandono o la minore conversione.</p>
+                    <div class="step-output">Produce: Report sul collo di bottiglia principale</div>
+                    <div class="error-common">Errore comune: Concentrarsi su problemi marginali invece che sul punto di maggiore attrito.</div>
+                </div>
+                <div class="methodology-step">
+                    <div class="step-number">04</div>
+                    <div class="step-title">Formulare un'Ipotesi Misurabile</div>
+                    <p class="step-description">Creare un'ipotesi chiara e testabile del tipo: 'Se interveniamo su X, Y aumenterà del Z%'.</p>
+                    <div class="step-output">Produce: Ipotesi di esperimento documentata</div>
+                    <div class="error-common">Errore comune: Ipotesi vaghe, non misurabili o non legate alla North Star Metric.</div>
+                </div>
+                <div class="methodology-step">
+                    <div class="step-number">05</div>
+                    <div class="step-title">Eseguire l'Esperimento (Budget Minimo, Tempo Definito)</div>
+                    <p class="step-description">Testare l'ipotesi con un investimento controllato (tempo e denaro) e criteri di successo predefiniti.</p>
+                    <div class="step-output">Produce: Risultati dell'esperimento, Dati di performance</div>
+                    <div class="error-common">Errore comune: Lasciare correre esperimenti indefinitamente o investire troppo presto.</div>
+                </div>
+                <div class="methodology-step">
+                    <div class="step-number">06</div>
+                    <div class="step-title">Analizzare e Imparare</div>
+                    <p class="step-description">Valutare i risultati dell'esperimento, capire il perché di successo o fallimento, e documentare le lezioni apprese.</p>
+                    <div class="step-output">Produce: Report sull'analisi dell'esperimento, Lezioni apprese</div>
+                    <div class="error-common">Errore comune: Non imparare dai fallimenti o non documentare i risultati.</div>
+                </div>
+                <div class="methodology-step">
+                    <div class="step-number">07</div>
+                    <div class="step-title">Scalare o Decidere</div>
+                    <p class="step-description">Se l'esperimento ha avuto successo, scalarlo. Altrimenti, abbandonarlo rapidamente per non sprecare ulteriori risorse.</p>
+                    <div class="step-output">Produce: Decisione di scaling o 'kill', Aggiornamenti del funnel/strategia</div>
+                    <div class="error-common">Errore comune: Esitazione nel tagliare esperimenti falliti o nell'investire in quelli di successo.</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="failures" class="section">
+            <h2>FALLIMENTI CHE MI HANNO FORGIATO (E Cosa Ho Imparato)</h2>
+            <div class="failures-grid">
+                <div class="failure-card">
+                    <span class="failure-title">Campagna Influencer senza Tracking</span>
+                    <div class="context">Investiti 15.000€ in una campagna influencer con l'obiettivo dichiarato di 'awareness'. Mancava un sistema di tracciamento e attribuzione chiaro, rendendo impossibile misurare il ROI effettivo.</div>
+                    <div class="lesson">Il budget, specialmente per canali meno tradizionali, deve essere giustificato da metriche di business misurabili e attribuibili. L'awareness da sola non paga le bollette.</div>
+                    <div class="rule-created">REGOLA CREATA: Mai allocare budget significativi senza un piano di attribuzione dati chiaro e metriche di conversione definite.</div>
+                    <div class="changed">Cosa è cambiato: Introduzione di protocolli obbligatori per il tracciamento delle campagne, inclusi codici promozionali unici, URL tracciabili e analisi a posteriori del traffico.</div>
+                </div>
+                <div class="failure-card">
+                    <span class="failure-title">Inseguire TikTok per 'Trend'</span>
+                    <div class="context">Investiti 3 mesi e risorse significative per entrare su TikTok, perché 'tutti ci sono'. Risultato: follower non qualificati, tempo del team sprecato e frustrazione, senza impatto sulle metriche di business.</div>
+                    <div class="lesson">Un canale di marketing deve allinearsi sia con il prodotto che con le capacità e gli obiettivi del team. Non basta che sia popolare; deve essere il posto giusto per il nostro pubblico e compatibile con le nostre risorse.</div>
+                    <div class="rule-created">REGOLA CREATA: Prima di entrare in un nuovo canale, condurre un'analisi di compatibilità prodotto-pubblico-team e definire KPI specifici per quel canale.</div>
+                    <div class="changed">Cosa è cambiato: Rivalutazione strategica dei canali di acquisizione basata su dati di performance storici e sull'allineamento strategico, piuttosto che sulla popolarità del momento.</div>
+                </div>
+                <div class="failure-card">
+                    <span class="failure-title">Ottimizzazione per Metriche di Vanità</span>
+                    <div class="context">Concentrazione su like, follower, open rate di email, portando a report che sembravano positivi ma non correlavano con la crescita delle vendite (revenue).</div>
+                    <div class="lesson">Le metriche di vanità possono nascondere problemi strutturali. La vera crescita deriva da ottimizzazioni che impattano direttamente le metriche di business core (revenue, LTV, MRR).</div>
+                    <div class="rule-created">REGOLA CREATA: Partire sempre dalle metriche di business chiave (revenue, profitto, LTV) e lavorare a ritroso per definire le metriche operative che le influenzano.</div>
+                    <div class="changed">Cosa è cambiato: Ridefinizione dei KPI di team e prodotto, con report focalizzati primariamente sui risultati di business.</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="patterns" class="section">
+            <h2>COME PRENDO DECISIONI: PATTERN RADICALI</h2>
+            <div class="pattern-decision-wrapper">
+                <div class="pattern-card">
+                    <h3 class="pattern-title">Eliminazione per Chiarezza</h3>
+                    <div class="pattern-when">
+                        <strong>Quando:</strong>
+                        <ul>
+                            <li>Decisioni su feature</li>
+                            <li>Onboarding</li>
+                            <li>Funnel</li>
+                            <li>Canali</li>
+                        </ul>
+                    </div>
+                    <div class="pattern-signals">
+                        <strong>Segnali che cerco:</strong>
+                        <ul>
+                            <li>Dati di abbandono precoce nei primi giorni di utilizzo</li>
+                            <li>Complessità percepita nel percorso utente</li>
+                            <li>Mancanza di chiarezza sul 'primo valore reale'</li>
+                            <li>Consumo di tempo utente su feature non centrali</li>
+                        </ul>
+                    </div>
+                    <div class="pattern-tradeoffs">
+                        <strong>Trade-off:</strong>
+                        <ul>
+                            <li>Possibile insoddisfazione iniziale da parte di utenti avanzati</li>
+                            <li>Richiede coraggio nel 'tagliare' funzionalità esistenti</li>
+                            <li>Investimento di tempo nell'analisi dei dati di utilizzo</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pattern-card">
+                    <h3 class="pattern-title">Attribution-First Budgeting</h3>
+                    <div class="pattern-when">
+                        <strong>Quando:</strong>
+                        <ul>
+                            <li>Allocazione budget marketing</li>
+                            <li>Valutazione canali</li>
+                        </ul>
+                    </div>
+                    <div class="pattern-signals">
+                        <strong>Segnali che cerco:</strong>
+                        <ul>
+                            <li>Budget richiesti senza KPI chiari</li>
+                            <li>Campagne con ROI ambiguo o non misurabile</li>
+                            <li>Richieste di budget per canali 'popolari' ma non adatti</li>
+                        </ul>
+                    </div>
+                    <div class="pattern-tradeoffs">
+                        <strong>Trade-off:</strong>
+                        <ul>
+                            <li>Possibile perdita di opportunità su canali emergenti difficili da tracciare inizialmente</li>
+                            <li>Richiede infrastruttura di tracking robusta</li>
+                            <li>Può portare a resistenza se si deve dire 'no' a iniziative apparentemente promettenti</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="not-do" class="section">
+            <div class="not-do-section">
+                <h2>COSA NON FACCIO (E Perché)</h2>
+                <ul class="not-do-list">
+                    <li>Spendere budget senza attribuzione chiara</li>
+                    <li>Perseguire metriche di vanità (like, follower, open rate)</li>
+                    <li>Implementare feature richieste senza analizzare il contesto d'uso e il timing</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="hate" class="section">
+             <div class="hate-section">
+                <h2>COSA ODIO PROFONDAMENTE</h2>
+                <ul class="hate-list">
+                    <li>L'idea astratta di 'fare viral' senza un piano concreto</li>
+                    <li>Budget di marketing decisi a sentimento o per 'allineamento'</li>
+                    <li>Report pieni di metriche di vanità inutili</li>
+                    <li>Il mantra 'il nostro target è tutti'</li>
+                    <li>Agenzie che vendono fumo anziché crescita misurabile</li>
+                    <li>Meeting infiniti per 'allinearsi' invece di agire</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="love" class="section">
+             <div class="love-section">
+                <h2>COSA AMO VEDERE (E FARE)</h2>
+                <ul class="love-list">
+                    <li>Dati puliti che raccontano una storia chiara</li>
+                    <li>Esperimenti che danno risposte definitive (sì o no)</li>
+                    <li>Vedere il numero di utenti che raggiungono il loro primo successo</li>
+                    <li>Email marketing che risuona davvero con il destinatario</li>
+                    <li>La semplicità dietro un funnel ben oliato</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="projects" class="section projects-section">
+             <div class="section-title-edge">
+                <h2>PROGETTI: SOLO COME PROVA DEL METODO</h2>
+             </div>
+            <div class="project-grid">
+                <div class="project-card">
+                    <span class="project-title">Startup SaaS B2B: Lancio e Crescita Iniziale</span>
+                    <div class="project-problem">Problema risolto: Portare un prodotto SaaS B2B da 0 a 10k MRR in 12 mesi, mantenendo un CAC sostenibile.</div>
+                    <div class="project-approach">
+                        Il mio approccio: Definizione della North Star Metric (MRR). Mappatura del funnel di acquisizione. Identificazione dei colli di bottiglia nell'onboarding e nel primo utilizzo. Implementazione di esperimenti mirati per migliorare la retention precoce e il tempo al primo valore. Ottimizzazione continua di copy per landing page, email e ads.
+                    </div>
+                    <div class="project-result-title">Risultato:</div>
+                    <div class="project-metrics">
+                         Raggiungimento di 10k MRR in 12 mesi. <br>
+                         <span>CAC:</span> 45 Euro
+                    </div>
+                    <a href="https://github.com/lucamartinelli/growth-experiments" target="_blank">Vedi Esperimenti su GitHub</a>
+                </div>
+                <div class="project-card">
+                    <span class="project-title">E-commerce B2B: Ottimizzazione Paid Acquisition</span>
+                    <div class="project-problem">Problema risolto: Aumentare il fatturato di un e-commerce B2B e ottimizzare il ritorno sull'investimento pubblicitario.</div>
+                    <div class="project-approach">
+                        Focus su Google Ads. Analisi approfondita delle keyword e delle intenti di ricerca. Creazione di landing page altamente performanti per campagne specifiche. Ottimizzazione del ROAS attraverso test A/B su creatività, copy e targeting. Analisi del customer journey per identificare punti di attrito.
+                    </div>
+                    <div class="project-result-title">Risultato:</div>
+                    <div class="project-metrics">
+                         +180% fatturato YoY. <br>
+                         <span>ROAS (Google Ads):</span> 4.2
+                    </div>
+                    <a href="https://lucamartinelli.substack.com" target="_blank">Leggi Case Study su Substack</a>
+                </div>
+                <div class="project-card">
+                    <span class="project-title">App Mobile: Implementazione Referral Program</span>
+                    <div class="project-problem">Problema risolto: Aumentare l'acquisizione di nuovi utenti in modo organico ed efficiente per un'app mobile.</div>
+                    <div class="project-approach">
+                        Progettazione e implementazione di un programma di referral basato su ricompense chiare e vantaggiose sia per chi invita che per chi viene invitato. Monitoraggio dei tassi di partecipazione e conversione del programma. Iterazione sul design delle ricompense e sulla comunicazione.
+                    </div>
+                     <div class="project-result-title">Risultato:</div>
+                    <div class="project-metrics">
+                        Il programma di referral genera il 35% di tutti i nuovi utenti.
+                    </div>
+                    <a href="https://www.linkedin.com/in/lucamartinelli-growth" target="_blank">Vedi Profilo LinkedIn</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="proof" class="section">
+            <h2>PROOF VERIFICABILI</h2>
+            <div class="proof-list">
+                <div class="proof-item">
+                    <span class="proof-level">[HIGH]</span>
+                    <p class="proof-statement">Ottimizzato il rapporto CAC/LTV da 1:2 a 1:5 in 8 mesi lavorando sulla retention precoce e sul 'primo valore reale'.</p>
+                    <div class="proof-links">
+                        <a href="https://www.linkedin.com/in/lucamartinelli-growth" target="_blank">Profilo LinkedIn - Sezione Esperienza/Descrizione</a>
+                        <a href="https://lucamartinelli.substack.com" target="_blank">Substack - Articolo Potenziale su LTV/CAC</a>
+                    </div>
+                </div>
+                <div class="proof-item">
+                    <span class="proof-level">[HIGH]</span>
+                    <p class="proof-statement">Costruisce 'engine di crescita misurabili' con focus su acquisizione, lifecycle e revenue optimization, basandosi sul principio 'se non si misura, non lo faccio'.</p>
+                    <div class="proof-links">
+                         <a href="https://www.linkedin.com/in/lucamartinelli-growth" target="_blank">Profilo LinkedIn - Headline e About</a>
+                        <a href="https://github.com/lucamartinelli/growth-experiments" target="_blank">GitHub - Repository 'growth-experiments'</a>
+                    </div>
+                </div>
+                <div class="proof-item">
+                    <span class="proof-level">[HIGH]</span>
+                    <p class="proof-statement">Ha contribuito a portare una startup SaaS B2B da 0 a 10k MRR in 12 mesi con un CAC di 45 Euro.</p>
+                     <div class="proof-links">
+                         <a href="https://www.linkedin.com/in/lucamartinelli-growth" target="_blank">Profilo LinkedIn - Sezione Esperienza</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 L. M. - L'Architetto della Crescita con un Bisturi. Tutti i diritti negati.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

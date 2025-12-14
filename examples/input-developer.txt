@@ -1,0 +1,65 @@
+================================================================================
+PROFILO 1: DEVELOPER
+================================================================================
+
+--- DATI PERSONALI ---
+Nome: Marco Ferretti
+Location: Milano, Italia
+Contatto: marco.ferretti@devmail.io
+
+--- RAW TEXT (da incollare in "Primary Data Stream") ---
+
+Sono un backend developer con 7 anni di esperienza. Ho iniziato con PHP (che ora odio), poi sono passato a Python e Node.js. Negli ultimi 3 anni lavoro principalmente con Go e Rust per sistemi ad alta performance.
+
+Ho lavorato in startup (caos totale, ma ho imparato tantissimo) e in corporate (processi lenti, ma codebase enormi). Preferisco le startup, anche se il work-life balance e' peggiore.
+
+COSA SO FARE BENE:
+- Ottimizzare query SQL che altri hanno scritto male
+- Debuggare problemi di memoria in produzione alle 3 di notte
+- Scrivere documentazione che la gente legge davvero
+- Dire "no" a feature che complicano l'architettura
+
+COSA HO SBAGLIATO:
+1. Ho riscritto un monolite in microservizi senza motivo valido. 6 mesi di lavoro, sistema piu' complesso, zero benefici reali. Lezione: non seguire i trend, segui i problemi.
+
+2. Ho sottovalutato i test. "Tanto funziona" -> 3 bug in produzione in una settimana. Ora scrivo test prima del codice, sempre.
+
+3. Ho accettato un progetto con deadline impossibile per fare bella figura. Risultato: codice pessimo, debito tecnico enorme, burnout. Mai piu'.
+
+COME LAVORO:
+- Prima capisco il problema, poi scrivo codice. Mai il contrario.
+- Code review aggressive. Se il codice non e' chiaro, va riscritto.
+- Documentazione inline. Se devo spiegare cosa fa una funzione, il nome e' sbagliato.
+- Deploy frequenti, rollback veloci. Meglio 10 deploy piccoli che 1 deploy enorme.
+
+COSA ODIO:
+- Meeting che potevano essere email
+- "Abbiamo sempre fatto cosi'"
+- Codice senza test
+- Manager che promettono deadline senza chiedere ai dev
+- Gente che committa direttamente su main
+
+STACK ATTUALE:
+Go, Rust, PostgreSQL, Redis, Kubernetes, AWS, Terraform
+
+PROGETTI SIGNIFICATIVI:
+1. Sistema di pagamenti real-time per fintech - 50k transazioni/secondo, zero downtime in 2 anni
+2. Migration da monolite a servizi (quella fatta BENE, dopo aver imparato dalla prima) - ridotto costi infra del 40%
+3. Tool interno di monitoring - adottato da 5 team, risparmiati 10h/settimana di debug manuale
+
+--- LINKEDIN/BIO ---
+
+Backend Developer | Go & Rust | Performance Optimization
+
+7+ anni di esperienza in sistemi distribuiti e ad alta performance. Ex-startup, ex-corporate, ora freelance per scelta. Credo che il codice migliore sia quello che non devi scrivere.
+
+Specializzazioni:
+- Sistemi real-time e event-driven
+- Ottimizzazione database e query
+- DevOps e Infrastructure as Code
+- Mentoring junior developers
+
+--- PROJECT LINKS ---
+https://github.com/mferretti/payment-gateway
+https://github.com/mferretti/go-monitoring-tool
+https://dev.to/marcoferretti

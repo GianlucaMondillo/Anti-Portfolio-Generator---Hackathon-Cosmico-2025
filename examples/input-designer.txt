@@ -1,0 +1,70 @@
+================================================================================
+PROFILO 2: DESIGNER
+================================================================================
+
+--- DATI PERSONALI ---
+Nome: Elena Visconti
+Location: Roma, Italia (Remote-first)
+Contatto: elena.visconti@designstudio.it
+
+--- RAW TEXT (da incollare in "Primary Data Stream") ---
+
+Product Designer con 6 anni di esperienza tra agenzie, startup e freelance. Ho iniziato come grafica pura, poi mi sono spostata verso UX/UI quando ho capito che i pixel senza strategia non servono a niente.
+
+Il mio percorso: grafica editoriale -> web design -> UX research -> product design. Ogni transizione e' stata dolorosa ma necessaria.
+
+FILOSOFIA:
+"Il design migliore e' quello che non noti". Se l'utente deve pensare a come usare qualcosa, ho fallito. La semplicita' e' difficilissima da raggiungere.
+
+COSA SO FARE:
+- Trasformare requisiti vaghi in interfacce concrete
+- Facilitare workshop con stakeholder che non sanno cosa vogliono
+- Progettare design system che i developer riescono a implementare
+- Dire "questo non funziona" con dati, non opinioni
+
+FALLIMENTI IMPORTANTI:
+
+1. Ho progettato un'app bellissima che nessuno sapeva usare. Avevo ignorato i test utente perche' "tanto era ovvio". 3 mesi di redesign. Lezione: mai fidarsi dell'intuito senza validazione.
+
+2. Ho litigato con un cliente che voleva "piu' wow". Invece di capire cosa intendesse, mi sono messa sulla difensiva. Ho perso il cliente. Ora chiedo sempre "cosa intendi esattamente?" e faccio 3 proposte concrete.
+
+3. Ho accettato un progetto enorme sottopagato per "farmi il portfolio". Risultato: lavoro mediocre, stress alle stelle, portfolio che non mostro a nessuno. Il lavoro gratis o sottopagato non e' mai un investimento.
+
+PROCESSO:
+1. Discovery: interviste, analisi competitor, definizione problema reale (non quello che il cliente PENSA sia il problema)
+2. Ideazione: sketch veloci, tanti, brutti. Quantita' prima di qualita'.
+3. Prototipo: Figma, interattivo, testabile in 48h max
+4. Test: 5 utenti bastano per trovare l'80% dei problemi
+5. Iterazione: fix, re-test, fix, re-test. Fino a che funziona.
+
+COSA ODIO:
+- "Facciamo come Apple/Spotify/Airbnb" senza capire perche' loro fanno cosi'
+- Moodboard infiniti che non portano a decisioni
+- Stakeholder che danno feedback sul colore dei bottoni ma ignorano i flussi
+- Designer che non parlano con i developer
+- "Puoi farlo uguale ma diverso?"
+
+TOOL:
+Figma (principalmente), Framer, Maze per test, Notion per documentazione, FigJam per workshop
+
+PROGETTI CHIAVE:
+1. Redesign app bancaria - NPS da 32 a 67 in 6 mesi
+2. Design system per SaaS B2B - 40% riduzione tempo sviluppo nuove feature
+3. Onboarding e-commerce - conversion +23%, drop-off -41%
+
+--- LINKEDIN/BIO ---
+
+Product Designer | UX Strategy | Design Systems
+
+Progetto esperienze digitali che funzionano. 6 anni di esperienza in startup, agenzie e freelance. Credo nei dati piu' che nelle opinioni, nei test piu' che nell'intuito.
+
+Specializzata in:
+- Product design end-to-end
+- Design system scalabili
+- UX research e testing
+- Workshop facilitation
+
+--- PROJECT LINKS ---
+https://www.behance.net/elenavisconti
+https://www.figma.com/@elenavisconti
+https://medium.com/@elenavisconti
